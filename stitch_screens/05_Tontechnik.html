@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mietkatalog Tontechnik (Cyan) | Professional Audio Rental</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00FFFF",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#050a0a",
+                        "surface-dark": "#0d1515",
+                        "glass-dark": "rgba(13, 21, 21, 0.7)"
+                    },
+                    fontFamily: {
+                        display: "Inter"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .liquid-glass {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 242, 255, 0.1);
+        }
+        .liquid-glass-strong {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 242, 255, 0.15);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+            border-color: rgba(0, 242, 255, 0.4);
+        }
+        body {
+            background-color: #050a0a;
+            color: #e2e8f0;
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1515; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e2929; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00FFFF; 
+        }
+    </style>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/10 bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4 h-[88px]">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">settings_input_component</span>
+<h2 class="text-slate-100 text-xl font-black leading-tight tracking-tight uppercase">Tontechnik<span class="text-primary">.Pro GbR</span></h2>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 text-sm font-bold tracking-wide transition-colors" href="#">MIETKATALOG</a>
+<a class="text-slate-400 hover:text-primary text-sm font-bold tracking-wide transition-colors" href="#">DIENSTLEISTUNGEN</a>
+<a class="text-slate-400 hover:text-primary text-sm font-bold tracking-wide transition-colors" href="#">REFERENZEN</a>
+<a class="text-slate-400 hover:text-primary text-sm font-bold tracking-wide transition-colors" href="#">KONTAKT</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-dark border border-white/10 rounded-full px-4 py-2 focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-slate-500 text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-slate-200 placeholder:text-slate-600 w-48 ml-2" placeholder="Suche Equipment..." type="text"/>
+</div>
+<button class="flex items-center justify-center rounded-full p-2.5 bg-white/5 hover:bg-white/10 text-slate-300 relative group transition-colors">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="absolute -top-1 -right-1 size-4 bg-primary text-black text-[10px] font-bold rounded-full flex items-center justify-center">2</span>
+</button>
+<button class="flex items-center justify-center rounded-full p-2.5 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</header>
+<main class="flex-1 max-w-[1600px] mx-auto w-full px-6 py-8">
+<div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 mb-8">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary">Mietkatalog</span>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="sticky top-28 space-y-8">
+<div class="liquid-glass rounded-2xl p-6">
+<h3 class="text-slate-100 font-bold uppercase tracking-wider mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">filter_list</span>
+                                    Kategorien
+                                </h3>
+<ul class="space-y-3">
+<li>
+<a class="flex items-center justify-between text-primary font-bold text-sm bg-primary/10 px-3 py-2 rounded-lg border border-primary/20" href="#">
+<span>Alles anzeigen</span>
+<span class="text-xs opacity-70">124</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between text-slate-400 hover:text-slate-200 hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm group" href="#">
+<span>PA Systeme</span>
+<span class="text-xs text-slate-600 group-hover:text-slate-400">42</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between text-slate-400 hover:text-slate-200 hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm group" href="#">
+<span>Mischpulte</span>
+<span class="text-xs text-slate-600 group-hover:text-slate-400">18</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between text-slate-400 hover:text-slate-200 hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm group" href="#">
+<span>Funkmikrofone</span>
+<span class="text-xs text-slate-600 group-hover:text-slate-400">36</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between text-slate-400 hover:text-slate-200 hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm group" href="#">
+<span>Monitoring</span>
+<span class="text-xs text-slate-600 group-hover:text-slate-400">15</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between text-slate-400 hover:text-slate-200 hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm group" href="#">
+<span>Endstufen</span>
+<span class="text-xs text-slate-600 group-hover:text-slate-400">13</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="liquid-glass rounded-2xl p-6">
+<h3 class="text-slate-100 font-bold uppercase tracking-wider mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">tune</span>
+                                    Status
+                                </h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input checked="" class="peer h-4 w-4 appearance-none rounded border border-slate-600 bg-transparent checked:border-primary checked:bg-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="material-symbols-outlined absolute inset-0 hidden text-black text-xs pointer-events-none peer-checked:block">check</span>
+</div>
+<span class="text-sm text-slate-400 group-hover:text-slate-200">Auf Lager</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="peer h-4 w-4 appearance-none rounded border border-slate-600 bg-transparent checked:border-primary checked:bg-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="material-symbols-outlined absolute inset-0 hidden text-black text-xs pointer-events-none peer-checked:block">check</span>
+</div>
+<span class="text-sm text-slate-400 group-hover:text-slate-200">Neuheiten</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex-1">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
+<div>
+<h1 class="text-3xl font-black text-slate-100 uppercase tracking-tighter mb-2">Mietkatalog <span class="text-primary">Tontechnik</span></h1>
+<p class="text-slate-400 text-sm">Professionelle Audio-Lösungen für Ihr Event</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-slate-500 text-xs font-bold uppercase hidden md:inline">Sortieren nach:</span>
+<select class="bg-surface-dark border border-white/10 rounded-xl px-4 py-2 text-sm text-slate-300 focus:border-primary focus:ring-0 cursor-pointer">
+<option>Empfohlen</option>
+<option>Preis aufsteigend</option>
+<option>Preis absteigend</option>
+<option>Neueste</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glow-hover">
+<div class="absolute top-4 right-4 z-10">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-dark/80 backdrop-blur border border-green-500/30 text-[10px] font-bold uppercase tracking-wide text-green-400">
+<span class="size-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                        Auf Lager
+                                    </span>
+</div>
+<div class="aspect-[4/3] w-full overflow-hidden bg-black/40">
+<img alt="Line Array System" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvXck-wn6BulX1FcTtK1bXcvZO-wLkAWXfj_b7ePau_vVHOpqm_8WRkDQAUzPnmhYpiCtXn_p1_GMVRZ07ZsIicstEZZl2fz8oQW98IyFJTOLxFnMaHHRXtqMGr5lbdsk8eABXrXoweLot5YRtonhr7jQjxu-qoo2lJnwO8g_DhmqrvdUcl8rd_HBmZPd39weCIAcXuAWAYkUT5Ue5-jlpipJ_dqiA6tdye8xU9-UDW6nNwPs02dHmJYY93YLVMLoQU-b2__DseFo"/>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-auto">
+<p class="text-xs font-bold text-primary mb-1 uppercase tracking-wider">PA Systeme</p>
+<h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-primary transition-colors">L-Acoustics K2 Line Array Element</h3>
+<ul class="text-xs text-slate-500 space-y-1 mb-4">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> 3-Wege Aktiv</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> Max SPL: 147 dB</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-white/5">
+<div class="flex items-end justify-between mb-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+<p class="text-xl font-black text-slate-100">185,00 €</p>
+</div>
+<button class="size-10 rounded-xl bg-white/5 hover:bg-primary hover:text-black text-primary transition-colors flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-black font-bold uppercase text-xs tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,255,0.15)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glow-hover">
+<div class="absolute top-4 right-4 z-10">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-dark/80 backdrop-blur border border-green-500/30 text-[10px] font-bold uppercase tracking-wide text-green-400">
+<span class="size-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                        Auf Lager
+                                    </span>
+</div>
+<div class="aspect-[4/3] w-full overflow-hidden bg-black/40">
+<img alt="Digital Mixer" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbbFGSwPtPCM3kQHPam91go4H-9fgqsDhsukGAW01chh_UsxgyGCaREqTHK5PE4Tv2wXSjs_qcNrHlkqJpLv0JT98sAiB48wdv9juFbIf5NE4JbYGCD5M9B_WqK9KCn6aQDYMKUGqn9rGdnZv2WwD8reGkCcnDcHXBwdVaxmqQD1Vie5xyWlsYpXf0UhVLxb5gN94Ys68rpzV_ziDjkU-eWt3iQRYCUrNqOcnZwUozQi5TTRtrIa4-XTZHH9mN6ZnKjE-1HE4atsM"/>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-auto">
+<p class="text-xs font-bold text-primary mb-1 uppercase tracking-wider">Mischpulte</p>
+<h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-primary transition-colors">DiGiCo SD12 96 Channel Console</h3>
+<ul class="text-xs text-slate-500 space-y-1 mb-4">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> 2x 15" Touchscreens</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> Stealth Core 2</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-white/5">
+<div class="flex items-end justify-between mb-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+<p class="text-xl font-black text-slate-100">450,00 €</p>
+</div>
+<button class="size-10 rounded-xl bg-white/5 hover:bg-primary hover:text-black text-primary transition-colors flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-black font-bold uppercase text-xs tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,255,0.15)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glow-hover">
+<div class="absolute top-4 right-4 z-10">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-dark/80 backdrop-blur border border-orange-500/30 text-[10px] font-bold uppercase tracking-wide text-orange-400">
+<span class="size-1.5 rounded-full bg-orange-400"></span>
+                                        Begrenzt
+                                    </span>
+</div>
+<div class="aspect-[4/3] w-full overflow-hidden bg-black/40">
+<img alt="Wireless Microphone" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE-8ae90ZU23R0tXdcSGMQS6NK7I3Q4Jh9e5UgGMjCDrJtsAncgi6X5f_dUrkayn3T2s660wEm2Z-UPnB83wd2v6Q-srNUt0r7WeUjBhRMalmtdtmXJqbcM4MHlVPiWOj2KVZsn81xguHpfC9bTh32c7DqV3RY6BX_ltt1mo4A6geHDNu-qW19YMxmxaDAskGE3vE9VfMXlQ3HqS5AothJ4vvHEC6zQh_eMQrouGoN0KEoBhibbTZX1kjNZ05BtUiqh-qWyQYiGCQ"/>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-auto">
+<p class="text-xs font-bold text-primary mb-1 uppercase tracking-wider">Funkmikrofone</p>
+<h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-primary transition-colors">Shure Axient Digital AD2/KSM8</h3>
+<ul class="text-xs text-slate-500 space-y-1 mb-4">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> Dualdyne Kapsel</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> Verschlüsselte Übertragung</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-white/5">
+<div class="flex items-end justify-between mb-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+<p class="text-xl font-black text-slate-100">65,00 €</p>
+</div>
+<button class="size-10 rounded-xl bg-white/5 hover:bg-primary hover:text-black text-primary transition-colors flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-black font-bold uppercase text-xs tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,255,0.15)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glow-hover">
+<div class="absolute top-4 right-4 z-10">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-dark/80 backdrop-blur border border-green-500/30 text-[10px] font-bold uppercase tracking-wide text-green-400">
+<span class="size-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                        Auf Lager
+                                    </span>
+</div>
+<div class="aspect-[4/3] w-full overflow-hidden bg-black/40 flex items-center justify-center">
+<img alt="Subwoofer" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3k9SVATlQB6vRG_ElttHxayGCdr6mKnTS6dFZv-mLLWXIxQoACoxbbXHnQpRKyzgdqA1PdvzOVQABesjZ1COhdp0ztQK4IhRzH0vwBWoiray7541eBms_-4BabPLuUXEnzVrXYa6DCIIj2-iU95ZEREjrbkZ6VHV8dDKulzUp1DxGEhIWLgZNEssyaJW3767R6TTbqdtqNEkvILRRDl7TVibo3s0p2g7cbwzk463SXbPUXIK4n-RFLt7OWbf84NVdiLh-p4gpe_E"/>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-auto">
+<p class="text-xs font-bold text-primary mb-1 uppercase tracking-wider">PA Systeme</p>
+<h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-primary transition-colors">L-Acoustics KS28 Subwoofer</h3>
+<ul class="text-xs text-slate-500 space-y-1 mb-4">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> 2x 18" Treiber</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> Cardioid Modus</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-white/5">
+<div class="flex items-end justify-between mb-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+<p class="text-xl font-black text-slate-100">110,00 €</p>
+</div>
+<button class="size-10 rounded-xl bg-white/5 hover:bg-primary hover:text-black text-primary transition-colors flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-black font-bold uppercase text-xs tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,255,0.15)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glow-hover">
+<div class="absolute top-4 right-4 z-10">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-dark/80 backdrop-blur border border-green-500/30 text-[10px] font-bold uppercase tracking-wide text-green-400">
+<span class="size-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                        Auf Lager
+                                    </span>
+</div>
+<div class="aspect-[4/3] w-full overflow-hidden bg-black/40">
+<img alt="In-Ear Monitoring" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7s2RSiZG6mED_c_HlN5ZQuJr0qhy5jHdJvT7NDLxni3yUne7FP8ZUDAg1mGimngYnGzksq4Rz6DmYyj-BdYuxuT-4IpolprstqaAultcigZggq339naYn5EWCAlpRg_6jZRdDCTNDvfTfymxORXDFvsWAJHg9PmnpyDuTMzQvT8SDXl4lUtwWpqJpOpVqgyM8WV4k4MyY_VpoVr_HzA7GmXWwjXLMT4ZoU2xfUBmS4Gkkab-ErIpXxjtx92fIHPq8wrE-VosEAE8"/>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-auto">
+<p class="text-xs font-bold text-primary mb-1 uppercase tracking-wider">Monitoring</p>
+<h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-primary transition-colors">Sennheiser SR 2050 IEM</h3>
+<ul class="text-xs text-slate-500 space-y-1 mb-4">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> Twin Transmitter</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> Ethernet Control</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-white/5">
+<div class="flex items-end justify-between mb-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+<p class="text-xl font-black text-slate-100">85,00 €</p>
+</div>
+<button class="size-10 rounded-xl bg-white/5 hover:bg-primary hover:text-black text-primary transition-colors flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-black font-bold uppercase text-xs tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,255,0.15)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glow-hover">
+<div class="absolute top-4 right-4 z-10">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-dark/80 backdrop-blur border border-green-500/30 text-[10px] font-bold uppercase tracking-wide text-green-400">
+<span class="size-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                        Auf Lager
+                                    </span>
+</div>
+<div class="aspect-[4/3] w-full overflow-hidden bg-black/40 flex items-center justify-center relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent z-10"></div>
+<span class="material-symbols-outlined text-slate-700 text-6xl">settings_input_hdmi</span>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="mb-auto">
+<p class="text-xs font-bold text-primary mb-1 uppercase tracking-wider">Peripherie</p>
+<h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-primary transition-colors">Rio3224-D2 Stage Box</h3>
+<ul class="text-xs text-slate-500 space-y-1 mb-4">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> Dante Netzwerk</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[10px]">check</span> 32 In / 16 Out / 4 AES</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-white/5">
+<div class="flex items-end justify-between mb-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+<p class="text-xl font-black text-slate-100">120,00 €</p>
+</div>
+<button class="size-10 rounded-xl bg-white/5 hover:bg-primary hover:text-black text-primary transition-colors flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-black font-bold uppercase text-xs tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,255,0.15)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<div class="flex items-center gap-2 bg-surface-dark/50 border border-white/5 p-2 rounded-xl">
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-white/5 text-slate-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-primary text-black font-bold">1</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-white/5 text-slate-300 hover:text-primary transition-colors font-medium">2</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-white/5 text-slate-300 hover:text-primary transition-colors font-medium">3</button>
+<span class="px-2 text-slate-600">...</span>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-white/5 text-slate-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<section class="mt-20">
+<div class="bg-gradient-to-r from-surface-dark to-background-dark border border-primary/20 rounded-[32px] p-8 md:p-12 relative overflow-hidden group">
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-700"></div>
+<div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary/50 to-transparent"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-4">
+<span class="material-symbols-outlined text-sm">support_agent</span>
+                                    24/7 Support
+                                </div>
+<h2 class="text-3xl md:text-4xl font-black text-slate-100 uppercase tracking-tighter mb-4">Nicht gefunden was Sie suchen?</h2>
+<p class="text-slate-400 text-lg leading-relaxed mb-8">
+                                    Unser Lager umfasst über 5.000 Artikel. Kontaktieren Sie unsere Disponenten für spezielle Anforderungen oder komplexe Systemkonfigurationen.
+                                </p>
+<div class="flex flex-wrap gap-4">
+<button class="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-slate-100 h-12 px-6 rounded-xl font-bold uppercase tracking-tight transition-all border border-white/10 hover:border-primary/50">
+<span class="material-symbols-outlined">call</span>
+                                        +49 (0) 40 1234-567
+                                    </button>
+<button class="flex items-center justify-center gap-2 text-primary hover:text-white font-bold uppercase tracking-tight transition-colors px-4">
+<span>Anfrage per Mail senden</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="hidden lg:block">
+<span class="material-symbols-outlined text-[12rem] text-white/5">inventory_2</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-dark border-t border-white/5 pt-16 pb-8 px-6 md:px-20 mt-12 relative z-10">
+<div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 text-primary mb-6">
+<span class="material-symbols-outlined text-2xl">settings_input_component</span>
+<h2 class="text-slate-100 text-lg font-black uppercase tracking-tight">Tontechnik<span class="text-primary">.Pro GbR</span></h2>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            Supplying world-class audio engineering solutions for concerts, theaters, and corporate events worldwide.
+                        </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-black transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-black transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-black transition-all" href="#">
+<span class="material-symbols-outlined text-sm">analytics</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-slate-200 font-bold uppercase text-xs tracking-widest mb-6 border-l-2 border-primary pl-3">Equipment</h4>
+<ul class="space-y-3 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Digital Consoles</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Line Arrays</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>In-Ear Monitors</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>RF Coordination</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-200 font-bold uppercase text-xs tracking-widest mb-6 border-l-2 border-primary pl-3">Services</h4>
+<ul class="space-y-3 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>System Design</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Acoustic Analysis</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>On-site Support</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Rental Fleet</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-200 font-bold uppercase text-xs tracking-widest mb-6 border-l-2 border-primary pl-3">Contact</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">mail</span>
+<span class="hover:text-slate-300 transition-colors cursor-pointer">support@tontechnik.pro</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">call</span>
+<span class="hover:text-slate-300 transition-colors cursor-pointer">+49 (0) 40 1234-567</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">location_on</span>
+<span>Hamburg, Germany</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1600px] mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-600 text-xs uppercase tracking-tight">© 2024 Tontechnik.Pro GbR. All rights reserved.</p>
+<div class="flex gap-8 text-slate-600 text-xs font-medium uppercase tracking-tight">
+<a class="hover:text-primary transition-colors" href="#">Impressum</a>
+<a class="hover:text-primary transition-colors" href="#">Datenschutz</a>
+<a class="hover:text-primary transition-colors" href="#">AGB</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

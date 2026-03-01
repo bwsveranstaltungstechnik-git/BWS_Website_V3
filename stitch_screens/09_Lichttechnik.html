@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class", 
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FFBF00", 
+                        "background-light": "#f6f7f8", 
+                        "background-dark": "#111821"
+                    }, 
+                    fontFamily: {
+                        display: "Inter"
+                    }, 
+                    borderRadius: {
+                        DEFAULT: "0.25rem", 
+                        lg: "0.5rem", 
+                        xl: "0.75rem", 
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 191, 0, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 191, 0, 0.1);
+        }
+        .glass-darker {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 191, 0, 0.08);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 191, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 191, 0, 0.4);
+            transform: translateY(-2px);
+            background: rgba(30, 41, 59, 0.6);
+        }
+        .checkbox-custom:checked {
+            background-color: #FFBF00;
+            border-color: #FFBF00;
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #FFBF00;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-primary/20 bg-background-dark/80 backdrop-blur-md px-6 md:px-10 py-4">
+<div class="flex items-center gap-4 text-primary w-1/4">
+<div class="size-10 flex items-center justify-center bg-primary/10 rounded-lg border border-primary/20">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<h2 class="text-slate-100 text-lg font-bold leading-none tracking-tight">LICHTTECHNIK</h2>
+<span class="text-primary text-[10px] uppercase tracking-[0.2em] font-medium">Verleih GbR</span>
+</div>
+</div>
+<div class="hidden md:flex flex-1 justify-center gap-10">
+<a class="relative text-primary text-sm font-bold py-2 group" href="#">
+                        Mietkatalog
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full shadow-[0_0_8px_rgba(255,191,0,0.8)]"></span>
+</a>
+<a class="relative text-slate-400 hover:text-white transition-colors text-sm font-medium py-2 group" href="#">
+                        Impressionen
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full transition-all group-hover:w-full opacity-50"></span>
+</a>
+<a class="relative text-slate-400 hover:text-white transition-colors text-sm font-medium py-2 group" href="#">
+                        Rechtliches
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full transition-all group-hover:w-full opacity-50"></span>
+</a>
+</div>
+<div class="flex items-center justify-end gap-4 w-1/4">
+<button class="hidden lg:flex items-center justify-center rounded-xl size-10 text-slate-400 hover:text-primary transition-all">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="relative flex items-center justify-center rounded-xl size-10 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 transition-all group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">shopping_cart</span>
+<span class="absolute -top-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-background-dark shadow-sm">3</span>
+</button>
+<div class="size-10 rounded-full border border-primary/30 p-0.5 cursor-pointer hover:border-primary transition-colors">
+<img class="rounded-full size-full object-cover" data-alt="User profile avatar with amber highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOWmk-mj73U7CuPX-KEvbX7ZCo62eKkX5FQtaLFd8oqgeAXsw1khkTsGYn-7j1KhP2ZaNGb2Jf106xRsdHrsNmPNotFLskq2DFdmjjIcV_cnZOtm6IhiNX1CUB8F6aNrlerblEh1BxWEiKxsqQCWESnxr6r8F4xrHSgaWcIYuxhrwH57yZnfNYxWdx2qj-GMyQ8zsR5uOA82mmvwruxwvjWx0JGb8VZfAKVmPl3F9mdnj0_-Oct81cQli4xbxgE9oQnPrT-J-420k"/>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1400px] mx-auto w-full px-4 py-8">
+<div class="relative group overflow-hidden rounded-2xl mb-8">
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/60 to-transparent z-10"></div>
+<div class="h-48 md:h-64 w-full bg-cover bg-center" data-alt="Modern stage lighting design with golden laser beams" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDB-xx0oyYs0858ljLTkhqSi-Hg4AB1JlUWrQWg6N3aDPD2bnofWDYjRY4lWyU6q7Z_pmZNfRwPlVtg9TzgWTMnTFaRFamQy5oGCQQV1oUYGYplZcT_4aiZ_V0IfVoS4XhcF-68Wwxa4s_cMU4_RxyGUao_cRijDHztMh9Y1mynm0GW-AbL4XziMZluH14Vrg2UIMl5qskUVhYokU-J0j40oc0OXeljBi_YylJA7uxxRHKCN3gcw9hsQJKdkIXZqEJW2x4xYwxlOw");'>
+</div>
+<div class="absolute inset-0 flex items-center px-8 z-20">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-primary/20 border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">Mietkatalog</span>
+</div>
+<h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-2 tracking-tighter">Lichttechnik <span class="text-primary">Verleih</span></h1>
+<p class="text-slate-300 max-w-lg text-sm md:text-base">Professionelles Licht-Equipment für Events, Bühnen und Installationen.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-6">
+<div class="glass p-5 rounded-xl">
+<h3 class="text-white font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">tune</span> Filter
+                            </h3>
+<div class="mb-6">
+<h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Kategorien</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="checkbox-custom rounded border-slate-600 bg-slate-800 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-primary transition-colors">Alle</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="checkbox-custom rounded border-slate-600 bg-slate-800 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-primary transition-colors">Moving Heads</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="checkbox-custom rounded border-slate-600 bg-slate-800 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-primary transition-colors">LED-Bars</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="checkbox-custom rounded border-slate-600 bg-slate-800 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-primary transition-colors">Outdoor (IP65)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="checkbox-custom rounded border-slate-600 bg-slate-800 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-primary transition-colors">Effektlicht</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="checkbox-custom rounded border-slate-600 bg-slate-800 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-primary transition-colors">Steuerung &amp; DMX</span>
+</label>
+</div>
+</div>
+<div class="mb-6">
+<h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Preis / Tag</h4>
+<input class="range-slider w-full h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer mb-2" max="500" min="0" type="range" value="250"/>
+<div class="flex justify-between text-xs text-slate-400">
+<span>0€</span>
+<span>500€+</span>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Verfügbarkeit</h4>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</div>
+<span class="text-sm text-slate-300 group-hover:text-white transition-colors">Sofort verfügbar</span>
+</label>
+</div>
+</div>
+<div class="glass-darker p-5 rounded-xl border border-primary/20 text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">support_agent</span>
+<h4 class="font-bold text-white mb-1">Beratung nötig?</h4>
+<p class="text-xs text-slate-400 mb-3">Unsere Experten helfen bei der Planung.</p>
+<button class="text-xs font-bold text-primary border border-primary/50 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-black transition-all w-full">Kontakt aufnehmen</button>
+</div>
+</aside>
+<div class="flex-1">
+<div class="flex flex-wrap items-center justify-between mb-6 gap-4">
+<p class="text-slate-400 text-sm">Zeige <span class="text-white font-bold">12</span> von <span class="text-white font-bold">48</span> Produkten</p>
+<div class="flex items-center gap-3">
+<select class="bg-background-dark border border-slate-700 text-slate-300 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2">
+<option>Sortieren: Empfohlen</option>
+<option>Preis: Aufsteigend</option>
+<option>Preis: Absteigend</option>
+<option>Name: A-Z</option>
+</select>
+<div class="flex gap-1 bg-background-dark border border-slate-700 rounded-lg p-1">
+<button class="p-1 rounded bg-slate-700 text-white"><span class="material-symbols-outlined text-sm">grid_view</span></button>
+<button class="p-1 rounded text-slate-400 hover:text-white"><span class="material-symbols-outlined text-sm">view_list</span></button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="relative h-48 bg-background-dark">
+<img alt="Apex-500 Hybrid Pro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwISULlxlIiHqEbr3QrRFGoFuhRSYoEpktSyRUkFxC_pV1PUGTF3-WLwfOp0ex4Ku_J2abWvcPXKxELDZu6SRvPtcEu5C1eA-3gXenOpjPIN1uKSqllWNeML41FX-mTGlIZ1jVICGwLf4qwNucbSmdBQ5rbJbAZJT9ceouKKODzOqhQIl23sGJ_IG_5nMjI6MiLEUrByPQdvuz-osAT_cm87tgED3rk_Wf-xntx8uM0v6DYhaBaSL34GxLBuAr2FE0SKPxRNM85_8"/>
+<div class="absolute top-3 left-3">
+<span class="bg-background-dark/80 backdrop-blur text-primary text-[10px] font-bold px-2 py-1 rounded border border-primary/30">TOP SELLER</span>
+</div>
+<div class="absolute top-3 right-3">
+<button class="bg-background-dark/50 hover:bg-primary hover:text-black text-white p-1.5 rounded-full backdrop-blur transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs text-slate-400 font-medium tracking-wide uppercase">Moving Head</span>
+<div class="flex items-center gap-1.5 text-green-400 bg-green-400/10 px-2 py-0.5 rounded text-[10px] font-bold border border-green-400/20">
+<span class="block w-1.5 h-1.5 rounded-full bg-green-400"></span> Verfügbar
+                                        </div>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 leading-tight group-hover:text-primary transition-colors">Apex-500 Hybrid Pro</h3>
+<p class="text-slate-400 text-xs mb-4 line-clamp-2">Leistungsstarker Hybrid Moving Head mit CMY-Farbmischung und Zoom.</p>
+<div class="mt-auto pt-4 border-t border-slate-700/50 flex flex-col gap-3">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-slate-400">Miete ab</span>
+<span class="text-xl font-bold text-primary">45,00€</span>
+<span class="text-xs text-slate-400">/ Tag</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="relative h-48 bg-background-dark">
+<div class="w-full h-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-slate-700">light_mode</span>
+</div>
+<div class="absolute top-3 left-3">
+<span class="bg-blue-500/20 backdrop-blur text-blue-400 text-[10px] font-bold px-2 py-1 rounded border border-blue-500/30">OUTDOOR</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs text-slate-400 font-medium tracking-wide uppercase">LED Bar</span>
+<div class="flex items-center gap-1.5 text-orange-400 bg-orange-400/10 px-2 py-0.5 rounded text-[10px] font-bold border border-orange-400/20">
+<span class="block w-1.5 h-1.5 rounded-full bg-orange-400"></span> Begrenzt
+                                        </div>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 leading-tight group-hover:text-primary transition-colors">Lumina IP65 Bar 100</h3>
+<p class="text-slate-400 text-xs mb-4 line-clamp-2">Wetterfeste LED-Bar für Außenanwendungen und Architekturbeleuchtung.</p>
+<div class="mt-auto pt-4 border-t border-slate-700/50 flex flex-col gap-3">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-slate-400">Miete ab</span>
+<span class="text-xl font-bold text-primary">22,50€</span>
+<span class="text-xs text-slate-400">/ Tag</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="relative h-48 bg-background-dark">
+<div class="w-full h-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-slate-700">tungsten</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs text-slate-400 font-medium tracking-wide uppercase">Blinder</span>
+<div class="flex items-center gap-1.5 text-green-400 bg-green-400/10 px-2 py-0.5 rounded text-[10px] font-bold border border-green-400/20">
+<span class="block w-1.5 h-1.5 rounded-full bg-green-400"></span> Verfügbar
+                                        </div>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 leading-tight group-hover:text-primary transition-colors">StageBlind 4-Lite</h3>
+<p class="text-slate-400 text-xs mb-4 line-clamp-2">Klassischer 4-Lite Blinder mit DMX-Steuerung für Publikumsbeleuchtung.</p>
+<div class="mt-auto pt-4 border-t border-slate-700/50 flex flex-col gap-3">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-slate-400">Miete ab</span>
+<span class="text-xl font-bold text-primary">18,00€</span>
+<span class="text-xs text-slate-400">/ Tag</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="relative h-48 bg-background-dark">
+<div class="w-full h-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-slate-700">settings_remote</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs text-slate-400 font-medium tracking-wide uppercase">Steuerung</span>
+<div class="flex items-center gap-1.5 text-green-400 bg-green-400/10 px-2 py-0.5 rounded text-[10px] font-bold border border-green-400/20">
+<span class="block w-1.5 h-1.5 rounded-full bg-green-400"></span> Verfügbar
+                                        </div>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 leading-tight group-hover:text-primary transition-colors">Grand Control 3</h3>
+<p class="text-slate-400 text-xs mb-4 line-clamp-2">Professionelles Lichtpult für komplexe Shows und Events.</p>
+<div class="mt-auto pt-4 border-t border-slate-700/50 flex flex-col gap-3">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-slate-400">Miete ab</span>
+<span class="text-xl font-bold text-primary">120,00€</span>
+<span class="text-xs text-slate-400">/ Tag</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="relative h-48 bg-background-dark">
+<div class="w-full h-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-slate-700">wb_iridescent</span>
+</div>
+<div class="absolute top-3 left-3">
+<span class="bg-primary/20 backdrop-blur text-primary text-[10px] font-bold px-2 py-1 rounded border border-primary/30">NEU</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs text-slate-400 font-medium tracking-wide uppercase">Moving Head</span>
+<div class="flex items-center gap-1.5 text-green-400 bg-green-400/10 px-2 py-0.5 rounded text-[10px] font-bold border border-green-400/20">
+<span class="block w-1.5 h-1.5 rounded-full bg-green-400"></span> Verfügbar
+                                        </div>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 leading-tight group-hover:text-primary transition-colors">BeamMaster 280</h3>
+<p class="text-slate-400 text-xs mb-4 line-clamp-2">Kompakter Beam Moving Head mit extrem hellem Output.</p>
+<div class="mt-auto pt-4 border-t border-slate-700/50 flex flex-col gap-3">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-slate-400">Miete ab</span>
+<span class="text-xl font-bold text-primary">35,00€</span>
+<span class="text-xs text-slate-400">/ Tag</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-sm">playlist_add</span>
+                                            In die Mietliste
+                                        </button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="relative h-48 bg-background-dark">
+<div class="w-full h-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-slate-700">filter_tilt_shift</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs text-slate-400 font-medium tracking-wide uppercase">Nebel</span>
+<div class="flex items-center gap-1.5 text-red-400 bg-red-400/10 px-2 py-0.5 rounded text-[10px] font-bold border border-red-400/20">
+<span class="block w-1.5 h-1.5 rounded-full bg-red-400"></span> Ausgebucht
+                                        </div>
+</div>
+<h3 class="text-white font-bold text-lg mb-1 leading-tight group-hover:text-primary transition-colors">HazePro Tour</h3>
+<p class="text-slate-400 text-xs mb-4 line-clamp-2">Professioneller Hazer im Flightcase für gleichmäßigen Dunst.</p>
+<div class="mt-auto pt-4 border-t border-slate-700/50 flex flex-col gap-3">
+<div class="flex items-baseline gap-1">
+<span class="text-xs text-slate-400">Miete ab</span>
+<span class="text-xl font-bold text-primary">28,00€</span>
+<span class="text-xs text-slate-400">/ Tag</span>
+</div>
+<button class="w-full bg-slate-700 text-slate-400 cursor-not-allowed font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all" disabled="">
+<span class="material-symbols-outlined text-sm">event_busy</span>
+                                            Nicht verfügbar
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12">
+<nav class="flex items-center gap-2">
+<a class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-background-dark font-bold" href="#">1</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors" href="#">2</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors" href="#">3</a>
+<span class="px-2 text-slate-600">...</span>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+<footer class="mt-20 border-t border-primary/10 bg-background-dark/30">
+<div class="max-w-[1400px] mx-auto w-full px-4 py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+<div class="md:col-span-1">
+<div class="flex items-center gap-3 text-primary mb-4">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg border border-primary/20">
+<span class="material-symbols-outlined text-primary text-sm">lightbulb</span>
+</div>
+<span class="text-white font-bold tracking-tight">LICHTTECHNIK GbR</span>
+</div>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Ihr verlässlicher Partner für professionelle Veranstaltungstechnik. Wir bringen Licht ins Dunkel für Events jeder Größe.
+                        </p>
+<div class="flex gap-3">
+<a class="size-8 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary hover:text-background-dark transition-all" href="#">
+<span class="text-xs font-bold">IN</span>
+</a>
+<a class="size-8 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary hover:text-background-dark transition-all" href="#">
+<span class="text-xs font-bold">FB</span>
+</a>
+<a class="size-8 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary hover:text-background-dark transition-all" href="#">
+<span class="text-xs font-bold">YT</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Mietkatalog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Über Uns</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Referenzen</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Kontakt</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Rechtliches</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Impressum</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Datenschutz</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">AGB</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Widerruf</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">Kontakt</h4>
+<ul class="space-y-3 text-sm text-slate-400">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+<span>Techstraße 101<br/>10115 Berlin</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">call</span>
+<span>+49 (0) 30 1234567</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">mail</span>
+<span>kontakt@lichttechnik.gbr</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-xs tracking-wide">© 2024 LICHTTECHNIK GbR. Alle Rechte vorbehalten.</p>
+<div class="flex gap-6">
+<div class="text-slate-500 flex items-center gap-2" title="Geprüftes Equipment">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-widest hidden sm:inline">Qualität</span>
+</div>
+<div class="text-slate-500 flex items-center gap-2" title="Lieferung möglich">
+<span class="material-symbols-outlined text-primary text-sm">local_shipping</span>
+<span class="text-[10px] font-bold uppercase tracking-widest hidden sm:inline">Logistik</span>
+</div>
+<div class="text-slate-500 flex items-center gap-2" title="24/7 Support">
+<span class="material-symbols-outlined text-primary text-sm">support_agent</span>
+<span class="text-[10px] font-bold uppercase tracking-widest hidden sm:inline">Support</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+</body></html>

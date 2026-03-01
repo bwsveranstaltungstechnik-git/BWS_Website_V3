@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apex-500 Hybrid Pro | Event-Technik GbR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class", 
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FFBF00", // Updated to Amber as requested
+                        "primary-dark": "#e5ab00",
+                        "accent-amber": "#FFBF00", // Consistent Amber
+                        "action-green": "#FFBF00", // Replaced green with Amber for actions
+                        "background-light": "#f6f7f8", 
+                        "background-dark": "#111821"
+                    }, 
+                    fontFamily: {
+                        display: "Inter"
+                    }, 
+                    borderRadius: {
+                        DEFAULT: "0.25rem", 
+                        lg: "0.5rem", 
+                        xl: "0.75rem", 
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .liquid-glass {
+            background: linear-gradient(135deg, rgba(255, 191, 0, 0.1) 0%, rgba(255, 191, 0, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-glow-amber {
+            text-shadow: 0 0 10px rgba(255, 191, 0, 0.4);
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111821; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFBF00; 
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen selection:bg-primary selection:text-slate-900">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full glass-card border-b border-white/10 px-6 py-4 lg:px-20">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-slate-900">wb_iridescent</span>
+</div>
+<div>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-slate-100">Event-Technik <span class="text-primary">GbR</span></h2>
+<p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Professional Rental Solutions</p>
+</div>
+</div>
+<div class="hidden md:flex flex-1 justify-center max-w-md mx-8">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-white/5 border border-white/10 rounded-full py-2 pl-10 pr-4 focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm transition-all placeholder-slate-500" placeholder="Search equipment..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="md:hidden p-2 hover:bg-white/5 rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-6 py-12 lg:px-20">
+<nav class="flex mb-8 text-sm text-slate-400 gap-2 items-center">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="text-primary hover:text-primary-dark transition-colors font-medium" href="#">Lighting</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-200">Apex-500 Hybrid Pro</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="space-y-6">
+<div class="relative group aspect-square rounded-2xl overflow-hidden liquid-glass flex items-center justify-center p-8">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-primary/10 pointer-events-none"></div>
+<img alt="Professional Moving Head Light" class="w-full h-full object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-700" data-alt="Professional LED moving head stage lighting fixture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgJazM5x0OQBIgOsn72ptUynLijpSGCmJeAiAgv2JZu3HQh9IleUNUvLNCbbmSmODw_zRsWdOlna3i-keryJXsmi1ZX4Pj6LM6gGbjMK9bor5vZSQ6OYZGs49jxycbAajy1DMECfV9Um7LCk9YetN3bKtTayop45jyPS8uG6JclrAjyIMq5lGttBD7l3wm1Fa2wBs3pXs4NS9tKhrmC06YhVYUQ5Oh73HfhPQIguzTvjvVd92hUUzOdxUcqJLiM1URyATXdRbKoXA"/>
+<div class="absolute bottom-6 left-6 flex gap-2">
+<span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-3 py-1 rounded-full border border-primary/20 uppercase tracking-widest">In Stock</span>
+<span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-3 py-1 rounded-full border border-primary/20 uppercase tracking-widest">Premium</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="aspect-square rounded-xl glass-card border-primary/30 p-2 opacity-100 ring-1 ring-primary/20">
+<img alt="Side view" class="w-full h-full object-cover rounded-lg" data-alt="Side view of moving head lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd8YVJu5ABCZZk9tqe8gANaNhfjE32HQ_EAo5EDzOXU6jf2Pc-IAFFXZ11WXGhtLuIUqxq30DDwScKSSg705qXWBH2_eI_MikUNFLrr-cldRAFYHnGRmtvk5K77qw4DuQAoWSyTdatjrpeJDdkKjuQiPw7EzXygG4YjRQ2AkX34uN7lF4sqdKK0UdRvjF4quvE2BOoAQfrnCEbPnN4ABoEZVZ-ztN0TfcShejctq4nr5W6LJ2al0QFzWu_FGuDrjYTvvgekZuyA_Q"/>
+</div>
+<div class="aspect-square rounded-xl glass-card p-2 opacity-50 hover:opacity-100 transition-opacity cursor-pointer hover:border-primary/30 hover:border">
+<img alt="Lens detail" class="w-full h-full object-cover rounded-lg" data-alt="Close up of high precision optical lens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz80Eqi3aD4EQR7vn66VYbR4Ga4lQMbMNu6YHARjFa_hGgPPlOS64dLqUu_jfHv4mcmnhdD0U8_fiBOv5oO1qSArplli4MizKojT9Kyf6EbcK0xkPL9J1Sq1Do3DUzDM_b8i_ylyDivXRQPrg7_zZbHVjRYsM8ELew-tQCT6F0z2L4lp_lpxK0kzvekxEO39xSCs5SJdy3qBoWvHMOOs9GSu3PbteIvG-2LHEBY5EIZI88N9KtYOz5r_Cc0B0P_SE6JLd9_f8AUWA"/>
+</div>
+<div class="aspect-square rounded-xl glass-card p-2 opacity-50 hover:opacity-100 transition-opacity cursor-pointer hover:border-primary/30 hover:border">
+<img alt="Action shot" class="w-full h-full object-cover rounded-lg" data-alt="Stage lighting beam effect in dark arena" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhg6A_mCT2C_UpJ9wOufGxji5JH-S2Fp3dRza7bQV1v8szCGj_oxdF-0MWIBgW2JDow1n8SeP8HWZauXD4xsUJSoVBBA7qznuLI1WV7NgmCk6PN94O5zY3VnLmxo7gtZnTE-tg65DxNtP-tga3yuzEoMs_BkxqXLXeUOcLLVdFlfR2NmBB0uqp2RzCbsnug4Tv8KUpzUhl56H3CjDsRLBKpbjtnko6B0VafSsiJCTy5cZC4xk6y4Ug3z8hw1n-rh1nb90cDi84vJo"/>
+</div>
+<div class="aspect-square rounded-xl glass-card p-2 opacity-50 hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer hover:border-primary/30 hover:border hover:text-primary">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">videocam</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-4xl lg:text-5xl font-bold tracking-tight mb-2">Apex-500 <span class="text-primary text-glow-amber">Hybrid Pro</span></h1>
+<p class="text-slate-400 text-lg mb-6">State-of-the-art hybrid moving head with CMY color mixing and ultra-sharp optics.</p>
+<div class="flex items-baseline gap-2 mb-8">
+<span class="text-4xl font-bold text-slate-100">€85.00</span>
+<span class="text-slate-400 text-lg">/ Tag</span>
+</div>
+<div class="glass-card rounded-xl p-6 mb-8 border-white/5">
+<h3 class="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">calendar_month</span> Mietzeitraum
+                        </h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-[10px] text-slate-500 uppercase ml-1 font-bold">Mietbeginn</label>
+<div class="relative">
+<input class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-colors text-slate-200" type="date"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] text-slate-500 uppercase ml-1 font-bold">Mietende</label>
+<div class="relative">
+<input class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-colors text-slate-200" type="date"/>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mb-10">
+<button class="flex-1 bg-primary hover:bg-primary-dark text-slate-900 font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 transform active:scale-[0.98]">
+<span class="material-symbols-outlined">list_alt</span>
+                            In die Mietliste
+                        </button>
+<button class="glass-card hover:bg-white/10 border-white/10 text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 transform active:scale-[0.98]">
+<span class="material-symbols-outlined">favorite_border</span>
+                            Save
+                        </button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-white/10 pt-8">
+<div class="text-center group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">bolt</span>
+<p class="text-[10px] text-slate-500 uppercase">Power</p>
+<p class="text-sm font-bold">500W LED</p>
+</div>
+<div class="text-center group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">zoom_in</span>
+<p class="text-[10px] text-slate-500 uppercase">Zoom</p>
+<p class="text-sm font-bold">2° - 45°</p>
+</div>
+<div class="text-center group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">palette</span>
+<p class="text-[10px] text-slate-500 uppercase">Color</p>
+<p class="text-sm font-bold">CMY + CTO</p>
+</div>
+<div class="text-center group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">weight</span>
+<p class="text-[10px] text-slate-500 uppercase">Weight</p>
+<p class="text-sm font-bold">22.5 kg</p>
+</div>
+</div>
+</div>
+</div>
+<section class="mt-20">
+<div class="border-b border-white/10 mb-8 flex gap-8">
+<button class="border-b-2 border-primary pb-4 text-sm font-bold uppercase tracking-widest text-primary">Technical Specs</button>
+<button class="pb-4 text-sm font-bold uppercase tracking-widest text-slate-500 hover:text-slate-300 transition-colors">Downloads</button>
+<button class="pb-4 text-sm font-bold uppercase tracking-widest text-slate-500 hover:text-slate-300 transition-colors">Reviews</button>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden">
+<table class="w-full text-left text-sm">
+<tbody class="divide-y divide-white/5">
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-400 w-1/3">Light Source</td>
+<td class="px-6 py-4 text-slate-200">500W High-Efficiency White LED Engine</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-400">Total Lumen Output</td>
+<td class="px-6 py-4 text-slate-200">28,500 lm</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-400">Gobo Wheels</td>
+<td class="px-6 py-4 text-slate-200">1 Rotating (7 + open), 1 Static (9 + open)</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-400">Prisms</td>
+<td class="px-6 py-4 text-slate-200">4-Facet Linear &amp; 8-Facet Circular</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-400">Control Protocol</td>
+<td class="px-6 py-4 text-slate-200">DMX512, RDM, Art-Net, sACN</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-400">Dimensions</td>
+<td class="px-6 py-4 text-slate-200">380 x 260 x 620 mm</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt-24 mb-12">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold">Wird oft <span class="text-primary">zusammen</span> gemietet</h2>
+<a class="text-primary hover:text-primary-dark hover:underline text-sm font-bold flex items-center gap-1 transition-colors" href="#">
+                        View All <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card rounded-2xl p-4 group cursor-pointer hover:border-primary/50 transition-all">
+<div class="aspect-square bg-slate-900 rounded-xl mb-4 overflow-hidden relative">
+<img alt="Flight case" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Rugged professional flight case for lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2psfTg8Kn_Uw6pM1ZFScj6Oz9Xd9u2ALGN1gRcUiL8AB4heaTD79FrPFZqpIuJQERYHy-qh_lw6VWBEPB_8UARS_kF_L5CvH6aYukKxGDc4DtLmYOPSaFQXfghXHDHYqn6KctmNtkAEDqfbenXFoFrPq3t8PKIJkrTq81pMTAmoJkwcUun9_RzccVOwUiqLoz_0RQHwLYjCz5oDVhezjITWqRM2PJu80dSMUm3kR-goqVdeODWA1byqiKkI9NRCYeM82f0s584FY"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<p class="text-xs text-slate-500 font-bold uppercase mb-1">Accessories</p>
+<h4 class="font-bold text-slate-100 group-hover:text-primary transition-colors">Dual Flight Case</h4>
+<p class="text-sm text-slate-400 mt-2">€15.00 / day</p>
+</div>
+<div class="glass-card rounded-2xl p-4 group cursor-pointer hover:border-primary/50 transition-all">
+<div class="aspect-square bg-slate-900 rounded-xl mb-4 overflow-hidden relative">
+<img alt="DMX Controller" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="GrandMA lighting control console" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjs_NEUx-0jQj_h-Xss3S4WdAL73h-w39LJSbAk9s-wVE8Mx9R-nIq_4g6BawiRcEhFO66fnKzfZh0sDAnL5wxaC2iXNVxPRquADDk5GCTHZmdCeCw0OCqORQ4S0DZN9GSuttJIVml3Cu4A5FaCuQWzI4nnERcN1v2thIQLaKO9bTcOiVaoq4PCLusM5jqzyvXT_3Mup5CqVmyg3TgxWqZO_a0vLnQeK4aGS6bgW6kzi2OUpd5Ht2oZ0rjQJuVKkiE3BkClezBgGo"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<p class="text-xs text-slate-500 font-bold uppercase mb-1">Control</p>
+<h4 class="font-bold text-slate-100 group-hover:text-primary transition-colors">GrandMA3 Command Wing</h4>
+<p class="text-sm text-slate-400 mt-2">€120.00 / day</p>
+</div>
+<div class="glass-card rounded-2xl p-4 group cursor-pointer hover:border-primary/50 transition-all">
+<div class="aspect-square bg-slate-900 rounded-xl mb-4 overflow-hidden relative">
+<img alt="Cables" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="XLR DMX signal cables professional grade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA03Mbna3xmH-L_WKmaL86-BDDVr7XKbK5ZzTrtd8iF0g6SnjKmFoKQoVr7vG2uST5VBPoBY7FEsPdVQBaDcI7V9MSvZkzM3T6ePVzOUz1tJy9C9EJ1x2VWIegkRoZ4mXSbzRfpxEbHUnOGdQnqVfjCfbQJ-uW9ydgo0GlOnQZBRwiRd5Fy-YKxfBMzxt-gbaQQQ8vbICcitqgIiaTrdGLZWmhQck2yNyIyOpLLhen5B4GAE16Cd4VnHpnyOeHo9m5g1mw5gfaDkQ"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<p class="text-xs text-slate-500 font-bold uppercase mb-1">Connectivity</p>
+<h4 class="font-bold text-slate-100 group-hover:text-primary transition-colors">DMX Cable Loom (20m)</h4>
+<p class="text-sm text-slate-400 mt-2">€5.00 / day</p>
+</div>
+<div class="glass-card rounded-2xl p-4 group cursor-pointer hover:border-primary/50 transition-all">
+<div class="aspect-square bg-slate-900 rounded-xl mb-4 overflow-hidden relative">
+<img alt="Haze machine" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Stage atmospheric haze machine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAne5MJkL7isVspBca5jWo-ZMVDyp5m6ro9_4OLWoBORcxPPVZ5C38KtR618d7WKFIEjzfPF69x2IsJ4dH1YvUzx0Gawkyu_OIcx5b0tEVUbUpCtQiXdGcz-qi-2PGyrhWlM-kXDVzfYqERIjtRywVvyo6DCx-6jhg341FQxHTzXD-MnMMHsX3lyQ2x5If1yZDlJAQMcLlVBx3YftoGsvo7H62rZLL3BsegsrFqllRMk5nx-YhJEIJHQjLkZ-1rDg-VE7U4d8sKE48"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<p class="text-xs text-slate-500 font-bold uppercase mb-1">Atmosphere</p>
+<h4 class="font-bold text-slate-100 group-hover:text-primary transition-colors">Tour Hazer II</h4>
+<p class="text-sm text-slate-400 mt-2">€45.00 / day</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="glass-card mt-auto border-t border-white/10 py-12 px-6 lg:px-20">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 bg-primary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-slate-900 text-sm">wb_iridescent</span>
+</div>
+<h2 class="text-lg font-bold leading-tight text-slate-100">Event-Technik GbR</h2>
+</div>
+<p class="text-sm text-slate-500 leading-relaxed">
+                        High-end event equipment rental for concerts, theater, and corporate galas. Based in Munich, serving Europe.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase tracking-widest text-xs text-slate-400">Quick Links</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Rental Terms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Shipping Info</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Support Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase tracking-widest text-xs text-slate-400">Categories</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Moving Heads</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Audio Systems</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Video Walls</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Trussing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase tracking-widest text-xs text-slate-400">Newsletter</h4>
+<p class="text-xs text-slate-500 mb-4">Get the latest tech updates and discounts.</p>
+<div class="flex gap-2">
+<input class="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs w-full focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-colors" placeholder="Your email" type="email"/>
+<button class="bg-primary hover:bg-primary-dark px-4 rounded-lg transition-colors text-slate-900">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-slate-600 uppercase tracking-widest">
+<p>© 2024 Event-Technik GbR. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-slate-400" href="#">Impressum</a>
+<a class="hover:text-slate-400" href="#">Datenschutz</a>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

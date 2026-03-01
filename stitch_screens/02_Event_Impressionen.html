@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Impressionen - Event Rental GbR</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#9370DB", 
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#17131f",
+                        "surface-dark": "#231e29",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(35, 30, 41, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(147, 112, 219, 0.1);
+        }
+        .glass-card {
+            background: rgba(35, 30, 41, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(147, 112, 219, 0.15);
+            border-color: rgba(147, 112, 219, 0.3);
+            transform: translateY(-4px);
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid { column-count: 3; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 glass-panel border-b border-white/5 px-4 lg:px-8 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-3 group" href="#">
+<div class="size-10 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl flex items-center justify-center text-primary border border-primary/20 group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined">event</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none text-white tracking-tight">Event Rental <span class="text-primary">GbR</span></h1>
+<span class="text-xs text-slate-400 font-medium tracking-wide">Professional Equipment</span>
+</div>
+</a>
+<nav class="hidden lg:flex items-center gap-1 p-1 bg-white/5 rounded-full border border-white/5">
+<a class="px-5 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition-all" href="#">Mietkatalog</a>
+<a class="px-5 py-2 text-sm font-medium bg-primary text-white shadow-lg shadow-primary/25 rounded-full transition-all" href="#">Impressionen</a>
+<a class="px-5 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition-all" href="#">Über Uns</a>
+<a class="px-5 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition-all" href="#">Kontakt</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-dark/80 rounded-full border border-white/5 px-4 py-2 focus-within:ring-1 focus-within:ring-primary/50 transition-all w-64">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">search</span>
+<input class="bg-transparent border-none text-sm text-white placeholder-slate-500 focus:ring-0 p-0 pl-3 w-full" placeholder="Event suchen..." type="text"/>
+</div>
+<button class="hidden md:flex bg-white text-background-dark hover:bg-slate-200 px-5 py-2.5 rounded-full text-sm font-bold transition-all items-center gap-2">
+<span>Anfrage</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary/20 ring-2 ring-transparent hover:ring-primary/50 transition-all cursor-pointer" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhKfzg-kZIVmQMg1onmDlNkZyvYW74qapeh_JyP8pDDBTnrG0g1Lgh8enClas94K4r6yEyLcP4PNccBuYVD7awhjTuBB2A5s_MR18_s89-E5ji7gU9Ata1pjkaZxz9wMWfLgZ_rVVAgZmQxr5H3zJl1MLwkhlw89HjhetVqrsmOI_fvuxyrcK6dgEXco3XnAxK4H8lLts9SmYbbE2TIlQScmTbh0Vb3Wu1NeFoOaGegz24pTVDwCHhS_t7HNhQlcjekPOzdcH-Vfk');"></div>
+</div>
+</div>
+</header>
+<main class="flex-grow px-4 lg:px-8 py-10">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<div class="flex flex-col gap-6 relative z-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-4xl lg:text-6xl font-black tracking-tight text-white mb-4">
+                        Event <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Impressionen</span>
+</h1>
+<p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                        Tauchen Sie ein in die Welt unvergesslicher Momente. Entdecken Sie unsere vergangenen Projekte, von intimen Feiern bis zu großen Festivals, und lassen Sie sich für Ihr nächstes Event inspirieren.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-2 md:justify-end">
+<button class="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all transform hover:-translate-y-0.5">Alle</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-dark border border-white/10 text-slate-300 text-sm font-medium hover:bg-white/5 hover:text-white transition-all hover:border-primary/30">Festivals</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-dark border border-white/10 text-slate-300 text-sm font-medium hover:bg-white/5 hover:text-white transition-all hover:border-primary/30">Corporate</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-dark border border-white/10 text-slate-300 text-sm font-medium hover:bg-white/5 hover:text-white transition-all hover:border-primary/30">Private Feiern</button>
+</div>
+</div>
+</div>
+<div class="relative w-full rounded-3xl overflow-hidden group min-h-[600px] flex items-end border border-white/10 shadow-2xl shadow-black/50">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAW-LDWP4QAE7Q4I_aNnBJFYoruVJezZr5zrNZCZFQxCJdO7ZLtrpxOcwoNTT5X0DKlPw9zr6DpabPww5erZ7hMOp87gXrW9jIztIbaAD5gR0lo7LHWbdaeop-b7VkMnXBl-Yj7QpmuhKxPBi3wBgBdseD1RacLeQ2aMTmPnmB1mU5vkybZf-pCylyw88LFUefB18ADp1qVkpr3pFpme4LY_3tRnCD0SP7m38AMRN3qTxMB2mVcq40ITQhSa36-2K_yaLPtaLhfxrY');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent"></div>
+<div class="relative z-10 w-full p-6 lg:p-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/30 backdrop-blur-md border border-primary/40 text-white text-xs font-bold uppercase tracking-wider mb-6 shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-sm">star</span>
+                        Featured Event
+                    </div>
+<h2 class="text-4xl md:text-6xl font-black text-white mb-4 leading-tight tracking-tight">Summer Beat Festival 2023</h2>
+<p class="text-slate-200 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl text-shadow-sm">
+                        Ein spektakuläres Open-Air-Erlebnis mit über 15.000 Besuchern. Komplette Bühnentechnik, Lichtdesign und Sound-Systeme aus unserem High-End-Rental-Bestand.
+                    </p>
+<div class="flex flex-wrap items-center gap-8 text-sm text-slate-200 font-medium">
+<div class="flex items-center gap-2 bg-black/30 px-3 py-1.5 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span>12. - 14. Juli 2023</span>
+</div>
+<div class="flex items-center gap-2 bg-black/30 px-3 py-1.5 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>Berlin Tempelhof</span>
+</div>
+</div>
+</div>
+<button class="flex-shrink-0 bg-white text-background-dark hover:bg-slate-200 px-8 py-4 rounded-xl font-bold transition-all flex items-center gap-3 group/btn shadow-xl hover:shadow-2xl hover:-translate-y-1">
+<span>Case Study ansehen</span>
+<span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="masonry-grid">
+<div class="masonry-item glass-card rounded-2xl overflow-hidden group cursor-pointer relative border border-white/5">
+<div class="relative aspect-[4/5] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkR45vyjqY-d4kcziIV_T7vqp2mjN86Dee2u1ujbJgXNSaBfVVwvxXTJpbKyKUZm8tJGEZhsP8zlxb8vLTbm1CHKjWFh0hqybJ57VT7V4y5qQP2k1jhNcAeRMk9HJXUAQyKRVN2TvglaDKSWO5aYmd3Ple0db7XxEctbVWdcFy6q-m7WKi-syP0hZoW2iiGFcIFLKxmkZRhAmJwe6H83AGvdke310SiBGQfZ3-DPLO4zUwhCyBdevudG1tnnWlMfeGdNY9rq6N81c');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute top-4 right-4">
+<span class="bg-black/40 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-white/10">2023</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="text-primary text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Corporate
+                    </div>
+<h3 class="text-2xl font-bold text-white mb-2">Tech Summit Gala</h3>
+<p class="text-slate-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 leading-relaxed">
+                        Exklusive Abendveranstaltung für Technologieführer mit ambientem Lichtkonzept.
+                    </p>
+</div>
+</div>
+<div class="masonry-item glass-card rounded-2xl overflow-hidden group cursor-pointer relative border border-white/5">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqfmfwN3U4u9LL8oDnOKhnda4DPwhIJDo3__7fgFX8TKDVpaW5RVEC6ovzssphOV4bBAoBKekr5YWl0h4dL4d4deeNLWRYs9tAoAfuAXHI3DP9ISauDvv4QC_0-dxN91yjLm-xQKNVPDTLDhQx_5ALbBMZQdU7JeSaS9qE0W10HiO-Nq2Uo_CmA_UL0FnpAVevwBp9CufDH--W4uefnRLGEOy9WjuHPQu6E31G5xwiADJvXjgssCU2wQYMi-aPZxn7GT6syW85BgM');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="text-primary text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Festival
+                    </div>
+<h3 class="text-2xl font-bold text-white mb-2">Neon Nights</h3>
+<p class="text-slate-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 leading-relaxed">
+                        Elektronisches Musikfestival mit aufwendiger Laser-Show.
+                    </p>
+</div>
+</div>
+<div class="masonry-item glass-card rounded-2xl overflow-hidden group cursor-pointer relative border border-white/5">
+<div class="relative aspect-square overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNRkbAahW5dUXtDnLhIkX59cVZUBH9gqmKpCVEboz3NW1_4V5ML8JpIwe-OaH4CRjA8fTeck8ifls03eVcvhFsJ6CTEYS6KA1WhfPLpLVFhnm5ne0WXhuSkEoBXcpw2IOY5T2GRnuLvM-WmIItrNTWMXR7gsSePpNF7JpgpBAhBdflNK4wW2sK7OkqVYrwgcGOG9RUSkqSYfFdM1-5pFub_cwXHbIA2TnCtHziHlPStkZESNtJWhDywzPb2k6hlsuCT7BJaMpz2_c');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="text-primary text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Private Feiern
+                    </div>
+<h3 class="text-2xl font-bold text-white mb-2">Hochzeit im Schloss</h3>
+<p class="text-slate-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 leading-relaxed">
+                        Romantische Beleuchtung und Tontechnik für eine Märchenhochzeit.
+                    </p>
+</div>
+</div>
+<div class="masonry-item glass-card rounded-2xl overflow-hidden group cursor-pointer relative border border-white/5">
+<div class="relative aspect-[3/4] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCz8ciyvifE0oN58OsgG_v9LLa0M9BiDIBU-e7sBfPCMRpKxOQslHIg0bTHSsKz6AGc9wAeN7SbpyFqVnNvrXwAyhAqUahsN-MdqR2ZqmCO4wv0jIbhFt2OzDAVrG75EDVKgWvodlsNdnE5czBchWPAVgt80PIs1N9oGjqVkEDCs42wyRHNDzuDG3lTCgq7zjX7Sch9pbWQAkQPqRGMLYUHogwU9qzFUKU3s9_WBHuobvnlvj3UIE9b7WzA27B7QyT-y34P05bkfWw');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="text-primary text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Corporate
+                    </div>
+<h3 class="text-2xl font-bold text-white mb-2">Fashion Week Berlin</h3>
+<p class="text-slate-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 leading-relaxed">
+                        Laufstegbeleuchtung und Rigging für Designer-Präsentationen.
+                    </p>
+</div>
+</div>
+<div class="masonry-item glass-card rounded-2xl overflow-hidden group cursor-pointer relative border border-white/5">
+<div class="relative aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRSkjvKp_NrKaFy0GqbEI4a0GbJ9ojzYfqCPR1b0cZQ3JlV7PgwXKViowLJqhZbj01yNpFRk4TZ0T4XkpmW9tg6nmU6Lq-W4wqdhxt7gWNGl-GCHVusKouO5pHgVNLMIoRkK2nS3jad_ZnZjUyRQcz4pUtuqfESfGIxcG8WKqefrKsEVsx1rouJrfkSsPBpC7DLVmrgF_MbfLR99B7RvBGVxbI8cM9XBepuJAMwrWzUfpeeg0QYiUXE8EgkU730wEWS5yjM3F7ggo');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="text-primary text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Corporate
+                    </div>
+<h3 class="text-2xl font-bold text-white mb-2">Jahreskonferenz 2023</h3>
+<p class="text-slate-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 leading-relaxed">
+                        Full-Service Technik für Keynotes und Workshops.
+                    </p>
+</div>
+</div>
+<div class="masonry-item glass-card rounded-2xl overflow-hidden group cursor-pointer relative border border-white/5">
+<div class="relative aspect-square overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDs0IDkGAZ-nZ_IU1ldZi2H0RY90lR95iPcaTJ2nrgzDWUd698B43OWIz9Ep6wQnuiNzxezwrHQePOYSCstxyc9KUylqDeKP5XBn5wvVXeTWJ9RpKhU17qSV31uUZzVoEJTfIVyLkw85U6FqgCRX7MHBbqO5bQ7sY0hcRDVH039bj2xBEhwFRMCEVFOjQ4A8wBF7-03BK91tO3UZjG4gvnJK8KZA9LfKM-50uFwMFt1AZeKOLt1q1XLuW7U0f-QoTqYr_ikxXsIg6A');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="text-primary text-xs font-bold uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Festival
+                    </div>
+<h3 class="text-2xl font-bold text-white mb-2">Rock am Ring Stage B</h3>
+<p class="text-slate-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 leading-relaxed">
+                        Sound-Engineering für die Alternative-Stage.
+                    </p>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8">
+<button class="px-8 py-3 rounded-full border border-primary/30 text-white hover:bg-primary/10 transition-colors flex items-center gap-2 group">
+<span class="font-medium">Mehr Projekte laden</span>
+<span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
+</button>
+</div>
+</div>
+</main>
+<footer class="mt-12 bg-background-dark border-t border-white/5 pt-16 pb-8 px-4 lg:px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 lg:col-span-2">
+<a class="flex items-center gap-2 mb-6 group w-fit" href="#">
+<div class="size-8 bg-primary/20 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-lg">event</span>
+</div>
+<span class="text-xl font-bold text-white">Event Rental <span class="text-primary">GbR</span></span>
+</a>
+<p class="text-slate-400 max-w-sm mb-8 leading-relaxed">
+                    Ihr zuverlässiger Partner für professionelle Veranstaltungstechnik. Wir realisieren Visionen durch Licht, Ton und innovative Bühnenkonzepte.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">camera_alt</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 text-lg">Navigation</h4>
+<ul class="flex flex-col gap-3 text-slate-400">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="w-1.5 h-1.5 rounded-full bg-primary/50"></span>Mietkatalog</a></li>
+<li><a class="text-white font-medium transition-colors flex items-center gap-2" href="#"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Impressionen</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="w-1.5 h-1.5 rounded-full bg-primary/50"></span>Über Uns</a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="w-1.5 h-1.5 rounded-full bg-primary/50"></span>Karriere</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 text-lg">Kontakt</h4>
+<ul class="flex flex-col gap-4 text-slate-400">
+<li class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-sm">call</span>
+</div>
+<div>
+<span class="block text-xs text-slate-500 uppercase tracking-wider mb-0.5">Telefon</span>
+<span class="text-white">+49 (0) 30 12345678</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-sm">mail</span>
+</div>
+<div>
+<span class="block text-xs text-slate-500 uppercase tracking-wider mb-0.5">E-Mail</span>
+<span class="text-white">info@event-rental.de</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+<span class="material-symbols-outlined text-sm">location_on</span>
+</div>
+<div>
+<span class="block text-xs text-slate-500 uppercase tracking-wider mb-0.5">Standort</span>
+<span class="text-white">Musterstraße 12<br/>10115 Berlin</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+<div>
+                © 2024 Event Rental GbR. Alle Rechte vorbehalten.
+            </div>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Impressum</a>
+<a class="hover:text-primary transition-colors" href="#">Datenschutz</a>
+<a class="hover:text-primary transition-colors" href="#">AGB</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

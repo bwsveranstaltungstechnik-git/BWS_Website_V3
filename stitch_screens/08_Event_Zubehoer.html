@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#50C878",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0b0f15",
+                        glass: "rgba(255, 255, 255, 0.03)",
+                        "glass-border": "rgba(255, 255, 255, 0.08)"
+                    },
+                    fontFamily: {
+                        display: "Inter"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .sidebar-item-active {
+            background: rgba(80, 200, 120, 0.15);
+            color: #50C878;
+            border-left: 3px solid #50C878;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f15;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased dark">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full glass-card border-b border-white/10 px-8 py-4 flex items-center justify-between backdrop-blur-xl bg-background-dark/80">
+<div class="flex items-center gap-16">
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="relative size-10 bg-gradient-to-br from-white/10 to-white/5 rounded-xl flex items-center justify-center border border-white/10 group-hover:border-primary/50 transition-colors overflow-hidden">
+<div class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-primary relative z-10">event_seat</span>
+</div>
+<div>
+<h1 class="text-lg font-bold tracking-tight text-white leading-tight">Event <span class="text-primary">Zubehör GbR</span></h1>
+<p class="text-[10px] text-slate-400 uppercase tracking-widest font-medium">Rental Catalog</p>
+</div>
+</div>
+<nav class="hidden xl:flex items-center gap-2 bg-white/5 p-1 rounded-full border border-white/10">
+<a class="px-5 py-2 text-sm font-medium text-white bg-primary/20 rounded-full border border-primary/20 shadow-[0_0_15px_rgba(80,200,120,0.2)]" href="#">Mietkatalog</a>
+<a class="px-5 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors rounded-full hover:bg-white/5" href="#">Leistungen</a>
+<a class="px-5 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors rounded-full hover:bg-white/5" href="#">Showroom</a>
+<a class="px-5 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors rounded-full hover:bg-white/5" href="#">Kontakt</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="relative max-w-xs w-full hidden lg:block group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors text-sm">search</span>
+<input class="w-full bg-black/20 border border-white/10 rounded-full py-2.5 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder-slate-600 text-slate-200 group-hover:border-white/20" placeholder="Zubehör durchsuchen..." type="text"/>
+</div>
+<div class="h-8 w-px bg-white/10 hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<button class="relative p-2.5 hover:bg-white/5 rounded-full transition-colors group border border-transparent hover:border-white/10">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white transition-colors text-[20px]">notifications</span>
+<span class="absolute top-2 right-2.5 size-1.5 bg-red-500 rounded-full"></span>
+</button>
+<button class="relative p-2.5 hover:bg-white/5 rounded-full transition-colors group border border-transparent hover:border-white/10">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[20px]">shopping_cart</span>
+<span class="absolute -top-0.5 -right-0.5 size-4 bg-primary text-[9px] font-bold text-black rounded-full flex items-center justify-center border border-black">4</span>
+</button>
+<div class="hidden sm:flex items-center gap-3 pl-2 cursor-pointer group">
+<div class="text-right hidden md:block">
+<p class="text-xs font-bold text-white group-hover:text-primary transition-colors">Alex Morgan</p>
+<p class="text-[10px] text-slate-500">Event Manager</p>
+</div>
+<div class="size-9 rounded-full border border-white/10 bg-cover bg-center ring-2 ring-transparent group-hover:ring-primary/50 transition-all" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKvIZwGs6omj1hK4wAhbaVJA26FQIFiPyensloM1_UoNknkpxbxickq03015EPjnB1V5L92XMV9UmPjO9V_OzjTFmKr0oNL317kDhQSXvHfhpCQk_K0o4ckP2NMrKPo-AOWZTdmGPF1TCnSy40-jlX9_aok_Riu0UbnBC269GyYrUojo9AMUJjki1fq8ngXk-MDKPdS2xRPyq4Lg9Xuh2LRiXH9kmDhycSbnRGQydaUvWQ3T3jxksxejIpAZmEBmZKJqzrYILvHt4')"></div>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 px-6 py-8 gap-8 max-w-[1600px] mx-auto w-full">
+<aside class="w-64 flex-shrink-0 hidden xl:flex flex-col gap-8">
+<div class="glass-card p-5 rounded-2xl">
+<h3 class="font-bold text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">tune</span> Filter
+                </h3>
+<div class="flex flex-col gap-6">
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-3">Eventstil</p>
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input class="rounded border-slate-700 bg-white/5 text-primary focus:ring-primary focus:ring-offset-0 transition-all checked:bg-primary" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-white transition-colors">Modern Luxury</span>
+</label>
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input class="rounded border-slate-700 bg-white/5 text-primary focus:ring-primary focus:ring-offset-0 transition-all checked:bg-primary" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-white transition-colors">Industrial Chic</span>
+</label>
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input class="rounded border-slate-700 bg-white/5 text-primary focus:ring-primary focus:ring-offset-0 transition-all checked:bg-primary" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-white transition-colors">Boho Wedding</span>
+</label>
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input class="rounded border-slate-700 bg-white/5 text-primary focus:ring-primary focus:ring-offset-0 transition-all checked:bg-primary" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-white transition-colors">Corporate Green</span>
+</label>
+</div>
+<div class="h-px bg-white/10 w-full"></div>
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-3">Verfügbarkeit</p>
+<div class="relative mb-3">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_month</span>
+<input class="w-full bg-white/5 border border-white/10 rounded-lg py-2 pl-9 pr-3 text-xs focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all text-slate-300" placeholder="Datum wählen" type="text"/>
+</div>
+<label class="flex items-center gap-3 py-1 cursor-pointer group">
+<input checked="" class="rounded border-slate-700 bg-white/5 text-primary focus:ring-primary focus:ring-offset-0 transition-all checked:bg-primary" type="checkbox"/>
+<span class="text-sm text-slate-300 group-hover:text-white transition-colors">Sofort verfügbar</span>
+</label>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold px-4 mb-2">Kategorien</p>
+<a class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined text-xl">chair</span>
+<span class="text-sm font-semibold">Lounge Möbel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-all text-slate-400 hover:text-white" href="#">
+<span class="material-symbols-outlined text-xl">local_bar</span>
+<span class="text-sm font-semibold">Barsysteme</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-all text-slate-400 hover:text-white" href="#">
+<span class="material-symbols-outlined text-xl">potted_plant</span>
+<span class="text-sm font-semibold">Deko-Elemente</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-all text-slate-400 hover:text-white" href="#">
+<span class="material-symbols-outlined text-xl">lightbulb</span>
+<span class="text-sm font-semibold">Beleuchtung</span>
+</a>
+</div>
+<div class="mt-auto glass-card p-4 rounded-2xl border-primary/20 bg-gradient-to-br from-primary/10 to-transparent relative overflow-hidden group cursor-pointer">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-all"></div>
+<p class="text-xs text-primary font-bold mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-sm">star</span> PRO Mitgliedschaft</p>
+<p class="text-xs text-slate-400 mb-3">Erhalten Sie 15% Rabatt auf alle Anmietungen mit unserem Business-Plan.</p>
+<button class="w-full py-2 bg-primary font-bold text-xs rounded-lg hover:bg-primary/90 transition-all text-white shadow-lg shadow-primary/20">Jetzt upgraden</button>
+</div>
+</aside>
+<main class="flex-1 flex flex-col gap-8 overflow-hidden">
+<section class="relative rounded-3xl overflow-hidden min-h-[280px] flex items-end p-8 md:p-10 border border-white/10 shadow-2xl">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Event atmosphere green theme" style="background-image: linear-gradient(to right, rgba(11, 15, 21, 0.95) 30%, rgba(11, 15, 21, 0.4)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjOuu0T3SNv6GHqia-xt_71FdSbtLxl3Nax6RE75NoYahn1BBaMITe_fWOO6Lu4ukSpmkyf6tqYnt2_-nsS8dYliC7EP-JfyXarw-P4icHFG591kcX2Hti3mqHQYWQtJ9IDtVUyjoiFRpMt9c-66ehyZLFawAr8L_ktSpgvx-QIYeGPK327Wl4tpH1Pv2lcPRcaWHVPSrTkUpQNySkcg4ZLgs5Sd3tTAst6pqyiIJoRQXfaEwb9KtquCnQ7Il42zLQBeyr_APmj68')"></div>
+<div class="relative z-10 max-w-2xl">
+<span class="bg-primary/20 text-primary border border-primary/30 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block backdrop-blur-sm">Saison 2024</span>
+<h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4 text-white">Mietkatalog <br/><span class="text-primary">Zubehör (Grün)</span></h1>
+<p class="text-slate-300 text-lg mb-6 max-w-lg">Entdecken Sie unsere kuratierte Auswahl an Premium-Eventausstattung. Von eleganten Lounge-Möbeln bis zu modularen Barsystemen.</p>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="text-2xl font-bold text-white">Verfügbares Inventar</h2>
+<p class="text-slate-400 text-sm mt-1">Zeige 12 von 48 Produkten</p>
+</div>
+<div class="flex gap-2">
+<div class="flex items-center bg-white/5 rounded-lg p-1 border border-white/10">
+<button class="p-2 bg-white/10 rounded text-primary shadow-sm"><span class="material-symbols-outlined text-sm">grid_view</span></button>
+<button class="p-2 text-slate-400 hover:text-white transition-colors"><span class="material-symbols-outlined text-sm">view_list</span></button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(80,200,120,0.1)]">
+<div class="h-56 relative overflow-hidden bg-black/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern velvet emerald armchair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdHqCnOmbIYgo8zK-5DZg16G-uePHMHG_0vy1jlbcHs8s_W38o9nX2qmhPrCyx8H_v_DKyws_6IzlMctPTAojN_UKoHvcgEfc7UjkPyGcMKo_pyMFMNg3bYB0DM4M62fHB-2tgatAZgbGf0U53dty5dBd9V03hAxhNfqwDRkm9ukrPA2cRhOY5-6r5o8E-2wC6n_a3EFgl86hWV7Fsu5uJbd8lvUKAXEjC93mYv3z8FNaaZcFcIaF6UnmCCd1DWDOMev6692eXnrg"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10">
+<span class="text-[10px] font-bold uppercase tracking-tight text-white">Lounge Möbel</span>
+</div>
+<button class="absolute top-3 right-3 size-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-primary hover:text-white text-white border border-white/10 transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 bg-emerald-900/80 backdrop-blur-md px-2 py-1 rounded-md border border-emerald-500/30">
+<div class="size-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-medium text-emerald-100">12 Stück verfügbar</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-white group-hover:text-primary transition-colors">Velvet Lounge Chair</h3>
+</div>
+<p class="text-slate-400 text-sm mb-4 line-clamp-2">Tiefer smaragdgrüner Samt mit goldenen Metallbeinen. Perfekt für VIP-Bereiche und stilvolle Empfänge.</p>
+<div class="mt-auto pt-4 border-t border-white/5 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-slate-500 uppercase font-semibold">Mietpreis pro Tag</span>
+<span class="text-primary font-bold text-xl">€45,00</span>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-emerald-400 text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(80,200,120,0.25)] hover:shadow-[0_0_20px_rgba(80,200,120,0.4)]">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                    Zur Mietanfrage hinzufügen
+                                </button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(80,200,120,0.1)]">
+<div class="h-56 relative overflow-hidden bg-black/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Illuminated LED mobile bar station" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ_y0bo73ZS7rynbq4EDZZvcli3YapeoGvxUYHr8iN6JGYO86E4kGhOemSf24aLM2DpGlxrAbXlmbNwsFaLQY0KHc5A6_1cs4se6HNLTsQxqIVwHIfNTplr3NlpBRR_4nmSIuczfmH469oSpjMdooXktwu8-Vtf1fnW5vBxOCnt27y2C_ECg1iyFz8dJfiM3q6heMy4OKN6Mp1AXnfyIgCDXM83WfKY_dr7z9ng12v11PqZz2LoJFzxWYFTzTpYPe4YUObL8pPSok"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10">
+<span class="text-[10px] font-bold uppercase tracking-tight text-white">Barsysteme</span>
+</div>
+<button class="absolute top-3 right-3 size-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-primary hover:text-white text-white border border-white/10 transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 bg-emerald-900/80 backdrop-blur-md px-2 py-1 rounded-md border border-emerald-500/30">
+<div class="size-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-medium text-emerald-100">4 Stück verfügbar</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-white group-hover:text-primary transition-colors">LED Glow Bar Station</h3>
+</div>
+<p class="text-slate-400 text-sm mb-4 line-clamp-2">Modulares LED-Bar-Element mit anpassbaren RGB-Lichteffekten. Ideal für Abendveranstaltungen.</p>
+<div class="mt-auto pt-4 border-t border-white/5 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-slate-500 uppercase font-semibold">Mietpreis pro Tag</span>
+<span class="text-primary font-bold text-xl">€85,00</span>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-emerald-400 text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(80,200,120,0.25)] hover:shadow-[0_0_20px_rgba(80,200,120,0.4)]">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                    Zur Mietanfrage hinzufügen
+                                </button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(80,200,120,0.1)]">
+<div class="h-56 relative overflow-hidden bg-black/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Event decoration elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYyllVjAoUw_7iOgzVa35Dv10rVi-bWsaNw093G-kvw62F4yRfUdo-fXS08mcMxzIwgFmcMnwlL3xPDvBonbh7TxbML_F9Hbu_LJ1S6Z8JmU_1HEDzYJuxA1YX3omiQ6FCawXkoqmP2kG5gX-2aPgCaTz-xZERkLHEQJQDqj4JDulGNQ5JXTNX2GWOS20wIcNRWqPU_dFg0x7rnn0SsJhC1n2fI7c2qTAxngvgxhM42tvYzG43SxKjGfIhR2ysC2QqsxuK0b11uK8"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10">
+<span class="text-[10px] font-bold uppercase tracking-tight text-white">Deko-Elemente</span>
+</div>
+<button class="absolute top-3 right-3 size-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-primary hover:text-white text-white border border-white/10 transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 bg-emerald-900/80 backdrop-blur-md px-2 py-1 rounded-md border border-emerald-500/30">
+<div class="size-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-medium text-emerald-100">8 Stück verfügbar</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-white group-hover:text-primary transition-colors">Green Wall Panel</h3>
+</div>
+<p class="text-slate-400 text-sm mb-4 line-clamp-2">Künstliche Pflanzenwand für Fotohintergründe oder Raumtrennung. Modulares System.</p>
+<div class="mt-auto pt-4 border-t border-white/5 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-slate-500 uppercase font-semibold">Mietpreis pro Tag</span>
+<span class="text-primary font-bold text-xl">€120,00</span>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-emerald-400 text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(80,200,120,0.25)] hover:shadow-[0_0_20px_rgba(80,200,120,0.4)]">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                    Zur Mietanfrage hinzufügen
+                                </button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_rgba(80,200,120,0.1)]">
+<div class="h-56 relative overflow-hidden bg-black/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern velvet emerald armchair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYmDWy33zr5cboMs5vaYSnptROP3VJIG2_Gctww3oTogHs5aAijW4RsGLWXHXhrs9xktRpmryGBjasY7nzy8b5g1eLaxS0nn5eTPx-_gldXad27AQRPCL407eCpgs-Q43O-sZR05DXNVAFxMvjI9ZalUFXKufF7z8UlFYcscvUCsaU9Wkj1SxvTX3IkPvdoL1NiQ9mb959xBc5DXaQ5sf69Ug4ZtGNKRCLtxLWW_yVrfMMKBCys3v09LIvwTgllRh-iD-TaduOcQY"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10">
+<span class="text-[10px] font-bold uppercase tracking-tight text-white">Lounge Möbel</span>
+</div>
+<button class="absolute top-3 right-3 size-8 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-primary hover:text-white text-white border border-white/10 transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 bg-yellow-900/80 backdrop-blur-md px-2 py-1 rounded-md border border-yellow-500/30">
+<div class="size-1.5 rounded-full bg-yellow-500 animate-pulse"></div>
+<span class="text-[10px] font-medium text-yellow-100">Begrenzt verfügbar</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-white group-hover:text-primary transition-colors">Emerald Ottoman</h3>
+</div>
+<p class="text-slate-400 text-sm mb-4 line-clamp-2">Passender Hocker zur Velvet Lounge Serie. Vielseitig einsetzbar als Sitzgelegenheit oder Ablage.</p>
+<div class="mt-auto pt-4 border-t border-white/5 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-xs text-slate-500 uppercase font-semibold">Mietpreis pro Tag</span>
+<span class="text-primary font-bold text-xl">€25,00</span>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-emerald-400 text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(80,200,120,0.25)] hover:shadow-[0_0_20px_rgba(80,200,120,0.4)]">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                                    Zur Mietanfrage hinzufügen
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<aside class="w-80 hidden 2xl:flex flex-col gap-6">
+<div class="glass-card p-6 rounded-2xl sticky top-28 border border-primary/20 bg-gradient-to-b from-white/5 to-transparent">
+<div class="flex items-center gap-2 mb-6 border-b border-white/10 pb-4">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+<h3 class="font-bold text-lg text-white">Mietanfrage</h3>
+<span class="ml-auto bg-primary text-black text-xs font-bold px-2 py-0.5 rounded-full">4</span>
+</div>
+<div class="space-y-4 mb-8 max-h-[400px] overflow-y-auto pr-2">
+<div class="flex gap-3 group relative">
+<div class="size-16 rounded-lg bg-cover bg-center border border-white/10" data-alt="Small thumbnail of chair" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdHqCnOmbIYgo8zK-5DZg16G-uePHMHG_0vy1jlbcHs8s_W38o9nX2qmhPrCyx8H_v_DKyws_6IzlMctPTAojN_UKoHvcgEfc7UjkPyGcMKo_pyMFMNg3bYB0DM4M62fHB-2tgatAZgbGf0U53dty5dBd9V03hAxhNfqwDRkm9ukrPA2cRhOY5-6r5o8E-2wC6n_a3EFgl86hWV7Fsu5uJbd8lvUKAXEjC93mYv3z8FNaaZcFcIaF6UnmCCd1DWDOMev6692eXnrg')"></div>
+<div class="flex-1">
+<p class="text-sm font-bold text-white">Velvet Lounge Chair</p>
+<p class="text-xs text-slate-400 mt-1">Menge: 4</p>
+<p class="text-xs text-primary font-bold mt-1">€45,00 / Tag</p>
+</div>
+<button class="absolute top-0 right-0 p-1 text-slate-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<div class="flex gap-3 group relative">
+<div class="size-16 rounded-lg bg-cover bg-center border border-white/10" data-alt="Small thumbnail of chair" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJ_y0bo73ZS7rynbq4EDZZvcli3YapeoGvxUYHr8iN6JGYO86E4kGhOemSf24aLM2DpGlxrAbXlmbNwsFaLQY0KHc5A6_1cs4se6HNLTsQxqIVwHIfNTplr3NlpBRR_4nmSIuczfmH469oSpjMdooXktwu8-Vtf1fnW5vBxOCnt27y2C_ECg1iyFz8dJfiM3q6heMy4OKN6Mp1AXnfyIgCDXM83WfKY_dr7z9ng12v11PqZz2LoJFzxWYFTzTpYPe4YUObL8pPSok')"></div>
+<div class="flex-1">
+<p class="text-sm font-bold text-white">LED Glow Bar</p>
+<p class="text-xs text-slate-400 mt-1">Menge: 1</p>
+<p class="text-xs text-primary font-bold mt-1">€85,00 / Tag</p>
+</div>
+<button class="absolute top-0 right-0 p-1 text-slate-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+<div class="border-t border-white/10 pt-4 space-y-3 mb-6">
+<div class="flex justify-between text-sm text-slate-400">
+<span>Zwischensumme (Tag)</span>
+<span>€265.00</span>
+</div>
+<div class="flex justify-between text-sm text-slate-400">
+<span>Mietdauer</span>
+<span class="text-white">3 Tage</span>
+</div>
+<div class="flex justify-between text-sm text-slate-400">
+<span>Logistik &amp; Aufbau</span>
+<span>nach Anfrage</span>
+</div>
+<div class="flex justify-between font-bold text-lg pt-2 border-t border-white/5 mt-2">
+<span class="text-white">Gesamt (ca.)</span>
+<span class="text-primary">€795.00</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary font-bold rounded-xl hover:bg-emerald-400 transition-all text-black shadow-lg shadow-primary/20 hover:shadow-primary/40 mb-3">Anfrage absenden</button>
+<button class="w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 font-bold rounded-xl transition-all text-white text-sm">Als PDF exportieren</button>
+<p class="text-center text-[10px] text-slate-500 mt-4 uppercase tracking-tighter">Unverbindliche Preisanfrage</p>
+</div>
+</aside>
+</div>
+<footer class="mt-auto border-t border-white/10 bg-[#06080b] relative overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[500px] h-[100px] bg-primary/10 blur-[60px] pointer-events-none"></div>
+<div class="max-w-[1600px] mx-auto px-8 py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="size-9 bg-primary/20 rounded-lg flex items-center justify-center border border-primary/20 text-primary">
+<span class="material-symbols-outlined text-xl">event_seat</span>
+</div>
+<span class="text-xl font-bold text-white tracking-tight">Event <span class="text-primary">Zubehör GbR</span></span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Wir verwandeln gewöhnliche Orte in außergewöhnliche Erlebnisse mit hochwertiger Ausstattung und innovativem Eventdesign.
+                    </p>
+<div class="flex gap-3">
+<a class="size-10 rounded-full bg-white/5 hover:bg-primary hover:text-black flex items-center justify-center transition-all border border-white/10 hover:border-primary text-slate-400" href="#">
+<svg aria-hidden="true" class="size-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-white/5 hover:bg-primary hover:text-black flex items-center justify-center transition-all border border-white/10 hover:border-primary text-slate-400" href="#">
+<svg aria-hidden="true" class="size-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-white/5 hover:bg-primary hover:text-black flex items-center justify-center transition-all border border-white/10 hover:border-primary text-slate-400" href="#">
+<svg aria-hidden="true" class="size-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06h.63zm1.673 5.378c-.846 0-1.54.694-1.54 1.54s.694 1.54 1.54 1.54 1.54-.694 1.54-1.54-.694-1.54-1.54-1.54zM12 8.496c-1.936 0-3.504 1.568-3.504 3.504s1.568 3.504 3.504 3.504 3.504-1.568 3.504-3.504-1.568-3.504-3.504-3.504zM2.5 12a9.5 9.5 0 1019 0 9.5 9.5 0 00-19 0z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-white font-bold mb-6 flex items-center gap-2 text-sm uppercase tracking-wider">
+<span class="w-8 h-px bg-primary"></span> Katalog
+                    </h3>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Lounge Möbel</a></li>
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Barsysteme</a></li>
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Deko &amp; Pflanzen</a></li>
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Beleuchtung</a></li>
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Audio &amp; Video</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold mb-6 flex items-center gap-2 text-sm uppercase tracking-wider">
+<span class="w-8 h-px bg-primary"></span> Service
+                    </h3>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Lieferung &amp; Aufbau</a></li>
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Eventplanung</a></li>
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> 3D-Visualisierung</a></li>
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Nachhaltigkeit</a></li>
+<li><a class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center gap-2 group" href="#"><span class="w-1 h-1 bg-slate-600 group-hover:bg-primary rounded-full transition-colors"></span> Karriere</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold mb-6 flex items-center gap-2 text-sm uppercase tracking-wider">
+<span class="w-8 h-px bg-primary"></span> Kontakt
+                    </h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+<span>Messeplatz 1<br/>20357 Hamburg</span>
+</li>
+<li class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">call</span>
+<a class="hover:text-white transition-colors" href="tel:+494012345678">+49 40 123 456 78</a>
+</li>
+<li class="flex items-center gap-3 text-sm text-slate-400">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+<a class="hover:text-white transition-colors" href="mailto:info@event-zubehoer.de">info@event-zubehoer.de</a>
+</li>
+</ul>
+<div class="mt-6 pt-6 border-t border-white/5">
+<p class="text-xs text-slate-500 mb-2">Newsletter abonnieren</p>
+<div class="flex gap-2">
+<input class="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-primary focus:ring-0 w-full placeholder-slate-600" placeholder="E-Mail Adresse" type="email"/>
+<button class="bg-primary text-black font-bold p-2 rounded-lg hover:bg-emerald-400 transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-xs text-center md:text-left">
+                    © 2024 Event Zubehör GbR. Alle Rechte vorbehalten.
+                </p>
+<div class="flex gap-6 text-xs text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Impressum</a>
+<a class="hover:text-primary transition-colors" href="#">Datenschutz</a>
+<a class="hover:text-primary transition-colors" href="#">AGB</a>
+</div>
+</div>
+</div>
+</footer>
+<div class="lg:hidden fixed bottom-0 w-full glass-card border-t border-white/10 px-8 py-4 flex justify-between items-center z-50 backdrop-blur-xl bg-black/80">
+<button class="text-primary flex flex-col items-center gap-1">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold">Katalog</span>
+</button>
+<button class="text-slate-400 flex flex-col items-center gap-1">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-bold">Suche</span>
+</button>
+<button class="text-slate-400 flex flex-col items-center gap-1 relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-black text-[9px] font-bold size-4 rounded-full flex items-center justify-center">4</span>
+<span class="text-[10px] font-bold">Anfrage</span>
+</button>
+<button class="text-slate-400 flex flex-col items-center gap-1">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profil</span>
+</button>
+</div>
+</div>
+
+</body></html>

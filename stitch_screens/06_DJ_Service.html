@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite DJ Services | Vibrant Beats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#BF40BF",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0f1218"
+                    },
+                    fontFamily: {
+                        display: "Inter"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(191, 64, 191, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(191, 64, 191, 0.1);
+        }
+        .vibrant-glow {
+            box-shadow: 0 0 40px -10px rgba(191, 64, 191, 0.3);
+        }
+        .nav-link-active {
+            color: #BF40BF;
+            position: relative;
+        }
+        .nav-link-active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #BF40BF;
+            border-radius: 2px;
+            box-shadow: 0 0 8px #BF40BF;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30 selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-white/5 bg-[#0f1218]/80 backdrop-blur-xl">
+<div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+<div class="flex items-center gap-2">
+<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-purple-600 text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">graphic_eq</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-white">VibeFlow<span class="text-primary">GbR</span></span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="#">Home</a>
+<a class="text-sm font-medium nav-link-active" href="#">DJ Service</a>
+<a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="#">Sound</a>
+<a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="#">Lighting</a>
+<a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="#">Photo Booth</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="group flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-all hover:border-primary/50 hover:text-white">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">search</span>
+</button>
+<button class="hidden sm:flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Book Now</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative px-6 py-12 md:px-10 md:py-20 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1 text-primary border border-primary/20 w-fit">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="text-xs font-bold uppercase tracking-wider">Premium Entertainment</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight text-white">
+                        Elevate Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-fuchsia-400">Atmosphere</span>
+</h1>
+<p class="text-lg text-slate-400 max-w-xl leading-relaxed">
+                        Curating bespoke sonic journeys for the world's most exclusive events. From intimate weddings to high-octane corporate galas.
+                    </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<div class="flex items-center gap-3 glass-effect rounded-2xl p-4 flex-1 min-w-[200px] vibrant-glow">
+<span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+<div>
+<p class="text-sm font-bold text-white">500+ Events</p>
+<p class="text-xs text-slate-500 italic">Seamlessly orchestrated</p>
+</div>
+</div>
+<div class="flex items-center gap-3 glass-effect rounded-2xl p-4 flex-1 min-w-[200px]">
+<span class="material-symbols-outlined text-primary text-3xl">star</span>
+<div>
+<p class="text-sm font-bold text-white">Top Rated</p>
+<p class="text-xs text-slate-500 italic">5-star performance</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10"></div>
+<img class="h-full w-full object-cover transition-transform duration-700 hover:scale-110" data-alt="Professional DJ performing at high energy event with violet lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8-vIjMtPaihmGwDqOMveCYQJHUIbygdaDd5CBADoERNcNhdJgqXiOt4hUTBt2WgUtYvAVNpBxAjT452ihyJYB2JxPqtVxKbO9u92EsGV4la0_Om_u5InPCPq6g7BPKpa3FvskZPbmsWVyoNOcbvbQxxpfNlUgv-RlTDZJvndYQM1eoRXktJOMW0gIQby-LK0x2MnkaYvcEfHJlb5Mnbo6CJnWVAKGj3bQf6WF-YCmFycSmC-KZAE02_53jPsQVWA4ySJ_pc83lsY"/>
+<div class="absolute bottom-6 left-6 z-20">
+<div class="glass-effect rounded-xl p-4 flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white">play_arrow</span>
+</div>
+<div>
+<p class="text-xs font-bold text-white uppercase tracking-tighter">Live Session</p>
+<p class="text-sm text-slate-300">Listen to MixCloud</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-[80px]"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-[80px]"></div>
+</div>
+</div>
+</section>
+<section class="px-6 py-16 bg-white/[0.02] border-y border-white/5">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+<div>
+<h2 class="text-3xl font-bold text-white mb-2">Signature Experiences</h2>
+<p class="text-slate-500">Tailored sets for every distinguished occasion.</p>
+</div>
+<div class="flex gap-2 p-1.5 glass-effect rounded-xl">
+<button class="bg-primary px-6 py-2 rounded-lg text-sm font-bold text-white shadow-lg">Weddings</button>
+<button class="px-6 py-2 rounded-lg text-sm font-bold text-slate-400 hover:text-white transition-all">Corporate</button>
+<button class="px-6 py-2 rounded-lg text-sm font-bold text-slate-400 hover:text-white transition-all">Regional</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group relative flex flex-col gap-4 rounded-3xl p-6 transition-all hover:bg-white/[0.03] border border-transparent hover:border-white/10">
+<div class="h-56 w-full rounded-2xl overflow-hidden mb-2">
+<img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Elegant wedding reception dance floor with purple ambient lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8xuncgRu7QgQwEhhP5m3Prl7nY7YTE4AwB4N3uImP_W1LPdub-OfUK5WAU7PnPNXh1Z9PfGdx9oLnXkzPAEG1tlc4oZyzJBGG8oww4nJiTiU4m9B0z3OWVYkcOHawkI__QK9JPRvQu6sdj8k2gCNYN6SHowaD7yIBELQZc9F1Sd5r43rKK0Ae0Bp1Eq7Vs8N1KS656BXtoF4oIspCTjhRGcLFCBSPlhc1wxQVznR1gpdvt1MFiLqzqjeApEL9yXYjM_Ldronxeyc"/>
+</div>
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-white">Wedding Specials</h3>
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">
+                            Creating magical moments from the first dance to the final encore. We blend timeless classics with modern energy.
+                        </p>
+<ul class="flex flex-col gap-2 mt-2">
+<li class="flex items-center gap-2 text-xs text-slate-300">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                Custom Playlist Consultation
+                            </li>
+<li class="flex items-center gap-2 text-xs text-slate-300">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                Premium Sound &amp; Mood Lighting
+                            </li>
+</ul>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-3xl p-6 transition-all hover:bg-white/[0.03] border border-transparent hover:border-white/10">
+<div class="h-56 w-full rounded-2xl overflow-hidden mb-2">
+<img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Corporate gala with professional stage setup and lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRLK_szB9TxTh5Vb_m9PDhR3Ak9y0ypUNnewGHmeEivztShj6qtJA9AUxvcnlKV2GFZQtjBxElPELPVbqSXQTUQVaGYeYz24GYK_L6aawRy2ueeawh7OLwOnxvELlSUWWCl5M4_LKoCtmfTv29zF6wQyDEXPWoKNztSi45qk45VtLmPWASmgHHFnIMLqr3Re-T-i4yfNHkO9-AZcOabP8J3UCo33bdxW98f_uu9-msGIsbZ-ot_rowCKxLaEiCxUq7By8vMJ266UA"/>
+</div>
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-white">Corporate Elegance</h3>
+<span class="material-symbols-outlined text-primary">business_center</span>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">
+                            Sophisticated soundscapes for product launches, annual galas, and networking mixers that leave a lasting brand impression.
+                        </p>
+<ul class="flex flex-col gap-2 mt-2">
+<li class="flex items-center gap-2 text-xs text-slate-300">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                Event Hosting &amp; MC Services
+                            </li>
+<li class="flex items-center gap-2 text-xs text-slate-300">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                Wireless Microphone Systems
+                            </li>
+</ul>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-3xl p-6 transition-all hover:bg-white/[0.03] border border-transparent hover:border-white/10">
+<div class="h-56 w-full rounded-2xl overflow-hidden mb-2">
+<img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Vibrant regional festival with colorful stage lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgH7gdDr7xxnXF96FLvZL-P_6pjitcWLQidPZJKPQ3EkNvIWH2hZ7QYsxPwaZtLpxoRiUBY3VyNiz_4ATJXmVEf-eTdfJDNd_ytLZBtjN0VPWKYZBbhsqowVx3OZEiCPjIRxw8edw2Zo3iUdVeOdaV5Hv_UxFSRy4RW_twUsXYtb7Js7LmMfgeN-WtqEXYoqZD4CpW8TDQAO6QjEFHXCFAk36x85dr_R6EueBXezGPGdnKAetkFclYT0MboSCPtwcVDaumvAZNH8Y"/>
+</div>
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-white">Regional Parties</h3>
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">
+                            Celebrating local culture with curated regional beats and global hits. Bringing the festival energy to your neighborhood.
+                        </p>
+<ul class="flex flex-col gap-2 mt-2">
+<li class="flex items-center gap-2 text-xs text-slate-300">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                Multi-genre Expertise
+                            </li>
+<li class="flex items-center gap-2 text-xs text-slate-300">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+                                High-Energy Performance
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 py-20 relative overflow-hidden">
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="text-4xl font-black text-white mb-6">Ready to drop the beat?</h2>
+<p class="text-slate-400 mb-10 text-lg">Our calendar fills up fast. Secure your date now and let's plan the sound for your next unforgettable moment.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="h-14 px-10 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/40">
+                        Check Availability
+                    </button>
+<button class="h-14 px-10 rounded-2xl glass-effect text-white font-bold text-lg hover:bg-white/10 transition-all">
+                        View Pricing
+                    </button>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+</section>
+</main>
+<footer class="border-t border-white/5 bg-[#0f1218] pt-16 pb-8">
+<div class="mx-auto max-w-7xl px-6">
+<div class="grid grid-cols-1 gap-12 md:grid-cols-4 lg:gap-16">
+<div class="md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-purple-600 text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+</div>
+<span class="text-lg font-bold tracking-tight text-white">VibeFlow<span class="text-primary">GbR</span></span>
+</div>
+<p class="text-sm leading-relaxed text-slate-400">
+                        Providing top-tier sound and lighting equipment for events that demand excellence.
+                    </p>
+</div>
+<div>
+<h3 class="mb-6 text-sm font-semibold uppercase tracking-wider text-white">Services</h3>
+<ul class="space-y-4">
+<li><a class="text-sm text-primary font-medium hover:text-white transition-colors" href="#">DJ Service</a></li>
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Sound Systems</a></li>
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Lighting Design</a></li>
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Photo Booths</a></li>
+</ul>
+</div>
+<div>
+<h3 class="mb-6 text-sm font-semibold uppercase tracking-wider text-white">Company</h3>
+<ul class="space-y-4">
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Portfolio</a></li>
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Pricing</a></li>
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="mb-6 text-sm font-semibold uppercase tracking-wider text-white">Legal</h3>
+<ul class="space-y-4">
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Impressum</a></li>
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-sm text-slate-400 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-8 md:flex-row">
+<p class="text-xs text-slate-500">
+                    © 2024 VibeFlow GbR. All rights reserved.
+                </p>
+<div class="flex gap-4">
+<a class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-slate-400 transition-all hover:bg-primary hover:text-white" href="#">
+<span class="material-symbols-outlined text-[16px]">alternate_email</span>
+</a>
+<a class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-slate-400 transition-all hover:bg-primary hover:text-white" href="#">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
