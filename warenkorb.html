@@ -52,8 +52,8 @@
             <div class="lg:col-span-8 flex flex-col gap-6">
                 <!-- Header -->
                 <div class="flex items-center justify-between flex-wrap gap-4">
-                    <h1 class="text-3xl font-black tracking-tighter text-white">Mietanfrage <span class="text-slate-500 font-medium text-lg ml-2">(2 Positionen)</span></h1>
-                    <button class="text-amber-500 text-sm font-semibold hover:underline decoration-amber-500/30 underline-offset-4 transition-all duration-300">Liste leeren</button>
+                    <h1 class="text-3xl font-black tracking-tighter text-white">Mietanfrage <span class="text-slate-500 font-medium text-lg ml-2" id="cart-title-count">(0 Positionen)</span></h1>
+                    <button id="clear-cart-btn" class="text-amber-500 text-sm font-semibold hover:underline decoration-amber-500/30 underline-offset-4 transition-all duration-300">Liste leeren</button>
                 </div>
 
                 <!-- Date Selection -->
@@ -61,82 +61,26 @@
                     <div class="flex items-center gap-3">
                         <span class="material-symbols-outlined text-amber-500 text-2xl">calendar_today</span>
                         <div>
-                            <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Mietbeginn</p>
-                            <p class="font-bold text-white mt-1">15. Okt 2026</p>
+                            <label for="rent-start" class="block text-[10px] text-slate-400 uppercase font-bold tracking-wider">Mietbeginn</label>
+                            <input type="date" id="rent-start" class="bg-black/40 border border-white/10 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full px-2.5 py-1 mt-1 font-bold">
                         </div>
                     </div>
                     <div class="hidden sm:block h-10 w-[1px] bg-white/10"></div>
                     <div class="flex items-center gap-3">
                         <span class="material-symbols-outlined text-amber-500 text-2xl">event_busy</span>
                         <div>
-                            <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Mietende</p>
-                            <p class="font-bold text-white mt-1">16. Okt 2026</p>
+                            <label for="rent-end" class="block text-[10px] text-slate-400 uppercase font-bold tracking-wider">Mietende</label>
+                            <input type="date" id="rent-end" class="bg-black/40 border border-white/10 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full px-2.5 py-1 mt-1 font-bold">
                         </div>
                     </div>
                     <div class="ml-auto bg-black/40 px-4 py-2 rounded-full text-xs font-bold border border-white/10 text-white">
-                        <span class="text-amber-500">1 TAG</span> EINSATZ
+                        <span class="text-amber-500" id="rent-duration-text">1 TAG</span> EINSATZ <span class="text-[10px] font-normal text-slate-400 ml-1">(Faktor <span id="rent-factor-text">1.0</span>)</span>
                     </div>
                 </div>
 
-                <!-- Item List -->
-                <div class="flex flex-col gap-4">
-                    <!-- Item 1 -->
-                    <div class="liquid-glass rounded-xl p-4 flex gap-6 items-center group border-l-4 border-l-transparent hover:border-l-amber-500 transition-all relative overflow-hidden glass-card">
-                        <div class="absolute top-0 left-0 w-1 p-2 h-full bg-amber-500/5 group-hover:bg-amber-500/10 transition-colors duration-300"></div>
-                        <div class="h-24 w-24 rounded-lg bg-black/40 shrink-0 border border-white/10 flex items-center justify-center p-2">
-                            <img alt="Beam Movinghead" class="h-full w-full object-contain" src="Bilder/Miet-Sortiment/Licht/Beam Movinghead.webp"/>
-                        </div>
-                        <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
-                            <div>
-                                <h3 class="font-black text-lg text-slate-100 group-hover:text-amber-500 transition-colors">Beam Moving Head 280W</h3>
-                                <p class="text-slate-400 text-sm">Lichttechnik</p>
-                                <p class="text-amber-500 text-sm font-bold mt-1">45,00 € <span class="text-[10px] text-slate-500 uppercase font-normal">/ Tag</span></p>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <div class="flex items-center bg-black/40 rounded-lg p-1 border border-white/10">
-                                    <button class="h-8 w-8 flex items-center justify-center hover:bg-white/5 rounded transition-colors text-slate-400">-</button>
-                                    <span class="w-8 text-center font-bold text-white">4</span>
-                                    <button class="h-8 w-8 flex items-center justify-center hover:bg-white/5 rounded text-amber-500 transition-colors">+</button>
-                                </div>
-                                <div class="text-right min-w-[80px]">
-                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Gesamt</p>
-                                    <p class="font-black text-lg text-white">180,00 €</p>
-                                </div>
-                                <button class="text-slate-500 hover:text-red-400 transition-colors p-2 hover:bg-red-500/10 rounded-lg">
-                                    <span class="material-symbols-outlined">delete</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="liquid-glass rounded-xl p-4 flex gap-6 items-center group border-l-4 border-l-transparent hover:border-l-cyan-500 transition-all relative overflow-hidden glass-card">
-                        <div class="absolute top-0 left-0 w-1 p-2 h-full bg-cyan-500/5 group-hover:bg-cyan-500/10 transition-colors duration-300"></div>
-                        <div class="h-24 w-24 rounded-lg bg-black/40 shrink-0 border border-white/10 flex items-center justify-center p-2">
-                            <img alt="Aktiv Topteil" class="h-full w-full object-contain" src="Bilder/Miet-Sortiment/Ton/Aktiv Topteil 12 Zoll.webp"/>
-                        </div>
-                        <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
-                            <div>
-                                <h3 class="font-black text-lg text-slate-100 group-hover:text-cyan-500 transition-colors">Aktiv Topteil 12"</h3>
-                                <p class="text-slate-400 text-sm">Tontechnik</p>
-                                <p class="text-cyan-500 text-sm font-bold mt-1">35,00 € <span class="text-[10px] text-slate-500 uppercase font-normal">/ Tag</span></p>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <div class="flex items-center bg-black/40 rounded-lg p-1 border border-white/10">
-                                    <button class="h-8 w-8 flex items-center justify-center hover:bg-white/5 rounded transition-colors text-slate-400">-</button>
-                                    <span class="w-8 text-center font-bold text-white">2</span>
-                                    <button class="h-8 w-8 flex items-center justify-center hover:bg-white/5 rounded text-cyan-500 transition-colors">+</button>
-                                </div>
-                                <div class="text-right min-w-[80px]">
-                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Gesamt</p>
-                                    <p class="font-black text-lg text-white">70,00 €</p>
-                                </div>
-                                <button class="text-slate-500 hover:text-red-400 transition-colors p-2 hover:bg-red-500/10 rounded-lg">
-                                    <span class="material-symbols-outlined">delete</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Item List Container -->
+                <div id="cart-items-container" class="flex flex-col gap-4">
+                    <!-- Dynamic cart items will be injected here via JS -->
                 </div>
 
                 <!-- Logistics Option -->
@@ -186,16 +130,22 @@
                     
                     <div class="flex flex-col gap-4 mb-8">
                         <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-400">Miet-Netto</span>
-                            <span class="font-bold text-white">250,00 €</span>
+                            <span class="text-slate-400">Miet-Netto (<span id="summary-days-text">1 Tag</span>)</span>
+                            <span class="font-bold text-white" id="summary-netto">0,00 €</span>
                         </div>
                         <div class="flex justify-between items-center text-sm">
                             <span class="text-slate-400">MwSt. (19%)</span>
-                            <span class="font-bold text-white">47,50 €</span>
+                            <span class="font-bold text-white" id="summary-tax">0,00 €</span>
                         </div>
                         <div class="flex justify-between items-center text-sm">
                             <span class="text-slate-400">Logistik</span>
-                            <span class="font-bold text-green-400">0,00 €</span>
+                            <span class="font-bold text-green-400" id="summary-shipping">0,00 €</span>
+                        </div>
+                        
+                        <!-- Extra notice for long rentals -->
+                        <div id="long-rental-warning" class="hidden my-2 p-3 bg-red-500/10 border border-red-500/20 rounded-xl flex items-start gap-3 transition-all duration-300">
+                            <span class="material-symbols-outlined text-red-500 text-sm mt-0.5">info</span>
+                            <p class="text-xs text-red-200 leading-tight">Für einen Mietzeitraum über 5 Tage muss ein individuelles Angebot angefragt werden. Die hier angezeigten Preise dienen nur als Orientierung.</p>
                         </div>
                         
                         <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-4"></div>
@@ -203,7 +153,7 @@
                         <div class="flex justify-between items-end">
                             <div>
                                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">Rundlauf-Brutto</p>
-                                <p class="text-4xl font-black text-white">297,50 €</p>
+                                <p class="text-4xl font-black text-white" id="summary-brutto">0,00 €</p>
                             </div>
                         </div>
                     </div>
