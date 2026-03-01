@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EventTech GbR | Rechtliches</title>
+    <!-- Tailwind CSS (CDN for prototype) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <style>
+        .nav-item-active {
+            background: rgba(81, 200, 120, 0.15);
+            color: #51c878;
+            border-left: 3px solid #51c878;
+        }
+
+        .nav-item-inactive {
+            color: #a2b3a8;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item-inactive:hover {
+            background: rgba(255, 255, 255, 0.03);
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen selection:bg-green-500/30">
+    <!-- Navbar bg-background-dark/80 -->
+    <nav class="sticky top-0 z-50 w-full liquid-glass border-b border-white/5" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer">
+                        <span class="material-symbols-outlined text-background-dark font-bold">blur_on</span>
+                    </div>
+                    <span class="text-xl font-black tracking-tighter uppercase text-white">EventTech GbR</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors text-slate-300" href="index.html">Startseite</a>
+                <a class="text-sm font-medium hover:text-purple-500 transition-colors text-slate-300" href="impressionen.html">Impressionen</a>
+                <a class="text-sm font-medium hover:text-amber-500 transition-colors text-slate-300" href="lichttechnik.html">Licht</a>
+                <a class="text-sm font-medium hover:text-cyan-500 transition-colors text-slate-300" href="tontechnik.html">Ton</a>
+                <a class="text-sm font-medium hover:text-green-500 transition-colors text-slate-300" href="event-zubehoer.html">Zubehör</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="warenkorb.html" class="px-6 py-2.5 bg-green-500 text-white text-sm font-bold rounded-full hover:bg-green-600 transition-all shadow-lg flex items-center gap-2 relative shadow-green-500/20">
+                    Warenkorb
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8 md:py-12 max-w-7xl">
+        <!-- Header Section -->
+        <div class="mb-10 text-center md:text-left mt-8">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-4">
+                Rechtliches
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl">
+                Transparenz ist uns wichtig. Hier finden Sie alle rechtlichen Informationen zu unserem Unternehmen und unserer Arbeitsweise.
+            </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar Navigation -->
+            <aside class="w-full lg:w-72 shrink-0">
+                <nav class="flex flex-col gap-2 liquid-glass rounded-xl p-4 sticky top-28 border-white/5 glass-card-green">
+                    <div class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2 px-3">Navigation</div>
+                    <a class="nav-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group" href="#impressum">
+                        <span class="material-symbols-outlined text-green-500">info</span>
+                        <span class="font-bold text-white">Impressum</span>
+                    </a>
+                    <a class="nav-item-inactive flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group" href="#datenschutz">
+                        <span class="material-symbols-outlined group-hover:text-green-500 transition-colors">shield</span>
+                        <span class="font-medium">Datenschutz</span>
+                    </a>
+                    <a class="nav-item-inactive flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group" href="#agb">
+                        <span class="material-symbols-outlined group-hover:text-green-500 transition-colors">gavel</span>
+                        <span class="font-medium">AGB</span>
+                    </a>
+                    
+                    <div class="mt-6 pt-6 border-t border-white/5 px-3">
+                        <div class="flex items-center gap-3 text-slate-400">
+                            <span class="material-symbols-outlined text-xl">help</span>
+                            <span class="text-sm">Fragen? <a class="text-green-500 hover:text-green-400 hover:underline transition-colors font-bold" href="#">Kontaktieren Sie uns</a></span>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Content Area -->
+            <section class="flex-grow">
+                <div id="impressum" class="liquid-glass rounded-3xl p-6 md:p-10 relative overflow-hidden border-white/5 glass-card-green mb-12">
+                    <!-- Decorative background element -->
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-green-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <!-- Content Header -->
+                    <div class="flex items-center gap-4 mb-8 pb-8 border-b border-white/10 relative z-10">
+                        <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-2xl text-green-500 shadow-lg shadow-green-500/5">
+                            <span class="material-symbols-outlined text-3xl">info</span>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-black text-white">Impressum</h2>
+                            <p class="text-sm text-slate-400 mt-1 font-medium">Angaben gemäß § 5 TMG</p>
+                        </div>
+                    </div>
+
+                    <!-- Content Body -->
+                    <div class="space-y-10 text-slate-300 relative z-10">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4 group">
+                                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">business</span>
+                                    Unternehmen
+                                </h3>
+                                <div class="bg-black/30 rounded-xl p-6 border border-white/5 group-hover:border-green-500/20 transition-colors">
+                                    <p class="font-black text-white text-xl mb-3 text-green-500">EventTech GbR</p>
+                                    <p class="text-slate-300">Holzmarktstraße 25</p>
+                                    <p class="text-slate-300">10243 Berlin</p>
+                                    <p class="text-slate-300">Deutschland</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4 group">
+                                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">group</span>
+                                    Vertreten durch
+                                </h3>
+                                <div class="bg-black/30 rounded-xl p-6 border border-white/5 group-hover:border-green-500/20 transition-colors">
+                                    <ul class="space-y-3 font-medium">
+                                        <li class="flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
+                                            <span class="text-slate-200">Max Mustermann</span>
+                                        </li>
+                                        <li class="flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
+                                            <span class="text-slate-200">Erika Musterfrau</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 pt-4 group">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">contact_phone</span>
+                                Kontakt
+                            </h3>
+                            <div class="bg-black/30 rounded-xl p-6 border border-white/5 grid sm:grid-cols-2 gap-6 group-hover:border-green-500/20 transition-colors">
+                                <div>
+                                    <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Telefon</span>
+                                    <p class="text-white mt-1 hover:text-green-500 transition-colors cursor-pointer font-bold text-lg">+49 (0) 30 12345678</p>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">E-Mail</span>
+                                    <p class="text-white mt-1 hover:text-green-500 transition-colors cursor-pointer font-bold text-lg">info@eventtech-gbr.de</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 pt-4 group">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">receipt_long</span>
+                                Umsatzsteuer-ID
+                            </h3>
+                            <div class="p-6 bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 rounded-xl">
+                                <p class="text-sm text-slate-400 mb-2 font-medium">Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:</p>
+                                <p class="text-white font-mono text-2xl font-bold tracking-wider text-green-400">DE123456789</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/10 text-sm text-slate-500 font-medium">
+                            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+        <!-- Footer (UI/UX Pro Max Applied) -->
+    <footer class="border-t border-white/10 py-16 px-6 bg-background-dark relative overflow-hidden mt-24">
+        <!-- Glow effects -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10 w-full">
+            <!-- Top Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="flex flex-col gap-6">
+                    <a href="index.html" class="flex items-center gap-2 group w-fit">
+                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer">
+                            <span class="material-symbols-outlined text-background-dark text-xl font-bold">blur_on</span>
+                        </div>
+                        <span class="text-xl font-black tracking-tighter uppercase text-white">EventTech GbR</span>
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Dein Premium Partner für Veranstaltungstechnik in Berlin. Höchste Qualität für unvergessliche Events.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
+                            <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
+                            <span class="material-symbols-outlined text-[20px]">smart_display</span>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
+                            <span class="material-symbols-outlined text-[20px]">email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Equipment</h4>
+                    <a href="tontechnik.html" class="text-slate-400 hover:text-cyan-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500/50 group-hover:bg-cyan-500 transition-colors"></span> Tontechnik</a>
+                    <a href="lichttechnik.html" class="text-slate-400 hover:text-amber-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 group-hover:bg-amber-500 transition-colors"></span> Lichttechnik</a>
+                    <a href="event-zubehoer.html" class="text-slate-400 hover:text-green-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-green-500/50 group-hover:bg-green-500 transition-colors"></span> Zubehör</a>
+                    <a href="dj-service.html" class="text-slate-400 hover:text-purple-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-purple-500/50 group-hover:bg-purple-500 transition-colors"></span> DJ Service</a>
+                </div>
+
+                <!-- Legal / Info -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Unternehmen</h4>
+                    <a href="impressionen.html" class="text-slate-400 hover:text-fuchsia-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-fuchsia-500/50 group-hover:bg-fuchsia-500 transition-colors"></span> Impressionen</a>
+                    <a href="impressum.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-slate-500/50 group-hover:bg-white transition-colors"></span> Über Uns</a>
+                    <a href="impressum.html#agb" class="text-slate-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-slate-500/50 group-hover:bg-white transition-colors"></span> AGB</a>
+                    <a href="impressum.html#datenschutz" class="text-slate-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-slate-500/50 group-hover:bg-white transition-colors"></span> Datenschutz</a>
+                </div>
+
+                <!-- Trust Badges & Contact -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Vertrauen & Kontakt</h4>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-green-500">verified</span>
+                            <span class="text-xs text-slate-400 font-medium">100% Geprüftes Equipment</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">headset_mic</span>
+                            <span class="text-xs text-slate-400 font-medium">24/7 Technischer Support</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-amber-500">local_shipping</span>
+                            <span class="text-xs text-slate-400 font-medium">Lieferung & Aufbau verfügbar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+                
+                <!-- Payment Methods Placeholder using Material Icons as generic stand-ins -->
+                <div class="flex items-center gap-3 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
+                    <div class="w-10 h-6 bg-white/10 rounded flex items-center justify-center border border-white/5"><span class="material-symbols-outlined text-[16px] text-white">account_balance</span></div>
+                    <div class="w-10 h-6 bg-white/10 rounded flex items-center justify-center border border-white/5"><span class="material-symbols-outlined text-[16px] text-white">credit_card</span></div>
+                    <div class="w-10 h-6 bg-white/10 rounded flex items-center justify-center border border-white/5"><span class="material-symbols-outlined text-[16px] text-white">payments</span></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Simple script to highlight active section in sidebar based on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const navItems = document.querySelectorAll('aside nav a');
+            // This is just a placeholder since we only have impressum currently
+            // Real implementation would use IntersectionObserver
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Remove active from all
+                    navItems.forEach(nav => {
+                        nav.className = 'nav-item-inactive flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group';
+                        nav.querySelector('span:first-child').classList.remove('text-green-500');
+                        nav.querySelector('span:last-child').classList.remove('font-bold', 'text-white');
+                        nav.querySelector('span:last-child').classList.add('font-medium');
+                    });
+                    
+                    // Add active to clicked
+                    item.className = 'nav-item-active flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group';
+                    item.querySelector('span:first-child').classList.add('text-green-500');
+                    item.querySelector('span:last-child').classList.remove('font-medium');
+                    item.querySelector('span:last-child').classList.add('font-bold', 'text-white');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -21,7 +21,7 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer">
                         <span class="material-symbols-outlined text-background-dark font-bold">blur_on</span>
                     </div>
                     <span class="text-xl font-black tracking-tighter uppercase">EventTech GbR</span>
@@ -89,7 +89,7 @@
                 <div class="group relative liquid-glass glass-card-amber rounded-[2rem] p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] -mr-16 -mt-16 transition-opacity group-hover:bg-amber-500/20"></div>
                     <div class="relative z-10">
-                        <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-amber-500/20">
+                        <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-amber-500/20 cursor-pointer">
                             <span class="material-symbols-outlined text-3xl">lightbulb</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-white">Lichttechnik</h3>
@@ -111,7 +111,7 @@
                 <div class="group relative liquid-glass glass-card-cyan rounded-[2rem] p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px] -mr-16 -mt-16 transition-opacity group-hover:bg-cyan-500/20"></div>
                     <div class="relative z-10">
-                        <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-cyan-500/20">
+                        <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-cyan-500/20 cursor-pointer">
                             <span class="material-symbols-outlined text-3xl">speaker</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-white">Tontechnik</h3>
@@ -133,7 +133,7 @@
                 <div class="group relative liquid-glass glass-card-green rounded-[2rem] p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-[80px] -mr-16 -mt-16 transition-opacity group-hover:bg-green-500/20"></div>
                     <div class="relative z-10">
-                        <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-green-500/20">
+                        <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-green-500/20 cursor-pointer">
                             <span class="material-symbols-outlined text-3xl">cable</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-white">Zubehör &amp; Rigging</h3>
@@ -381,25 +381,88 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 py-12 px-6 bg-background-dark relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent"></div>
-        <div class="absolute inset-0 z-0 bg-gradient-to-t from-emerald-900/10 to-transparent pointer-events-none"></div>
+        <!-- Footer (UI/UX Pro Max Applied) -->
+    <footer class="border-t border-white/10 py-16 px-6 bg-background-dark relative overflow-hidden mt-24">
+        <!-- Glow effects -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
         
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
-            <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-white rounded flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-                    <span class="material-symbols-outlined text-background-dark text-[14px] font-bold">blur_on</span>
+        <div class="max-w-7xl mx-auto relative z-10 w-full">
+            <!-- Top Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="flex flex-col gap-6">
+                    <a href="index.html" class="flex items-center gap-2 group w-fit">
+                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer">
+                            <span class="material-symbols-outlined text-background-dark text-xl font-bold">blur_on</span>
+                        </div>
+                        <span class="text-xl font-black tracking-tighter uppercase text-white">EventTech GbR</span>
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Dein Premium Partner für Veranstaltungstechnik in Berlin. Höchste Qualität für unvergessliche Events.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
+                            <span class="material-symbols-outlined text-[20px]">photo_camera</span>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
+                            <span class="material-symbols-outlined text-[20px]">smart_display</span>
+                        </a>
+                        <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
+                            <span class="material-symbols-outlined text-[20px]">email</span>
+                        </a>
+                    </div>
                 </div>
-                <span class="text-sm font-black tracking-tighter uppercase text-slate-200">EventTech GbR</span>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Equipment</h4>
+                    <a href="tontechnik.html" class="text-slate-400 hover:text-cyan-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500/50 group-hover:bg-cyan-500 transition-colors"></span> Tontechnik</a>
+                    <a href="lichttechnik.html" class="text-slate-400 hover:text-amber-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 group-hover:bg-amber-500 transition-colors"></span> Lichttechnik</a>
+                    <a href="event-zubehoer.html" class="text-slate-400 hover:text-green-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-green-500/50 group-hover:bg-green-500 transition-colors"></span> Zubehör</a>
+                    <a href="dj-service.html" class="text-slate-400 hover:text-purple-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-purple-500/50 group-hover:bg-purple-500 transition-colors"></span> DJ Service</a>
+                </div>
+
+                <!-- Legal / Info -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Unternehmen</h4>
+                    <a href="impressionen.html" class="text-slate-400 hover:text-fuchsia-500 text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-fuchsia-500/50 group-hover:bg-fuchsia-500 transition-colors"></span> Impressionen</a>
+                    <a href="impressum.html" class="text-slate-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-slate-500/50 group-hover:bg-white transition-colors"></span> Über Uns</a>
+                    <a href="impressum.html#agb" class="text-slate-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-slate-500/50 group-hover:bg-white transition-colors"></span> AGB</a>
+                    <a href="impressum.html#datenschutz" class="text-slate-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-slate-500/50 group-hover:bg-white transition-colors"></span> Datenschutz</a>
+                </div>
+
+                <!-- Trust Badges & Contact -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-white font-black uppercase tracking-widest text-sm mb-2">Vertrauen & Kontakt</h4>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-green-500">verified</span>
+                            <span class="text-xs text-slate-400 font-medium">100% Geprüftes Equipment</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">headset_mic</span>
+                            <span class="text-xs text-slate-400 font-medium">24/7 Technischer Support</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-amber-500">local_shipping</span>
+                            <span class="text-xs text-slate-400 font-medium">Lieferung & Aufbau verfügbar</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="flex gap-8 text-sm text-slate-400">
-                <a class="hover:text-emerald-400 transition-colors" href="impressum.html">Datenschutz</a>
-                <a class="hover:text-emerald-400 transition-colors" href="impressum.html">AGB</a>
-                <a class="hover:text-emerald-400 transition-colors" href="impressum.html">Impressum</a>
+
+            <!-- Bottom Section -->
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+                
+                <!-- Payment Methods Placeholder using Material Icons as generic stand-ins -->
+                <div class="flex items-center gap-3 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
+                    <div class="w-10 h-6 bg-white/10 rounded flex items-center justify-center border border-white/5"><span class="material-symbols-outlined text-[16px] text-white">account_balance</span></div>
+                    <div class="w-10 h-6 bg-white/10 rounded flex items-center justify-center border border-white/5"><span class="material-symbols-outlined text-[16px] text-white">credit_card</span></div>
+                    <div class="w-10 h-6 bg-white/10 rounded flex items-center justify-center border border-white/5"><span class="material-symbols-outlined text-[16px] text-white">payments</span></div>
+                </div>
             </div>
-            
-            <p class="text-sm text-slate-600">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
