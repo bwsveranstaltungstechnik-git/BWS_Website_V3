@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EventTech GbR | Startseite</title>
+    <!-- Tailwind CSS (CDN for prototype) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary/30">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full liquid-glass border-b border-slate-200/10 bg-background-dark/80" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined text-background-dark font-bold">blur_on</span>
+                    </div>
+                    <span class="text-xl font-black tracking-tighter uppercase">EventTech GbR</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Startseite</a>
+                <a class="text-sm font-medium hover:text-amber-500 transition-colors" href="lichttechnik.html">Licht</a>
+                <a class="text-sm font-medium hover:text-cyan-500 transition-colors" href="tontechnik.html">Ton</a>
+                <a class="text-sm font-medium hover:text-green-500 transition-colors" href="event-zubehoer.html">Zubehör</a>
+                <a class="text-sm font-medium hover:text-purple-500 transition-colors" href="dj-service.html">DJ Service</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="warenkorb.html" class="px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center gap-2">
+                    Warenkorb
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden hero-gradient px-6 bg-background-dark">
+            <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-4xl text-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    Neu im Verleih: High-End Moving Heads
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight mb-8">
+                    Professionelle Eventtechnik <br/> 
+                    <span class="text-primary">Mieten &amp; Erleben.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Ihr Partner für Veranstaltungstechnik in Wittlich und Umgebung. Wir bieten erstklassiges Equipment für Konzerte, Firmenfeiern und private Events. Einfach, transparent und zuverlässig.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#kategorien" class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-transform text-center cursor-pointer">
+                        Zum Mietkatalog
+                    </a>
+                    <a href="#kontakt" class="w-full sm:w-auto px-8 py-4 liquid-glass text-white font-bold rounded-xl hover:bg-white/5 transition-colors text-center cursor-pointer">
+                        Beratungstermin
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="kategorien" class="py-24 px-6 max-w-7xl mx-auto relative z-10 -mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Lichttechnik -->
+                <div class="group relative liquid-glass glass-card-amber rounded-[2rem] p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] -mr-16 -mt-16 transition-opacity group-hover:bg-amber-500/20"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-amber-500/20">
+                            <span class="material-symbols-outlined text-3xl">lightbulb</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Lichttechnik</h3>
+                        <p class="text-slate-400 mb-8 leading-relaxed">Atmosphärische Beleuchtung, Moving Heads und Bühnenlicht für strahlende Momente.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Moving Heads &amp; Spots</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>LED Bars &amp; Fluter</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Lichtsteuerpulte</li>
+                        </ul>
+                        
+                        <a href="lichttechnik.html" class="inline-flex items-center gap-2 text-amber-500 font-bold hover:gap-3 transition-all">
+                            Kategorie öffnen <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tontechnik -->
+                <div class="group relative liquid-glass glass-card-cyan rounded-[2rem] p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px] -mr-16 -mt-16 transition-opacity group-hover:bg-cyan-500/20"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-cyan-500/20">
+                            <span class="material-symbols-outlined text-3xl">speaker</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Tontechnik</h3>
+                        <p class="text-slate-400 mb-8 leading-relaxed">Kristallklarer Sound durch professionelle PA-Systeme, Mikrofone und Mischpulte.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>Aktive PA-Systeme</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>Funkmikrofone</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>Digitalmixer</li>
+                        </ul>
+                        
+                        <a href="tontechnik.html" class="inline-flex items-center gap-2 text-cyan-500 font-bold hover:gap-3 transition-all">
+                            Kategorie öffnen <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Zubehör -->
+                <div class="group relative liquid-glass glass-card-green rounded-[2rem] p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-[80px] -mr-16 -mt-16 transition-opacity group-hover:bg-green-500/20"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-500 mb-6 group-hover:scale-110 transition-transform duration-500 border border-green-500/20">
+                            <span class="material-symbols-outlined text-3xl">cable</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Zubehör &amp; Rigging</h3>
+                        <p class="text-slate-400 mb-8 leading-relaxed">Alles was dazugehört: Kabel, Stative, Traversen und Bühnenelemente.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Traversensysteme</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Stromverteilung</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>Bühnenpodeste</li>
+                        </ul>
+                        
+                        <a href="event-zubehoer.html" class="inline-flex items-center gap-2 text-green-500 font-bold hover:gap-3 transition-all">
+                            Kategorie öffnen <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-12 px-6 max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-sm font-bold text-primary uppercase tracking-[0.2em] mb-4">Unser Service</h2>
+                <h3 class="text-4xl font-bold">Mehr als nur Vermietung.</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-8 liquid-glass rounded-2xl group hover:border-primary/50 transition-all duration-500">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">handyman</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Auf- &amp; Abbau</h4>
+                    <p class="text-slate-400 leading-relaxed">Unser Team kümmert sich um die fachgerechte Installation und Demontage vor Ort.</p>
+                </div>
+                
+                <div class="p-8 liquid-glass rounded-2xl group hover:border-primary/50 transition-all duration-500">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">support_agent</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Technische Betreuung</h4>
+                    <p class="text-slate-400 leading-relaxed">Erfahrene Techniker begleiten Ihr Event und sorgen für einen reibungslosen Ablauf.</p>
+                </div>
+                
+                <div class="p-8 liquid-glass rounded-2xl group hover:border-primary/50 transition-all duration-500">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Logistik &amp; Transport</h4>
+                    <p class="text-slate-400 leading-relaxed">Pünktliche Lieferung direkt zur Location und Abholung nach Veranstaltungsende.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-24 bg-slate-900/30 overflow-hidden mt-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <h2 class="text-sm font-bold text-primary uppercase tracking-[0.2em] mb-4">Kundenstimmen</h2>
+                        <h3 class="text-4xl font-bold">Das sagen unsere Kunden.</h3>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <button class="w-12 h-12 liquid-glass rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-white/10">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <button class="w-12 h-12 liquid-glass rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-white/10">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex gap-8 overflow-x-auto pb-8 snap-x scrollbar-hide">
+                    <!-- Testimonial 1 -->
+                    <div class="min-w-[350px] md:min-w-[450px] liquid-glass p-8 rounded-3xl snap-center border border-white/5 relative group hover:border-primary/30 transition-colors">
+                        <div class="flex gap-1 text-amber-500 mb-6">
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-300 text-lg mb-8 italic">"Super Beratung und erstklassiges Equipment. Die Lichtanlage war der Hammer auf unserer Firmenfeier! EventTech GbR ist absolut zu empfehlen."</p>
+                        
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-slate-700 bg-cover bg-center ring-2 ring-primary/20 flex items-center justify-center text-xl font-bold text-white uppercase">JM</div>
+                            <div>
+                                <h5 class="font-bold text-white">Julia Müller</h5>
+                                <p class="text-xs text-slate-500 uppercase tracking-wider font-bold">Eventmanagerin</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="min-w-[350px] md:min-w-[450px] liquid-glass p-8 rounded-3xl snap-center border border-white/5 relative group hover:border-primary/30 transition-colors">
+                        <div class="flex gap-1 text-amber-500 mb-6">
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star_half</span>
+                        </div>
+                        <p class="text-slate-300 text-lg mb-8 italic">"Schnelle Abwicklung und sehr faire Preise. Das Ton-Equipment war in einem Top-Zustand. Gerne wieder beim nächsten Festival."</p>
+                        
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-slate-700 bg-cover bg-center ring-2 ring-primary/20 flex items-center justify-center text-xl font-bold text-white uppercase">TW</div>
+                            <div>
+                                <h5 class="font-bold text-white">Thomas Weber</h5>
+                                <p class="text-xs text-slate-500 uppercase tracking-wider font-bold">Sound Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="min-w-[350px] md:min-w-[450px] liquid-glass p-8 rounded-3xl snap-center border border-white/5 relative group hover:border-primary/30 transition-colors">
+                        <div class="flex gap-1 text-amber-500 mb-6">
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-current" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-300 text-lg mb-8 italic">"Sehr unkompliziert. Die Jungs haben uns auch kurzfristig noch ausgeholfen als ein anderer Anbieter abgesprungen ist. Top Service!"</p>
+                        
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-slate-700 ring-2 ring-primary/20 flex items-center justify-center text-white font-bold text-xl uppercase">MK</div>
+                            <div>
+                                <h5 class="font-bold text-white">Michael Klein</h5>
+                                <p class="text-xs text-slate-500 uppercase tracking-wider font-bold">Veranstalter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Marquee -->
+        <section class="py-16 border-y border-white/5 bg-black/20">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <p class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-10">Unsere Partner &amp; Marken</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="text-2xl font-black text-white/40 font-serif">Sennheiser</div>
+                    <div class="text-2xl font-black text-white/40 tracking-tighter">SHURE</div>
+                    <div class="text-2xl font-bold text-white/40 italic">YAMAHA</div>
+                    <div class="text-xl font-black text-white/40 tracking-[0.2em] border-2 border-white/40 px-2 py-1">PIONEER</div>
+                    <div class="text-2xl font-bold text-white/40">L-Acoustics</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="kontakt" class="relative py-24 overflow-hidden">
+            <div class="absolute inset-0 z-0 bg-background-dark pointer-events-none">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] beam-gradient opacity-30 blur-[100px]"></div>
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 relative z-10">
+                <div class="flex flex-col justify-between h-full">
+                    <div>
+                        <h2 class="text-sm font-bold text-emerald-500 uppercase tracking-[0.2em] mb-4">Kontakt</h2>
+                        <h3 class="text-4xl md:text-5xl font-black mb-8">Bereit für Ihr nächstes Event?</h3>
+                        <p class="text-lg text-slate-400 mb-12">
+                            Unser Team aus Technikern und Planern steht bereit, um Ihre Veranstaltung unvergesslich zu machen. Fordern Sie jetzt ein unverbindliches Angebot an.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 liquid-glass rounded-xl flex items-center justify-center text-emerald-500 shrink-0">
+                                    <span class="material-symbols-outlined">mail</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white mb-1">E-Mail</p>
+                                    <p class="text-slate-400 text-sm">info@bws-veranstaltungstechnik.de</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 liquid-glass rounded-xl flex items-center justify-center text-emerald-500 shrink-0">
+                                    <span class="material-symbols-outlined">call</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white mb-1">Telefon</p>
+                                    <p class="text-slate-400 text-sm">+49 (0) 151 123 456 78</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 col-span-1 md:col-span-2">
+                                <div class="w-12 h-12 liquid-glass rounded-xl flex items-center justify-center text-emerald-500 shrink-0">
+                                    <span class="material-symbols-outlined">location_on</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white mb-1">Standort</p>
+                                    <p class="text-slate-400 text-sm">Wittlich und Umgebung</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="liquid-glass-high p-8 md:p-12 rounded-[2rem] border border-white/20 shadow-2xl shadow-emerald-500/10 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-[60px] group-hover:bg-emerald-500/30 transition-all duration-700"></div>
+                    
+                    <form class="space-y-6 relative z-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Name</label>
+                                <input class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors backdrop-blur-sm" placeholder="Max Mustermann" type="text"/>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-slate-300">E-Mail</label>
+                                <input class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors backdrop-blur-sm" placeholder="max@firma.de" type="email"/>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Event Typ</label>
+                            <div class="relative">
+                                <select class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors appearance-none backdrop-blur-sm">
+                                    <option class="text-black">Firmenfeier</option>
+                                    <option class="text-black">Geburtstag / Hochzeit</option>
+                                    <option class="text-black">Konzert / Festival</option>
+                                    <option class="text-black">Sonstiges</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-emerald-500">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-slate-300">Nachricht</label>
+                            <textarea class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors backdrop-blur-sm" placeholder="Erzählen Sie uns von Ihrem Vorhaben..." rows="4"></textarea>
+                        </div>
+                        
+                        <button class="w-full py-4 bg-emerald-500 text-white font-black rounded-xl hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/40 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group-hover:tracking-wide" type="submit">
+                            Nachricht senden <span class="material-symbols-outlined">send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 px-6 bg-background-dark relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-t from-emerald-900/10 to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-white rounded flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                    <span class="material-symbols-outlined text-background-dark text-[14px] font-bold">blur_on</span>
+                </div>
+                <span class="text-sm font-black tracking-tighter uppercase text-slate-200">EventTech GbR</span>
+            </div>
+            
+            <div class="flex gap-8 text-sm text-slate-400">
+                <a class="hover:text-emerald-400 transition-colors" href="impressum.html">Datenschutz</a>
+                <a class="hover:text-emerald-400 transition-colors" href="impressum.html">AGB</a>
+                <a class="hover:text-emerald-400 transition-colors" href="impressum.html">Impressum</a>
+            </div>
+            
+            <p class="text-sm text-slate-600">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EventTech GbR | Warenkorb</title>
+    <!-- Tailwind CSS (CDN for prototype) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen selection:bg-amber-500/30">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full liquid-glass border-b border-slate-200/10 bg-background-dark/80" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined text-background-dark font-bold">blur_on</span>
+                    </div>
+                    <span class="text-xl font-black tracking-tighter uppercase">EventTech GbR</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Startseite</a>
+                <a class="text-sm font-medium hover:text-amber-500 transition-colors" href="lichttechnik.html">Licht</a>
+                <a class="text-sm font-medium hover:text-cyan-500 transition-colors" href="tontechnik.html">Ton</a>
+                <a class="text-sm font-medium hover:text-green-500 transition-colors" href="event-zubehoer.html">Zubehör</a>
+                <a class="text-sm font-medium hover:text-purple-500 transition-colors" href="dj-service.html">DJ Service</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="warenkorb.html" class="px-6 py-2.5 bg-amber-500 text-white text-sm font-bold rounded-full hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 relative">
+                    Warenkorb
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                    <span class="absolute -top-1 -right-1 bg-white text-amber-500 text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center border border-amber-500">2</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Cart Items -->
+            <div class="lg:col-span-8 flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex items-center justify-between flex-wrap gap-4">
+                    <h1 class="text-3xl font-black tracking-tighter text-white">Mietanfrage <span class="text-slate-500 font-medium text-lg ml-2">(2 Positionen)</span></h1>
+                    <button class="text-amber-500 text-sm font-semibold hover:underline decoration-amber-500/30 underline-offset-4">Liste leeren</button>
+                </div>
+
+                <!-- Date Selection -->
+                <div class="liquid-glass rounded-2xl p-6 flex flex-wrap gap-6 items-center bg-gradient-to-r from-amber-500/5 to-transparent border-white/5">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-amber-500 text-2xl">calendar_today</span>
+                        <div>
+                            <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Mietbeginn</p>
+                            <p class="font-bold text-white mt-1">15. Okt 2026</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:block h-10 w-[1px] bg-white/10"></div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-amber-500 text-2xl">event_busy</span>
+                        <div>
+                            <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Mietende</p>
+                            <p class="font-bold text-white mt-1">16. Okt 2026</p>
+                        </div>
+                    </div>
+                    <div class="ml-auto bg-black/40 px-4 py-2 rounded-full text-xs font-bold border border-white/10 text-white">
+                        <span class="text-amber-500">1 TAG</span> EINSATZ
+                    </div>
+                </div>
+
+                <!-- Item List -->
+                <div class="flex flex-col gap-4">
+                    <!-- Item 1 -->
+                    <div class="liquid-glass rounded-xl p-4 flex gap-6 items-center group border-l-4 border-l-transparent hover:border-l-amber-500 transition-all relative overflow-hidden glass-card">
+                        <div class="absolute top-0 left-0 w-1 p-2 h-full bg-amber-500/5 group-hover:bg-amber-500/10 transition-colors duration-300"></div>
+                        <div class="h-24 w-24 rounded-lg bg-black/40 shrink-0 border border-white/10 flex items-center justify-center p-2">
+                            <img alt="Beam Movinghead" class="h-full w-full object-contain" src="Bilder/Miet-Sortiment/Licht/Beam Movinghead.webp"/>
+                        </div>
+                        <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
+                            <div>
+                                <h3 class="font-black text-lg text-slate-100 group-hover:text-amber-500 transition-colors">Beam Moving Head 280W</h3>
+                                <p class="text-slate-400 text-sm">Lichttechnik</p>
+                                <p class="text-amber-500 text-sm font-bold mt-1">45,00 € <span class="text-[10px] text-slate-500 uppercase font-normal">/ Tag</span></p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <div class="flex items-center bg-black/40 rounded-lg p-1 border border-white/10">
+                                    <button class="h-8 w-8 flex items-center justify-center hover:bg-white/5 rounded transition-colors text-slate-400">-</button>
+                                    <span class="w-8 text-center font-bold text-white">4</span>
+                                    <button class="h-8 w-8 flex items-center justify-center hover:bg-white/5 rounded text-amber-500 transition-colors">+</button>
+                                </div>
+                                <div class="text-right min-w-[80px]">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Gesamt</p>
+                                    <p class="font-black text-lg text-white">180,00 €</p>
+                                </div>
+                                <button class="text-slate-500 hover:text-red-400 transition-colors p-2 hover:bg-red-500/10 rounded-lg">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="liquid-glass rounded-xl p-4 flex gap-6 items-center group border-l-4 border-l-transparent hover:border-l-cyan-500 transition-all relative overflow-hidden glass-card">
+                        <div class="absolute top-0 left-0 w-1 p-2 h-full bg-cyan-500/5 group-hover:bg-cyan-500/10 transition-colors duration-300"></div>
+                        <div class="h-24 w-24 rounded-lg bg-black/40 shrink-0 border border-white/10 flex items-center justify-center p-2">
+                            <img alt="Aktiv Topteil" class="h-full w-full object-contain" src="Bilder/Miet-Sortiment/Ton/Aktiv Topteil 12 Zoll.webp"/>
+                        </div>
+                        <div class="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
+                            <div>
+                                <h3 class="font-black text-lg text-slate-100 group-hover:text-cyan-500 transition-colors">Aktiv Topteil 12"</h3>
+                                <p class="text-slate-400 text-sm">Tontechnik</p>
+                                <p class="text-cyan-500 text-sm font-bold mt-1">35,00 € <span class="text-[10px] text-slate-500 uppercase font-normal">/ Tag</span></p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <div class="flex items-center bg-black/40 rounded-lg p-1 border border-white/10">
+                                    <button class="h-8 w-8 flex items-center justify-center hover:bg-white/5 rounded transition-colors text-slate-400">-</button>
+                                    <span class="w-8 text-center font-bold text-white">2</span>
+                                    <button class="h-8 w-8 flex items-center justify-center hover:bg-white/5 rounded text-cyan-500 transition-colors">+</button>
+                                </div>
+                                <div class="text-right min-w-[80px]">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Gesamt</p>
+                                    <p class="font-black text-lg text-white">70,00 €</p>
+                                </div>
+                                <button class="text-slate-500 hover:text-red-400 transition-colors p-2 hover:bg-red-500/10 rounded-lg">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logistics Option -->
+                <div class="liquid-glass rounded-2xl p-6 border-white/5 mt-4">
+                    <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-amber-500">local_shipping</span> Logistik
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="relative cursor-pointer group">
+                            <input checked="" class="sr-only peer" name="delivery" type="radio"/>
+                            <div class="p-4 bg-black/20 rounded-xl border border-white/10 peer-checked:border-amber-500 transition-all peer-checked:bg-amber-500/5 hover:border-white/20">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-amber-500 text-3xl">store</span>
+                                    <div>
+                                        <p class="font-black text-white">Selbstabholung</p>
+                                        <p class="text-xs text-slate-400 mt-1">Lager Hamburg</p>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="text-[10px] font-black px-2 py-1 bg-green-500/20 text-green-400 rounded-md border border-green-500/30 uppercase tracking-widest">Kostenlos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer group">
+                            <input class="sr-only peer" name="delivery" type="radio"/>
+                            <div class="p-4 bg-black/20 rounded-xl border border-white/10 peer-checked:border-amber-500 transition-all hover:border-white/20">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-slate-400 text-3xl group-hover:text-amber-500 transition-colors">route</span>
+                                    <div>
+                                        <p class="font-black text-white">Lieferung & Aufbau</p>
+                                        <p class="text-xs text-slate-400 mt-1">Aufpreis n. Aufwand</p>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Anfrage</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Box -->
+            <div class="lg:col-span-4">
+                <div class="liquid-glass rounded-3xl p-8 sticky top-28 border-white/5 shadow-2xl glass-card-amber">
+                    <h2 class="text-2xl font-black mb-8 text-white">Übersicht</h2>
+                    
+                    <div class="flex flex-col gap-4 mb-8">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-400">Miet-Netto</span>
+                            <span class="font-bold text-white">250,00 €</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-400">MwSt. (19%)</span>
+                            <span class="font-bold text-white">47,50 €</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-400">Logistik</span>
+                            <span class="font-bold text-green-400">0,00 €</span>
+                        </div>
+                        
+                        <div class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-4"></div>
+                        
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mb-1">Rundlauf-Brutto</p>
+                                <p class="text-4xl font-black text-white">297,50 €</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col gap-3">
+                        <button class="w-full bg-amber-500 hover:bg-amber-400 text-black py-4 rounded-xl font-black text-lg shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all flex items-center justify-center gap-2">
+                            Anfrage senden <span class="material-symbols-outlined">send</span>
+                        </button>
+                        <button class="w-full bg-black/40 hover:bg-white/10 border border-white/10 text-white py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-sm">picture_as_pdf</span> Als Angebot laden
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-col gap-4">
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-green-500">verified</span>
+                            <p class="text-xs text-slate-400 leading-relaxed">Die Verfügbarkeit wird nach der Anfrage geprüft. Du gehst keine Bindung ein.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-amber-500">support_agent</span>
+                            <p class="text-xs text-slate-400 leading-relaxed">Wir melden uns umgehend mit einem verbindlichen Angebot für dein Event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 px-6 bg-background-dark relative overflow-hidden mt-12">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-t from-amber-900/10 to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-white rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-background-dark text-[14px] font-bold">blur_on</span>
+                </div>
+                <span class="text-sm font-black tracking-tighter uppercase text-slate-200">EventTech GbR</span>
+            </div>
+            
+            <div class="flex gap-8 text-sm text-slate-400">
+                <a class="hover:text-amber-400 transition-colors" href="impressum.html">Datenschutz</a>
+                <a class="hover:text-amber-400 transition-colors" href="impressum.html">AGB</a>
+                <a class="hover:text-amber-400 transition-colors" href="impressum.html">Impressum</a>
+            </div>
+            
+            <p class="text-sm text-slate-600">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

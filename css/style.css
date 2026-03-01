@@ -1,0 +1,54 @@
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.liquid-glass-high {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+.hero-gradient {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(10, 10, 10, 1) 70%
+  );
+}
+.glass-card-amber:hover {
+  box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.3);
+  border-color: rgba(245, 158, 11, 0.5);
+}
+.glass-card-cyan:hover {
+  box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.3);
+  border-color: rgba(6, 182, 212, 0.5);
+}
+.glass-card-green:hover {
+  box-shadow: 0 0 40px -10px rgba(34, 197, 94, 0.3);
+  border-color: rgba(34, 197, 94, 0.5);
+}
+.beam-gradient {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(80, 200, 120, 0) 0deg,
+    rgba(80, 200, 120, 0.5) 180deg,
+    rgba(80, 200, 120, 0) 360deg
+  );
+  filter: blur(60px);
+  opacity: 0.6;
+  transform: rotate(-15deg);
+}
+.map-container iframe {
+  filter: grayscale(1) invert(1) contrast(0.8) brightness(0.8);
+}
+/* Utility to hide scrollbar but keep functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

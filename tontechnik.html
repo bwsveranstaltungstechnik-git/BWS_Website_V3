@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EventTech GbR | Tontechnik</title>
+    <!-- Tailwind CSS (CDN for prototype) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-cyan-500/30">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full liquid-glass border-b border-slate-200/10 bg-background-dark/80" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined text-background-dark font-bold">blur_on</span>
+                    </div>
+                    <span class="text-xl font-black tracking-tighter uppercase">EventTech GbR</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Startseite</a>
+                <a class="text-sm font-medium hover:text-amber-500 transition-colors" href="lichttechnik.html">Licht</a>
+                <a class="text-sm font-medium text-cyan-500 font-bold transition-colors" href="tontechnik.html">Ton</a>
+                <a class="text-sm font-medium hover:text-green-500 transition-colors" href="event-zubehoer.html">Zubehör</a>
+                <a class="text-sm font-medium hover:text-purple-500 transition-colors" href="dj-service.html">DJ Service</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="warenkorb.html" class="px-6 py-2.5 bg-cyan-500 text-white text-sm font-bold rounded-full hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+                    Warenkorb
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-12">
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 mb-8">
+            <a class="hover:text-cyan-500 transition-colors" href="index.html">Home</a>
+            <span class="material-symbols-outlined text-[10px]">chevron_right</span>
+            <span class="text-cyan-500">Tontechnik</span>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar -->
+            <aside class="w-full lg:w-64 flex-shrink-0">
+                <div class="sticky top-28 space-y-8">
+                    <div class="liquid-glass rounded-2xl p-6 border-white/5">
+                        <h3 class="text-slate-100 font-bold uppercase tracking-wider mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-cyan-500 text-sm">filter_list</span>
+                            Kategorien
+                        </h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a class="flex items-center justify-between text-cyan-500 font-bold text-sm bg-cyan-500/10 px-3 py-2 rounded-lg border border-cyan-500/20" href="#">
+                                    <span>Alles anzeigen</span>
+                                    <span class="text-xs opacity-70">24</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex items-center justify-between text-slate-400 hover:text-slate-200 hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm group" href="#">
+                                    <span>PA Systeme & Lautsprecher</span>
+                                    <span class="text-xs text-slate-600 group-hover:text-slate-400">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex items-center justify-between text-slate-400 hover:text-slate-200 hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm group" href="#">
+                                    <span>Mischpulte</span>
+                                    <span class="text-xs text-slate-600 group-hover:text-slate-400">4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="flex items-center justify-between text-slate-400 hover:text-slate-200 hover:bg-white/5 px-3 py-2 rounded-lg transition-all text-sm group" href="#">
+                                    <span>Mikrofone</span>
+                                    <span class="text-xs text-slate-600 group-hover:text-slate-400">8</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Product Grid -->
+            <div class="flex-1">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
+                    <div>
+                        <h1 class="text-4xl font-black text-slate-100 tracking-tighter mb-2">Mietkatalog <span class="text-cyan-500">Tontechnik</span></h1>
+                        <p class="text-slate-400 text-base">Professionelle Audio-Lösungen für Ihr Event</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Product 1 -->
+                    <div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glass-card-cyan border-white/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 flex items-center justify-center p-4">
+                            <img alt="LD Systems ICOA 12" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" src="Bilder/Miet-Sortiment/Ton/LD 12 Icoa.webp"/>
+                        </div>
+                        <div class="flex flex-1 flex-col p-5 bg-gradient-to-t from-black/50 to-transparent">
+                            <div class="mb-auto">
+                                <p class="text-xs font-bold text-cyan-500 mb-1 uppercase tracking-wider">Lautsprecher</p>
+                                <h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-cyan-400 transition-colors">LD Systems ICOA 12 A BT</h3>
+                                <ul class="text-xs text-slate-400 space-y-1 mb-4">
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 12" Aktiv</li>
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> Bluetooth integriert</li>
+                                </ul>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 mt-auto">
+                                <div class="flex items-end justify-between mb-4">
+                                    <div>
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+                                        <p class="text-xl font-black text-white">40,00 €</p>
+                                    </div>
+                                </div>
+                                <button class="w-full py-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold uppercase text-xs tracking-wider hover:bg-cyan-500 hover:text-black transition-all flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    In den Warenkorb
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glass-card-cyan border-white/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 flex items-center justify-center p-4">
+                            <img alt="LD Systems Stinger 18A" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" src="Bilder/Miet-Sortiment/Ton/LD 18A Stinger.webp"/>
+                        </div>
+                        <div class="flex flex-1 flex-col p-5 bg-gradient-to-t from-black/50 to-transparent">
+                            <div class="mb-auto">
+                                <p class="text-xs font-bold text-cyan-500 mb-1 uppercase tracking-wider">Subwoofer</p>
+                                <h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-cyan-400 transition-colors">LD Systems Stinger 18A G3</h3>
+                                <ul class="text-xs text-slate-400 space-y-1 mb-4">
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 18" Bassreflex</li>
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 800W RMS</li>
+                                </ul>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 mt-auto">
+                                <div class="flex items-end justify-between mb-4">
+                                    <div>
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+                                        <p class="text-xl font-black text-white">65,00 €</p>
+                                    </div>
+                                </div>
+                                <button class="w-full py-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold uppercase text-xs tracking-wider hover:bg-cyan-500 hover:text-black transition-all flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    In den Warenkorb
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glass-card-cyan border-white/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 flex items-center justify-center p-4">
+                            <img alt="Behringer Flow 8" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" src="Bilder/Miet-Sortiment/Mischpulte/Flow8.webp"/>
+                        </div>
+                        <div class="flex flex-1 flex-col p-5 bg-gradient-to-t from-black/50 to-transparent">
+                            <div class="mb-auto">
+                                <p class="text-xs font-bold text-cyan-500 mb-1 uppercase tracking-wider">Mischpulte</p>
+                                <h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-cyan-400 transition-colors">Behringer Flow 8</h3>
+                                <ul class="text-xs text-slate-400 space-y-1 mb-4">
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 8-Kanal Digitalmixer</li>
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> Bluetooth Audio & App-Control</li>
+                                </ul>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 mt-auto">
+                                <div class="flex items-end justify-between mb-4">
+                                    <div>
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+                                        <p class="text-xl font-black text-white">25,00 €</p>
+                                    </div>
+                                </div>
+                                <button class="w-full py-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold uppercase text-xs tracking-wider hover:bg-cyan-500 hover:text-black transition-all flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    In den Warenkorb
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glass-card-cyan border-white/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 flex items-center justify-center p-4">
+                            <img alt="the t.bone free solo Twin HT" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" src="Bilder/Miet-Sortiment/Mikros/Funkstrecke.webp"/>
+                        </div>
+                        <div class="flex flex-1 flex-col p-5 bg-gradient-to-t from-black/50 to-transparent">
+                            <div class="mb-auto">
+                                <p class="text-xs font-bold text-cyan-500 mb-1 uppercase tracking-wider">Mikrofone</p>
+                                <h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-cyan-400 transition-colors">the t.bone free solo Twin HT</h3>
+                                <ul class="text-xs text-slate-400 space-y-1 mb-4">
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 2x UHF Funkmikrofon</li>
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 823 - 832 MHz</li>
+                                </ul>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 mt-auto">
+                                <div class="flex items-end justify-between mb-4">
+                                    <div>
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+                                        <p class="text-xl font-black text-white">35,00 €</p>
+                                    </div>
+                                </div>
+                                <button class="w-full py-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold uppercase text-xs tracking-wider hover:bg-cyan-500 hover:text-black transition-all flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    In den Warenkorb
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glass-card-cyan border-white/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 flex items-center justify-center p-4">
+                            <img alt="Shure SM58" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" src="Bilder/Miet-Sortiment/Mikros/SM58.webp"/>
+                        </div>
+                        <div class="flex flex-1 flex-col p-5 bg-gradient-to-t from-black/50 to-transparent">
+                            <div class="mb-auto">
+                                <p class="text-xs font-bold text-cyan-500 mb-1 uppercase tracking-wider">Mikrofone</p>
+                                <h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-cyan-400 transition-colors">Shure SM58 LC</h3>
+                                <ul class="text-xs text-slate-400 space-y-1 mb-4">
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> Dynamisches Gesangsmikrofon</li>
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> Der Industrie-Standard</li>
+                                </ul>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 mt-auto">
+                                <div class="flex items-end justify-between mb-4">
+                                    <div>
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+                                        <p class="text-xl font-black text-white">10,00 €</p>
+                                    </div>
+                                </div>
+                                <button class="w-full py-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold uppercase text-xs tracking-wider hover:bg-cyan-500 hover:text-black transition-all flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    In den Warenkorb
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="group relative flex flex-col liquid-glass rounded-2xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] glass-card-cyan border-white/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-black/40 flex items-center justify-center p-4">
+                            <img alt="PA Set L" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" src="Bilder/Miet-Sortiment/Ton/Set L.webp"/>
+                        </div>
+                        <div class="flex flex-1 flex-col p-5 bg-gradient-to-t from-black/50 to-transparent">
+                            <div class="mb-auto">
+                                <p class="text-xs font-bold text-cyan-500 mb-1 uppercase tracking-wider">PA Sets</p>
+                                <h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-cyan-400 transition-colors">PA-Set L (bis 200 Personen)</h3>
+                                <ul class="text-xs text-slate-400 space-y-1 mb-4">
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 2x LD Systems Stinger 18A</li>
+                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 2x LD Systems ICOA 12A</li>
+                                </ul>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 mt-auto">
+                                <div class="flex items-end justify-between mb-4">
+                                    <div>
+                                        <p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
+                                        <p class="text-xl font-black text-white">150,00 €</p>
+                                    </div>
+                                </div>
+                                <button class="w-full py-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold uppercase text-xs tracking-wider hover:bg-cyan-500 hover:text-black transition-all flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    In den Warenkorb
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 px-6 bg-background-dark relative overflow-hidden mt-12">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-t from-cyan-900/10 to-transparent pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-white rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-background-dark text-[14px] font-bold">blur_on</span>
+                </div>
+                <span class="text-sm font-black tracking-tighter uppercase text-slate-200">EventTech GbR</span>
+            </div>
+            
+            <div class="flex gap-8 text-sm text-slate-400">
+                <a class="hover:text-cyan-400 transition-colors" href="impressum.html">Datenschutz</a>
+                <a class="hover:text-cyan-400 transition-colors" href="impressum.html">AGB</a>
+                <a class="hover:text-cyan-400 transition-colors" href="impressum.html">Impressum</a>
+            </div>
+            
+            <p class="text-sm text-slate-600">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
