@@ -1,26 +1,28 @@
 ---
-description: Mobile Version überprüfen ob die neuen Feature auch Richtig implementier sind udn ob die Ui sinn ergibt
+description: Mobile Version überprüfen und optimieren
 ---
 
-Führe eine umfassende Überprüfung der mobilen Darstellung durch und stelle sicher, dass alle Features korrekt implementiert und nutzbar sind.
-
-0. **Context 7 Tailwind UI Guidelines:**
-   - Falls größere Layouts (z.B. Tabellen, Modal-Dialoge) neu geschrieben werden müssen, konsultiere `/use-context7` für Best Practices bzgl. Tailwind CSS und Mobile-First Architektur.
+Führe eine umfassende Überprüfung der mobilen Darstellung durch und stelle sicher, dass alle Inhalte korrekt dargestellt und nutzbar sind.
 
 1.  **Responsivität & Layout prüfen:**
-   - Analysiere die wichtigsten Views (Fixture-Editor, Channels, Capabilities, Modes, Export) auf kleineren Bildschirmen.
-   - Stelle sicher, dass die Kanalliste auf mobilen Geräten nutzbar ist.
-   - Überprüfe Padding und Margins (`p-2`, `m-2` auf Mobile statt `p-8`).
-
+    - Analysiere die wichtigsten Seiten (Startseite, Unterseiten, Kontakt, Galerie) bei verschiedenen Bildschirmbreiten (375px, 768px, 1024px).
+    - Stelle sicher, dass Texte lesbar sind und keine horizontale Scrollbar entsteht.
+    - Überprüfe Padding und Margins auf mobilen Geräten.
 
 2. **Sichtbarkeit von UI-Elementen:**
-   - Prüfe, ob wichtige Buttons (z.B. "Neuer Artikel", "Neuer Job", "Export") auf dem Handy nicht hinter anderen Elementen verschwinden oder zu einer horizontalen Scrollbar führen.
-   - Kontrolliere, ob die neuen Features (Direct Product Opening per Suchleiste, Multiauswahl) mobil gut bedienbar sind.
+    - Prüfe, ob die Navigation auf dem Handy korrekt als Hamburger-Menü oder ähnliches dargestellt wird.
+    - Kontrolliere, ob wichtige Buttons und Links leicht erreichbar sind.
+    - Stelle sicher, dass keine Elemente hinter der Navigation oder dem Footer verschwinden.
 
 3. **Touch-Bedienung & Interaktionsflächen:**
-   - Checke, ob Checkboxen und Dropdowns auf Touchscreens leicht anwählbar sind (ausreichend große "Hit-Areas", z.B. bei der Multiauswahl in der Suchleiste).
-   - Teste, ob modale Dialoge auf kleinen Screens nicht abgeschnitten werden.
+    - Checke, ob Buttons und Links auf Touchscreens leicht anwählbar sind (mindestens 44x44px Touch-Target).
+    - Teste, ob modale Dialoge und Popup-Elemente auf kleinen Screens korrekt angezeigt werden.
+    - Prüfe ob Bilder-Galerien oder Slider per Touch bedienbar sind.
 
-4. **Korrektur & Feedback:**
-   - Behebe identifizierte Layout-Fehler direkt per Tailwind-Klassen (`sm:`, `md:` Breakpoints anpassen).
-   - Erstelle bei komplexeren Usability-Problemen auf Mobilgeräten einen Bericht für den User (z.B. wenn eine Tabelle zu viele Spalten hat, um sinnvoll als Liste auf dem Handy angezeigt zu werden).
+4. **Performance auf Mobile:**
+    - Prüfe Bildgrößen und ob responsive Bilder (`srcset`) verwendet werden.
+    - Stelle sicher, dass Animationen auf mobilen Geräten flüssig laufen.
+
+5. **Korrektur & Feedback:**
+    - Behebe identifizierte Layout-Fehler direkt per CSS Media Queries.
+    - Erstelle bei komplexeren Usability-Problemen einen Bericht für den User.

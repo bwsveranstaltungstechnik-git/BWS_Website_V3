@@ -4,27 +4,24 @@ description: Genereller Security & Audit Check Workflow
 
 # Genereller Security Check Workflow
 
-Führt einen allgemeinen Sicherheits- und Stabilitäts-Check des gesamten Projekts durch (Dependencies, Code-Secrets, etc.). Dieser Workflow ist weiter gefasst als der API-Security-Check.
+Führt einen allgemeinen Sicherheits- und Stabilitäts-Check des gesamten Website-Projekts durch.
 
-// turbo-all
-1. Prüfe auf NPM-Abhängigkeiten mit bekannten Sicherheitslücken:
-```bash
-npm audit
-```
+1. **Externe Ressourcen prüfen:**
+   - Scanne alle HTML-Dateien auf externe Links, CDN-Einbindungen und Drittanbieter-Scripts.
+   - Prüfe ob alle externen Ressourcen über HTTPS eingebunden sind.
+   - Verifiziere, dass `integrity`-Attribute (SRI) bei CDN-Scripts gesetzt sind.
 
-2. Scanne den Quellcode rekursiv nach hartcodierten Kennwörtern (Passwörter, DB-Secrets, API-Schlüssel):
-```bash
-find src/ -type f -exec grep -inE "(password|secret|api_key|token)[=:]\s*['\\\"]([^'\\\"]+)['\\\"]" {} + | grep -v "password: ''" | grep -v "token: ''" | grep -v "NEXT_PUBLIC" || echo "Keine offensichtlichen hartcodierten Secrets gefunden."
-```
+2. **Hartcodierte Daten prüfen:**
+   - Durchsuche HTML, CSS und JS Dateien nach hartcodierten API-Keys, Passwörtern oder Tokens.
+   - Prüfe ob sensible Daten in JavaScript-Dateien exponiert sind.
 
-3. Überprüfe die Next.js Konfiguration auf Sicherheits-Header (`next.config.js` / `next.config.mjs`):
-```bash
-cat next.config.* || echo "Keine next.config.* Datei gefunden."
-```
+3. **Formular-Sicherheit:**
+   - Prüfe ob Formulare korrekte `action`-Attribute und `method` (POST für sensible Daten) verwenden.
+   - Stelle sicher, dass Eingabefelder geeignete `type`-Attribute haben (z.B. `type="email"`, `type="tel"`).
 
-4. Liste alle im Frontend exponierten Umgebungsvariablen (`NEXT_PUBLIC_`) auf, um sicherzustellen, dass keine echten Secrets dabei sind (durchsucht `.env*` Dateien und den Code):
-```bash
-grep -r "NEXT_PUBLIC_" .env* src/ app/ || echo "Keine NEXT_PUBLIC Environment Variables gefunden."
-```
+4. **Content Security:**
+   - Prüfe ob `target="_blank"` Links ein `rel="noopener noreferrer"` haben.
+   - Stelle sicher, dass keine unsicheren Inline-Scripts verwendet werden.
 
-5. Generiere einen kurzen Report (falls Lücken gefunden wurden, bitte beheben und den Status an den Nutzer melden).
+5. **Report:**
+   Generiere einen kurzen Report (falls Lücken gefunden wurden, bitte beheben und den Status an den Nutzer melden).

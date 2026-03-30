@@ -38,7 +38,7 @@ function fixUmlauteInDirectory(dir) {
 
         if (stat.isDirectory()) {
             changedFilesCount += fixUmlauteInDirectory(fullPath);
-        } else if (fullPath.endsWith('.ts') || fullPath.endsWith('.tsx') || fullPath.endsWith('.md')) {
+        } else if (fullPath.endsWith('.html') || fullPath.endsWith('.js') || fullPath.endsWith('.css') || fullPath.endsWith('.md')) {
             let content = fs.readFileSync(fullPath, 'utf8');
             let originalContent = content;
 
@@ -58,14 +58,11 @@ function fixUmlauteInDirectory(dir) {
     return changedFilesCount;
 }
 
-const targetDir = path.join(__dirname, '../../src');
-const docsDir = path.join(__dirname, '../../docs');
+const projectRoot = path.join(__dirname, '../..');
 const agentDir = path.join(__dirname, '../../.agent');
 
 console.log("Starte Reparatur der Umlaute...");
 let total = 0;
-if (fs.existsSync(targetDir)) total += fixUmlauteInDirectory(targetDir);
-if (fs.existsSync(docsDir)) total += fixUmlauteInDirectory(docsDir);
-if (fs.existsSync(agentDir)) total += fixUmlauteInDirectory(agentDir);
+if (fs.existsSync(projectRoot)) total += fixUmlauteInDirectory(projectRoot);
 
 console.log(`Fertig! ${total} Dateien wurden repariert.`);
