@@ -16,7 +16,7 @@ const newFooter = `    <!-- Footer (UI/UX Pro Max Applied) -->
                         <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                             <span class="material-symbols-outlined text-background-dark text-xl font-bold">blur_on</span>
                         </div>
-                        <span class="text-xl font-black tracking-tighter uppercase text-white">EventTech GbR</span>
+                        <span class="text-xl font-black tracking-tighter uppercase text-white">BWS Veranstaltungstechnik GbR</span>
                     </a>
                     <p class="text-slate-400 text-sm leading-relaxed">
                         Dein Premium Partner für Veranstaltungstechnik in Berlin. Höchste Qualität für unvergessliche Events.
@@ -74,7 +74,7 @@ const newFooter = `    <!-- Footer (UI/UX Pro Max Applied) -->
 
             <!-- Bottom Section -->
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 BWS Veranstaltungstechnik GbR. Alle Rechte vorbehalten.</p>
                 
                 <!-- Payment Methods Placeholder using Material Icons as generic stand-ins -->
                 <div class="flex items-center gap-3 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">

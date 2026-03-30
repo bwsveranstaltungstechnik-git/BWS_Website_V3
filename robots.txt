@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Warenkorb nicht indexieren
+Disallow: /warenkorb.html
+Disallow: /stitch_screens/
+
+# Sitemap
+Sitemap: https://bws-veranstaltungstechnik.de/sitemap.xml

@@ -3,10 +3,19 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>EventTech GbR | Tontechnik</title>
+    <title>Tontechnik & PA mieten | Wittlich & Eifel | BWS Veranstaltungstechnik GbR</title>
+    <meta property="og:title" content="Tontechnik & PA mieten | Wittlich & Eifel | BWS Veranstaltungstechnik GbR">
+    <meta property="og:description" content="Mieten Sie professionelle Tontechnik, Lautsprecher und PA-Anlagen für klare Sprachverständlichkeit und fetten Sound bei Ihrem Event.">
+    <meta name="description" content="Mieten Sie professionelle Tontechnik, Lautsprecher und PA-Anlagen für klare Sprachverständlichkeit und fetten Sound bei Ihrem Event.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bws-veranstaltungstechnik.de/tontechnik.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bws-veranstaltungstechnik.de/tontechnik.html">
+    <meta property="og:locale" content="de_DE">
     <!-- Tailwind CSS (CDN for prototype) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="js/tailwind-config.js"></script>
+    <script>tailwind.config.theme.extend.colors.primary = '#00FFFF';</script>
     
     <!-- Google Fonts & Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
@@ -15,16 +24,14 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-cyan-500/30">
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-cyan-500/30 overflow-x-hidden">
     <!-- Navbar -->
     <nav class="sticky top-0 z-50 w-full liquid-glass border-b border-slate-200/10 bg-background-dark/80" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer">
-                        <span class="material-symbols-outlined text-background-dark font-bold">blur_on</span>
-                    </div>
-                    <span class="text-xl font-black tracking-tighter uppercase">EventTech GbR</span>
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer overflow-hidden pb-0.5"><img src="Bilder/Logo/BWS Logo.webp" alt="BWS Logo" class="w-full h-full object-contain scale-[1.3] pt-0.5"></div>
+                    <span class="text-xl font-black tracking-tighter uppercase">BWS Veranstaltungstechnik GbR</span>
                 </a>
             </div>
             
@@ -38,48 +45,480 @@
             
             <div class="flex items-center gap-4">
                 <a href="warenkorb.html" class="px-6 py-2.5 bg-cyan-500 text-white text-sm font-bold rounded-full hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20 flex items-center gap-2">
-                    Warenkorb
+                    <span class="hidden sm:inline">Warenkorb</span>
                     <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
                 </a>
+                <button id="mobile-menu-open" class="md:hidden flex items-center justify-center w-10 h-10 text-white rounded-lg hover:bg-white/10 transition-colors ml-2">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-12">
-        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 mb-8">
-            <a class="hover:text-cyan-500 transition-colors" href="index.html">Home</a>
-            <span class="material-symbols-outlined text-[10px]">chevron_right</span>
-            <span class="text-cyan-500">Tontechnik</span>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-background-dark/95 backdrop-blur-xl translate-x-full transition-transform duration-300 flex flex-col md:hidden">
+        <div class="flex items-center justify-between p-6 border-b border-white/10 mt-safe">
+            <span class="text-xl font-black uppercase text-white">Menu</span>
+            <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
         </div>
+        <div class="flex flex-col p-6 gap-6 overflow-y-auto pb-safe">
+            <a href="index.html" class="text-2xl font-black text-white hover:text-primary transition-colors mobile-link">Startseite</a>
+            <a href="lichttechnik.html" class="text-2xl font-black text-white hover:text-amber-500 transition-colors mobile-link">Licht</a>
+            <a href="tontechnik.html" class="text-2xl font-black text-white hover:text-cyan-500 transition-colors mobile-link">Ton</a>
+            <a href="event-zubehoer.html" class="text-2xl font-black text-white hover:text-green-500 transition-colors mobile-link">Zubehör</a>
+            <a href="dj-service.html" class="text-2xl font-black text-white hover:text-purple-500 transition-colors mobile-link">DJ Service</a>
+            <hr class="border-white/10 my-2" />
+            <a href="warenkorb.html" class="text-xl font-bold flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mobile-link"><span class="material-symbols-outlined">shopping_cart</span> Warenkorb</a>
+            <a href="impressionen.html" class="text-xl font-bold text-slate-400 hover:text-white transition-colors mobile-link">Impressionen</a>
+            <a href="impressum.html" class="text-xl font-bold text-slate-400 hover:text-white transition-colors mobile-link">Unternehmen</a>
+        </div>
+    </div>
 
-        <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Sidebar -->
-            <aside class="w-full lg:w-64 flex-shrink-0">
-                                <h3 class="text-lg font-bold text-slate-100 mb-2 leading-tight group-hover:text-cyan-400 transition-colors">PA-Set L (bis 200 Personen)</h3>
-                                <ul class="text-xs text-slate-400 space-y-1 mb-4">
-                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 2x LD Systems Stinger 18A</li>
-                                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[12px] text-cyan-500">check_circle</span> 2x LD Systems ICOA 12A</li>
-                                </ul>
-                            </div>
-                            <div class="pt-4 border-t border-white/10 mt-auto">
-                                <div class="flex items-end justify-between mb-4">
-                                    <div>
-                                        <p class="text-[10px] text-slate-500 uppercase font-bold">Miete / Tag</p>
-                                        <p class="text-xl font-black text-white">150,00 €</p>
-                                    </div>
-                                </div>
-                                <button class="w-full py-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold uppercase text-xs tracking-wider hover:bg-cyan-500 hover:text-black transition-all flex items-center justify-center gap-2 add-to-cart-btn" data-id="ton-1" data-name="LD Systems ICOA 12 A BT" data-price="40.00" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Ton/LD 12 Icoa.webp">
-                                    <span class="material-symbols-outlined text-sm">shopping_cart</span>
-                                    In den Warenkorb
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+    <main class="flex-1 w-full relative z-10 pb-24">
+    <!-- Hero Header -->
+    <div class="relative pt-32 pb-20 px-6 border-b border-white/5 overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-6 border border-primary/20 shadow-[0_0_30px_rgba(255,191,0,0.15)]">
+                <span class="material-symbols-outlined text-3xl">speaker</span>
             </div>
+            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6">Tontechnik</h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">Ob kleiner Geburtstag, Firmenfeier oder Abiball – wir haben das passende Sortiment.</p>
         </div>
-    </main>
+    </div>
+
+    <!-- Catalog Container -->
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-8 border border-white/10 w-fit px-4 py-2 rounded-full liquid-glass">
+            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+            <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            <span class="text-primary hover:text-white cursor-pointer transition-colors">Tontechnik</span>
+        </div>
+
+                    <div class="col-span-1 md:col-span-2 xl:col-span-3 mb-4 mt-12 bg-black/20 px-6 py-4 rounded-xl border border-white/5 border-t-white/10 hidden md:block">
+                <h2 class="text-2xl font-black text-white tracking-tight uppercase">Einzelne Lautsprecher</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Ton/LD 12 Icoa.webp" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-primary border-primary/30 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            2 Stück verfügbar
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">LD ICOA 12A BT</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">12" Aktiv Fullrange.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">12" LF und 1" HF Treiber</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Übertragungsbereich: 50 Hz - 20 kHz</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Leistung: 300 Watt RMS / 1200 W Peak</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Maximalpegel: 126 dB</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Maße: 635 x 396 x 375mm</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gewicht: 19,95kg</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Stativ, Kabel & Bluetooth Adapter sind im Preis inbegriff.</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">25€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-ld-icoa-12a-bt">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-ld-icoa-12a-bt">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-ld-icoa-12a-bt" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-ld-icoa-12a-bt" data-name="LD ICOA 12A BT" data-price="25" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Ton/LD 12 Icoa.webp" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Ton/LD 15 Icoa.webp" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-primary border-primary/30 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            2 Stück verfügbar
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">LD ICOA 15A BT</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">15" Aktiv Fullrange.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">15" LF und 1" HF Treiber</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Übertragungsbereich: 48 Hz - 20 kHz</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Leistung: 300 Watt RMS / 1200 Watt Peak</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Maximalpegel: 128 dB</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Abmessungen: 695 x 416 x 415 mm</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gewicht: 24,3 kg</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Stativ, Kabel & Bluetooth Adapter sind im Preis inbegriff.</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">30€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-ld-icoa-15a-bt">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-ld-icoa-15a-bt">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-ld-icoa-15a-bt" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-ld-icoa-15a-bt" data-name="LD ICOA 15A BT" data-price="30" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Ton/LD 15 Icoa.webp" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Ton/LD 18A Stinger.webp" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-primary border-primary/30 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            2 Stück verfügbar
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">LD STINGER 18A G3</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">18" Subwoofer.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Aktiver Bassreflex-Subwoofer mit 18"</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Übertragungsbereich: 35 - 200 Hz</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Leistung: 800 W RMS (1600 W Peak)</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Maximalpegel: 135 dB</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Abmessungen: 677 x 547 x 740 mm</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gewicht: 42,6 kg</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">M20 Distanzstange ist im Preis mit inbegriffen.</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">40€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-ld-stinger-18a-g3">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-ld-stinger-18a-g3">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-ld-stinger-18a-g3" data-max="4">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-ld-stinger-18a-g3" data-name="LD STINGER 18A G3" data-price="40" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Ton/LD 18A Stinger.webp" data-max="4">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+</div>            <div class="col-span-1 md:col-span-2 xl:col-span-3 mb-4 mt-12 bg-black/20 px-6 py-4 rounded-xl border border-white/5 border-t-white/10 hidden md:block">
+                <h2 class="text-2xl font-black text-white tracking-tight uppercase">Lautsprecher Sets</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Ton/Set XS.jpg" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-slate-300 border-slate-700 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            Auf Anfrage
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">Set XS</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">1x ICOA 15A BT.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gesamtgewicht: ≈24kg ohne Distanzstange</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Stativ & Kabel sind im Preis inbegriffen.</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">30€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-set-xs">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-set-xs">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-set-xs" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-set-xs" data-name="Set XS" data-price="30" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Ton/Set XS.jpg" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Ton/Set S.jpg" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-slate-300 border-slate-700 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            Auf Anfrage
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">Set S</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">1x ICOA 15A + 1x Sub.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">LD ICOA 15A BT und LD STINGER 18A G3</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gesamtgewicht: ≈67kg ohne Distanzstange</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Stativ/Distanzstange & Kabel sind im Preis inbegriffen.</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">70€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-set-s">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-set-s">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-set-s" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-set-s" data-name="Set S" data-price="70" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Ton/Set S.jpg" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Ton/Set M.jpg" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-slate-300 border-slate-700 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            Auf Anfrage
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">Set M</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">2x ICOA 15A + 1x Sub.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">2x LD ICOA 15A BT und LD STINGER 18A G3</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gesamtgewicht: ≈91kg ohne Distanzstange</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-amber-500 font-bold">warning</span> <span class="text-amber-500 font-bold">⚠ Auf Transportvolumen bei Abholung achten!</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Stativ/Distanzstange & Kabel sind im Preis inbegriffen.</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">100€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-set-m">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-set-m">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-set-m" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-set-m" data-name="Set M" data-price="100" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Ton/Set M.jpg" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Ton/Set L.jpg" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-slate-300 border-slate-700 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            Auf Anfrage
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">Set L</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">2x ICOA 15A + 2x Sub.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">2x LD ICOA 15A BT und 2x LD STINGER 18A G3</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gesamtgewicht: ≈134kg ohne Distanzstangen</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-amber-500 font-bold">warning</span> <span class="text-amber-500 font-bold">⚠ Auf Transportvolumen bei Abholung achten!</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Stativ/Distanzstange & Kabel sind im Preis inbegriffen.</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">140€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-set-l">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-set-l">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-set-l" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-set-l" data-name="Set L" data-price="140" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Ton/Set L.jpg" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+</div>            <div class="col-span-1 md:col-span-2 xl:col-span-3 mb-4 mt-12 bg-black/20 px-6 py-4 rounded-xl border border-white/5 border-t-white/10 hidden md:block">
+                <h2 class="text-2xl font-black text-white tracking-tight uppercase">Mischpulte & Mikrofone</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Mikros/SM58.webp" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-slate-300 border-slate-700 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            Auf Anfrage
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">Shure SM58</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">Dynamisches Gesangsmikrofon.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Shure SM 58 LC</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Optimierter Frequenzgang mit präsenten Mitten und Bassabsenkungen</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Integrierter, effektiver Wind- und Pop-Filter</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Richtcharakteristik: Niere</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Übertragungsbereich: 50 - 15.000 Hz</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gewicht: 0,298 kg</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">7€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-shure-sm58">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-shure-sm58">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-shure-sm58" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-shure-sm58" data-name="Shure SM58" data-price="7" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Mikros/SM58.webp" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Mikros/Funkmikros.webp" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-slate-300 border-slate-700 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            Auf Anfrage
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">Funkmikrofone</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">Kabellose Mikrofon-Systeme.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Hand- und Taschensender</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Inklusive Empfänger & Kabel</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">99€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-funkmikrofone">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-funkmikrofone">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-funkmikrofone" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-funkmikrofone" data-name="Funkmikrofone" data-price="99" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Mikros/Funkmikros.webp" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Mischpulte/Notepad 5.webp" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-slate-300 border-slate-700 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            Auf Anfrage
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">Notepad 5</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">5-Kanal Tonmischpult.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Soundcraft Notepad 5</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">5-Kanal Tonmischpult</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Mono-Kanal mit Mic/Line Preamp, Hi-Z, Lo-Cut</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">2-Spur USB-Recording/Playback</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gewicht: 0,620 kg</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">10€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-notepad-5">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-notepad-5">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-notepad-5" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-notepad-5" data-name="Notepad 5" data-price="10" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Mischpulte/Notepad 5.webp" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+<div class="liquid-glass rounded-3xl overflow-hidden flex flex-col group border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
+    <div class="relative h-[250px] bg-background-dark overflow-hidden flex items-center justify-center p-4">
+        <img src="Bilder/Miet-Sortiment/Mischpulte/Flow8.webp" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl"/>
+        <div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur text-slate-300 border-slate-700 text-[10px] font-bold px-3 py-1.5 rounded border uppercase tracking-wider">
+            Auf Anfrage
+        </div>
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+        <h3 class="text-white font-black text-xl mb-1 leading-tight group-hover:text-primary transition-colors">Flow 8</h3>
+        <p class="text-slate-400 text-sm mb-6 pb-4 border-b border-white/5">6-Kanal Digitalmischpult.</p>
+        <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Behringer Flow 8</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">6-Kanal Tonmischpult</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">2 Mono Kanäle XLR</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">+48V Phantomspeisung</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Vollständig steuerbar über App Behringer FLOW</span></li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_small</span> <span class="">Gewicht: 1,4 kg</span></li>
+
+        </ul>
+        <div class="mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
+            <div class="flex items-baseline gap-1.5 justify-center bg-black/30 rounded-lg py-3">
+                <span class="text-2xl font-black text-white">20€</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">/ Tag</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="flex items-center bg-black/40 rounded-xl border border-white/10 overflow-hidden">
+                    <button class="qty-minus h-10 w-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all text-lg font-bold" data-target="tontechnik-flow-8">−</button>
+                    <span class="qty-display w-8 text-center font-black text-white text-sm" id="qty-tontechnik-flow-8">1</span>
+                    <button class="qty-plus h-10 w-10 flex items-center justify-center text-primary hover:text-white hover:bg-primary/20 transition-all text-lg font-bold" data-target="tontechnik-flow-8" data-max="2">+</button>
+                </div>
+                <button class="flex-1 add-to-cart-btn bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-black font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/5 uppercase text-sm tracking-wider" data-id="tontechnik-flow-8" data-name="Flow 8" data-price="20" data-category="tontechnik" data-img="Bilder/Miet-Sortiment/Mischpulte/Flow8.webp" data-max="2">
+                    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> In den Warenkorb
+                </button>
+            </div>
+                
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</main>
 
     <!-- Footer -->
         <!-- Footer (UI/UX Pro Max Applied) -->
@@ -94,13 +533,11 @@
                 <!-- Brand Info -->
                 <div class="flex flex-col gap-6">
                     <a href="index.html" class="flex items-center gap-2 group w-fit">
-                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer">
-                            <span class="material-symbols-outlined text-background-dark text-xl font-bold">blur_on</span>
-                        </div>
-                        <span class="text-xl font-black tracking-tighter uppercase text-white">EventTech GbR</span>
+                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer overflow-hidden"><img src="Bilder/Logo/BWS Logo.webp" alt="BWS Logo" class="w-full h-full object-contain scale-[1.3] pb-0.5"></div>
+                        <span class="text-xl font-black tracking-tighter uppercase text-white">BWS Veranstaltungstechnik GbR</span>
                     </a>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Dein Premium Partner für Veranstaltungstechnik in Berlin. Höchste Qualität für unvergessliche Events.
+                        Dein Premium Partner für Veranstaltungstechnik in der Eifel, Wittlich und Umgebung. Höchste Qualität für unvergessliche Events.
                     </p>
                     <div class="flex items-center gap-4">
                         <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
@@ -155,7 +592,7 @@
 
             <!-- Bottom Section -->
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 BWS Veranstaltungstechnik GbR. Alle Rechte vorbehalten.</p>
                 
                 <!-- Payment Methods Placeholder using Material Icons as generic stand-ins -->
                 <div class="flex items-center gap-3 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
@@ -169,5 +606,24 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "BWS Veranstaltungstechnik GbR",
+        "description": "Mieten Sie professionelle Tontechnik, Lautsprecher und PA-Anlagen für klare Sprachverständlichkeit und fetten Sound bei Ihrem Event.",
+        "url": "https://bws-veranstaltungstechnik.de/tontechnik.html",
+        "email": "info@bwsverleih.de",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Klausen",
+            "postalCode": "54524",
+            "addressRegion": "Rheinland-Pfalz",
+            "addressCountry": "DE"
+        }
+    }
+    </script>
 </body>
 </html>

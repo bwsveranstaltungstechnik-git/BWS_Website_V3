@@ -3,10 +3,19 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>EventTech GbR | DJ Service</title>
+    <title>DJ Service mieten | Wittlich & Umgebung | BWS Veranstaltungstechnik GbR</title>
+    <meta property="og:title" content="DJ Service mieten | Wittlich & Umgebung | BWS Veranstaltungstechnik GbR">
+    <meta property="og:description" content="Buchen Sie unseren professionellen DJ Service für Hochzeiten, Firmenfeiern und Partys in Wittlich und der Eifel. Inklusive Premium Anlage und Licht.">
+    <meta name="description" content="Buchen Sie unseren professionellen DJ Service für Hochzeiten, Firmenfeiern und Partys in Wittlich und der Eifel. Inklusive Premium Anlage und Licht.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bws-veranstaltungstechnik.de/dj-service.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bws-veranstaltungstechnik.de/dj-service.html">
+    <meta property="og:locale" content="de_DE">
     <!-- Tailwind CSS (CDN for prototype) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="js/tailwind-config.js"></script>
+    <script>tailwind.config.theme.extend.colors.primary = '#BF40BF';</script>
     
     <!-- Google Fonts & Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
@@ -15,16 +24,14 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-purple-500/30 selection:text-white">
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-purple-500/30 selection:text-white overflow-x-hidden">
     <!-- Navbar -->
     <nav class="sticky top-0 z-50 w-full liquid-glass border-b border-slate-200/10 bg-background-dark/80" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer">
-                        <span class="material-symbols-outlined text-background-dark font-bold">blur_on</span>
-                    </div>
-                    <span class="text-xl font-black tracking-tighter uppercase">EventTech GbR</span>
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer overflow-hidden pb-0.5"><img src="Bilder/Logo/BWS Logo.webp" alt="BWS Logo" class="w-full h-full object-contain scale-[1.3] pt-0.5"></div>
+                    <span class="text-xl font-black tracking-tighter uppercase">BWS Veranstaltungstechnik GbR</span>
                 </a>
             </div>
             
@@ -41,168 +48,120 @@
                     Anfrage
                     <span class="material-symbols-outlined text-[18px]">calendar_month</span>
                 </a>
+                <button id="mobile-menu-open" class="md:hidden flex items-center justify-center w-10 h-10 text-white rounded-lg hover:bg-white/10 transition-colors ml-2">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <main class="flex-1">
-        <!-- Hero Section -->
-        <section class="relative px-6 py-12 md:px-10 md:py-20 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div class="lg:col-span-7 flex flex-col gap-6">
-                    <div class="inline-flex items-center gap-2 rounded-full bg-purple-500/10 px-4 py-1 text-purple-500 border border-purple-500/20 w-fit">
-                        <span class="material-symbols-outlined text-[16px]">verified</span>
-                        <span class="text-xs font-bold uppercase tracking-wider">Premium Entertainment</span>
-                    </div>
-                    <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight text-white">
-                        Elevate Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-400">Atmosphere</span>
-                    </h1>
-                    <p class="text-lg text-slate-400 max-w-xl leading-relaxed">
-                        Wir sorgen für den perfekten Soundtrack deines Events. Von exklusiven Hochzeiten bis hin zu energiegeladenen Firmenfeiern - maßgeschneiderte Musik für unvergessliche Momente.
-                    </p>
-                    <div class="flex flex-wrap gap-4 mt-4">
-                        <div class="flex items-center gap-3 liquid-glass rounded-2xl p-4 flex-1 min-w-[200px] shadow-[0_0_40px_-10px_rgba(168,85,247,0.3)] border-white/5">
-                            <span class="material-symbols-outlined text-purple-500 text-3xl">celebration</span>
-                            <div>
-                                <p class="text-sm font-bold text-white">100+ Events</p>
-                                <p class="text-xs text-slate-500 italic">Erfolgreich begleitet</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3 liquid-glass rounded-2xl p-4 flex-1 min-w-[200px] border-white/5">
-                            <span class="material-symbols-outlined text-purple-500 text-3xl">star</span>
-                            <div>
-                                <p class="text-sm font-bold text-white">Top Rated</p>
-                                <p class="text-xs text-slate-500 italic">5-Sterne Performance</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:col-span-5 relative">
-                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10"></div>
-                        <img class="h-full w-full object-cover transition-transform duration-700 hover:scale-110 cursor-pointer" alt="DJ am Pult bei einem Event" src="Bilder/Impressionen/20240608_234944.webp"/>
-                        <div class="absolute bottom-6 left-6 z-20">
-                            <div class="liquid-glass rounded-xl p-4 flex items-center gap-4 border-white/10">
-                                <div class="h-10 w-10 rounded-full bg-purple-500 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-white">play_arrow</span>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-bold text-white uppercase tracking-tighter">Live Mix</p>
-                                    <p class="text-sm text-slate-300">Soundcloud anhören</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/20 rounded-full blur-[80px] pointer-events-none"></div>
-                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-[80px] pointer-events-none"></div>
-                </div>
-            </div>
-        </section>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-background-dark/95 backdrop-blur-xl translate-x-full transition-transform duration-300 flex flex-col md:hidden">
+        <div class="flex items-center justify-between p-6 border-b border-white/10 mt-safe">
+            <span class="text-xl font-black uppercase text-white">Menu</span>
+            <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col p-6 gap-6 overflow-y-auto pb-safe">
+            <a href="index.html" class="text-2xl font-black text-white hover:text-primary transition-colors mobile-link">Startseite</a>
+            <a href="lichttechnik.html" class="text-2xl font-black text-white hover:text-amber-500 transition-colors mobile-link">Licht</a>
+            <a href="tontechnik.html" class="text-2xl font-black text-white hover:text-cyan-500 transition-colors mobile-link">Ton</a>
+            <a href="event-zubehoer.html" class="text-2xl font-black text-white hover:text-green-500 transition-colors mobile-link">Zubehör</a>
+            <a href="dj-service.html" class="text-2xl font-black text-white hover:text-purple-500 transition-colors mobile-link">DJ Service</a>
+            <hr class="border-white/10 my-2" />
+            <a href="warenkorb.html" class="text-xl font-bold flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mobile-link"><span class="material-symbols-outlined">shopping_cart</span> Warenkorb</a>
+            <a href="impressionen.html" class="text-xl font-bold text-slate-400 hover:text-white transition-colors mobile-link">Impressionen</a>
+            <a href="impressum.html" class="text-xl font-bold text-slate-400 hover:text-white transition-colors mobile-link">Unternehmen</a>
+        </div>
+    </div>
 
-        <!-- Signature Experiences -->
-        <section class="px-6 py-16 bg-white/[0.02] border-y border-white/5 relative">
-            <div class="max-w-7xl mx-auto relative z-10">
-                <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
-                    <div>
-                        <h2 class="text-3xl font-bold text-white mb-2">Signature Experiences</h2>
-                        <p class="text-slate-500">Maßgeschneiderte Sets für jeden Anlass.</p>
-                    </div>
+    <main class="flex-1 w-full relative z-10 pb-24">
+    <!-- Hero Header -->
+    <div class="relative pt-32 pb-20 px-6 border-b border-white/5 overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/10 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="inline-flex items-center justify-center h-20 bg-purple-500/10 mb-6 border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.15)] rounded-2xl p-2"><img src="Bilder/Logo/Noah Eis X BWS.png" alt="Noah Eis x BWS" class="h-full object-contain px-2"></div>
+            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-4"><span class="text-purple-400">DJ</span> Service</h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">Dein Event-DJ für Hochzeiten, Partys und Club-Events.</p>
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 py-16">
+        <div class="liquid-glass rounded-[3rem] p-8 md:p-12 border border-white/5 flex flex-col md:flex-row gap-12 items-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full"></div>
+            
+            <div class="w-full md:w-2/5 flex flex-col items-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500/30 shadow-[0_0_50px_rgba(168,85,247,0.2)] mb-6">
+                    <img src="Bilder/Noah Eis/Noah Eis Dark.webp" onerror="this.src='Bilder/Placeholder/Placeholder.webp'" alt="DJ Noah Eis" class="w-full h-full object-cover">
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Experience 1 -->
-                    <div class="group relative flex flex-col gap-4 rounded-3xl p-6 transition-all hover:bg-white/[0.03] border border-transparent hover:border-white/10 glass-card-purple">
-                        <div class="h-56 w-full rounded-2xl overflow-hidden mb-2">
-                            <img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 cursor-pointer" alt="Hochzeitsfeier mit eleganter Beleuchtung" src="Bilder/Impressionen/IMG-20240630-WA0000.webp"/>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-white">Hochzeiten</h3>
-                            <span class="material-symbols-outlined text-purple-500">favorite</span>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Magische Momente vom Eröffnungstanz bis zur Zugabe. Wir verbinden zeitlose Klassiker mit moderner Energie für alle Generationen.
-                        </p>
-                        <ul class="flex flex-col gap-2 mt-2">
-                            <li class="flex items-center gap-2 text-xs text-slate-300">
-                                <span class="material-symbols-outlined text-[16px] text-purple-500">check_circle</span>
-                                Individuelle Musikabsprache
-                            </li>
-                            <li class="flex items-center gap-2 text-xs text-slate-300">
-                                <span class="material-symbols-outlined text-[16px] text-purple-500">check_circle</span>
-                                Inkl. Premium Sound & Ambientbeleuchtung
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Experience 2 -->
-                    <div class="group relative flex flex-col gap-4 rounded-3xl p-6 transition-all hover:bg-white/[0.03] border border-transparent hover:border-white/10 glass-card-purple">
-                        <div class="h-56 w-full rounded-2xl overflow-hidden mb-2">
-                            <img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 cursor-pointer" alt="Corporate Event Setup" src="Bilder/Impressionen/20240814_191134.webp"/>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-white">Firmenfeiern</h3>
-                            <span class="material-symbols-outlined text-purple-500">business_center</span>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Professionelle musikalische Begleitung für Produktlaunches, Jubiläen und Netzwerk-Events, die deine Marke perfekt repräsentieren.
-                        </p>
-                        <ul class="flex flex-col gap-2 mt-2">
-                            <li class="flex items-center gap-2 text-xs text-slate-300">
-                                <span class="material-symbols-outlined text-[16px] text-purple-500">check_circle</span>
-                                Dezente Hintergrundmusik bis Party
-                            </li>
-                            <li class="flex items-center gap-2 text-xs text-slate-300">
-                                <span class="material-symbols-outlined text-[16px] text-purple-500">check_circle</span>
-                                Funkmikrofone für Redner
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Experience 3 -->
-                    <div class="group relative flex flex-col gap-4 rounded-3xl p-6 transition-all hover:bg-white/[0.03] border border-transparent hover:border-white/10 glass-card-purple">
-                        <div class="h-56 w-full rounded-2xl overflow-hidden mb-2">
-                            <img class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 cursor-pointer" alt="Party Stimmung" src="Bilder/Impressionen/20240608_223651.webp"/>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-white">Geburtstage & Partys</h3>
-                            <span class="material-symbols-outlined text-purple-500">celebration</span>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Club-Atmosphäre oder ausgelassene Privatfeier. Wir bringen den Club-Sound direkt auf deinen Dancefloor.
-                        </p>
-                        <ul class="flex flex-col gap-2 mt-2">
-                            <li class="flex items-center gap-2 text-xs text-slate-300">
-                                <span class="material-symbols-outlined text-[16px] text-purple-500">check_circle</span>
-                                Multi-Genre Mixes
-                            </li>
-                            <li class="flex items-center gap-2 text-xs text-slate-300">
-                                <span class="material-symbols-outlined text-[16px] text-purple-500">check_circle</span>
-                                High-Energy Performance
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="px-6 py-20 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto text-center relative z-10">
-                <h2 class="text-4xl font-black text-white mb-6">Lass uns gemeinsam feiern</h2>
-                <p class="text-slate-400 mb-10 text-lg">Sichere dir jetzt deinen Wunschtermin und wir planen gemeinsam das Setup und den Soundtrack für dein Event.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="h-14 px-10 rounded-2xl bg-purple-500 text-white font-bold text-lg hover:bg-purple-600 transition-all shadow-xl shadow-purple-500/40">
-                        Termin anfragen
-                    </button>
-                    <a href="tontechnik.html" class="flex items-center justify-center h-14 px-10 rounded-2xl liquid-glass text-white font-bold text-lg hover:bg-white/10 transition-all border-white/10">
-                        Technikkatalog ansehen
+                <div class="flex gap-4">
+                    <a href="https://instagram.com" target="_blank" class="w-12 h-12 bg-white/5 border border-white/10 hover:border-purple-400 text-slate-400 hover:text-purple-400 flex items-center justify-center rounded-full transition-all">
+                        <span class="material-symbols-outlined">photo_camera</span>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 hover:border-purple-400 text-slate-400 hover:text-purple-400 flex items-center justify-center rounded-full transition-all">
+                        <span class="material-symbols-outlined">play_arrow</span>
                     </a>
                 </div>
             </div>
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-        </section>
-    </main>
+
+            <div class="w-full md:w-3/5 relative z-10 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-bold uppercase tracking-widest mb-4 border border-purple-500/30">
+                    <span class="material-symbols-outlined text-[12px]">star</span> Exclusive Artist
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter mb-6">DJ Noah Eis</h2>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    Suchst du noch einen DJ für deine Feier? Dann ist <strong class="text-white">Noah Eis</strong> die perfekte Wahl! Mit seinem umfangreichen Musikrepertoire macht er jeden Abend zu einem unvergesslichen Erlebnis.
+                </p>
+                <p class="text-slate-400 mb-10 leading-relaxed">
+                    Egal ob Hochzeit, Club-Event oder Firmenfeier – mit dem richtigen Feingefühl für das Publikum füllt Noah jede Tanzfläche und sorgt für absolute Ausnahmezustände.
+                </p>
+
+                <button class="w-full md:w-auto bg-purple-500 hover:bg-purple-400 text-white font-black py-4 px-8 rounded-xl flex items-center justify-center gap-3 transition-all shadow-[0_0_30px_rgba(168,85,247,0.3)] hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(168,85,247,0.5)]">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    Noah Eis anfragen
+                </button>
+            </div>
+        </div>
+
+        
+            <!-- Hörproben & Playlists -->
+            <div class="mt-24 mb-10">
+                <div class="flex items-center gap-4 mb-10 border-b border-white/10 pb-4">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                        <span class="material-symbols-outlined">queue_music</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white tracking-tight uppercase">Hörproben & Playlists</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="liquid-glass p-3 rounded-3xl border border-white/5 hover:border-purple-500/30 transition-all hover:shadow-2xl hover:shadow-purple-500/10">
+                        <iframe style="border-radius:18px" src="https://open.spotify.com/embed/playlist/4Wg8yIL4xINyShsS0ysrtF?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="liquid-glass p-3 rounded-3xl border border-white/5 hover:border-purple-500/30 transition-all hover:shadow-2xl hover:shadow-purple-500/10">
+                        <iframe style="border-radius:18px" src="https://open.spotify.com/embed/playlist/3cQJeTBRYMBf7N9Fn72D5i?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="liquid-glass p-3 rounded-3xl border border-white/5 hover:border-purple-500/30 transition-all hover:shadow-2xl hover:shadow-purple-500/10">
+                        <iframe style="border-radius:18px" src="https://open.spotify.com/embed/playlist/2uqi4OGLwyXdqz3KjawbrZ?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impressionen Video -->
+        <div class="mt-20">
+            <h3 class="text-2xl font-black text-white tracking-tight uppercase mb-8 border-b border-white/10 pb-4 text-center">Impressionen - Allegro</h3>
+            <div class="w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/10 liquid-glass p-2">
+                <video controls class="w-full aspect-video outline-none rounded-2xl" poster="Bilder/Noah Eis/Allegro.webp">
+                    <source src="Bilder/Noah Eis/Breeze.mp4" type="video/mp4">
+                    <source src="Bilder/Noah Eis/Breeze.webm" type="video/webm">
+                    Dein Browser unterstützt das Video leider nicht.
+                </video>
+            </div>
+        </div>
+    </div>
+</main>
 
     <!-- Footer -->
         <!-- Footer (UI/UX Pro Max Applied) -->
@@ -217,13 +176,11 @@
                 <!-- Brand Info -->
                 <div class="flex flex-col gap-6">
                     <a href="index.html" class="flex items-center gap-2 group w-fit">
-                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer">
-                            <span class="material-symbols-outlined text-background-dark text-xl font-bold">blur_on</span>
-                        </div>
-                        <span class="text-xl font-black tracking-tighter uppercase text-white">EventTech GbR</span>
+                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer overflow-hidden"><img src="Bilder/Logo/BWS Logo.webp" alt="BWS Logo" class="w-full h-full object-contain scale-[1.3] pb-0.5"></div>
+                        <span class="text-xl font-black tracking-tighter uppercase text-white">BWS Veranstaltungstechnik GbR</span>
                     </a>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Dein Premium Partner für Veranstaltungstechnik in Berlin. Höchste Qualität für unvergessliche Events.
+                        Dein Premium Partner für Veranstaltungstechnik in der Eifel, Wittlich und Umgebung. Höchste Qualität für unvergessliche Events.
                     </p>
                     <div class="flex items-center gap-4">
                         <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
@@ -278,7 +235,7 @@
 
             <!-- Bottom Section -->
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 BWS Veranstaltungstechnik GbR. Alle Rechte vorbehalten.</p>
                 
                 <!-- Payment Methods Placeholder using Material Icons as generic stand-ins -->
                 <div class="flex items-center gap-3 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
@@ -292,5 +249,24 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "BWS Veranstaltungstechnik GbR",
+        "description": "Buchen Sie unseren professionellen DJ Service für Hochzeiten, Firmenfeiern und Partys in Wittlich und der Eifel. Inklusive Premium Anlage und Licht.",
+        "url": "https://bws-veranstaltungstechnik.de/dj-service.html",
+        "email": "info@bwsverleih.de",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Klausen",
+            "postalCode": "54524",
+            "addressRegion": "Rheinland-Pfalz",
+            "addressCountry": "DE"
+        }
+    }
+    </script>
 </body>
 </html>

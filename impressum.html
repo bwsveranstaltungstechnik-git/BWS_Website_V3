@@ -3,7 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>EventTech GbR | Rechtliches</title>
+    <title>Impressum, Datenschutz & AGB | BWS Veranstaltungstechnik GbR</title>
+    <meta property="og:title" content="Impressum, Datenschutz & AGB | BWS Veranstaltungstechnik GbR">
+    <meta property="og:description" content="Impressum, Datenschutzerklärung und Allgemeine Geschäftsbedingungen (AGB) der BWS Veranstaltungstechnik GbR.">
+    <meta name="description" content="Impressum, Datenschutzerklärung und Allgemeine Geschäftsbedingungen (AGB) der BWS Veranstaltungstechnik GbR.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bws-veranstaltungstechnik.de/impressum.html">
     <!-- Tailwind CSS (CDN for prototype) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="js/tailwind-config.js"></script>
@@ -33,16 +38,14 @@
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen selection:bg-green-500/30">
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen selection:bg-green-500/30 overflow-x-hidden">
     <!-- Navbar bg-background-dark/80 -->
     <nav class="sticky top-0 z-50 w-full liquid-glass border-b border-white/5" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer">
-                        <span class="material-symbols-outlined text-background-dark font-bold">blur_on</span>
-                    </div>
-                    <span class="text-xl font-black tracking-tighter uppercase text-white">EventTech GbR</span>
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer overflow-hidden pb-0.5"><img src="Bilder/Logo/BWS Logo.webp" alt="BWS Logo" class="w-full h-full object-contain scale-[1.3] pt-0.5"></div>
+                    <span class="text-xl font-black tracking-tighter uppercase text-white">BWS Veranstaltungstechnik GbR</span>
                 </a>
             </div>
             
@@ -56,12 +59,36 @@
             
             <div class="flex items-center gap-4">
                 <a href="warenkorb.html" class="px-6 py-2.5 bg-green-500 text-white text-sm font-bold rounded-full hover:bg-green-600 transition-all shadow-lg flex items-center gap-2 relative shadow-green-500/20">
-                    Warenkorb
+                    <span class="hidden sm:inline">Warenkorb</span>
                     <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
                 </a>
+                <button id="mobile-menu-open" class="md:hidden flex items-center justify-center w-10 h-10 text-white rounded-lg hover:bg-white/10 transition-colors ml-2">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-background-dark/95 backdrop-blur-xl translate-x-full transition-transform duration-300 flex flex-col md:hidden">
+        <div class="flex items-center justify-between p-6 border-b border-white/10 mt-safe">
+            <span class="text-xl font-black uppercase text-white">Menu</span>
+            <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col p-6 gap-6 overflow-y-auto pb-safe">
+            <a href="index.html" class="text-2xl font-black text-white hover:text-primary transition-colors mobile-link">Startseite</a>
+            <a href="lichttechnik.html" class="text-2xl font-black text-white hover:text-amber-500 transition-colors mobile-link">Licht</a>
+            <a href="tontechnik.html" class="text-2xl font-black text-white hover:text-cyan-500 transition-colors mobile-link">Ton</a>
+            <a href="event-zubehoer.html" class="text-2xl font-black text-white hover:text-green-500 transition-colors mobile-link">Zubehör</a>
+            <a href="dj-service.html" class="text-2xl font-black text-white hover:text-purple-500 transition-colors mobile-link">DJ Service</a>
+            <hr class="border-white/10 my-2" />
+            <a href="warenkorb.html" class="text-xl font-bold flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mobile-link"><span class="material-symbols-outlined">shopping_cart</span> Warenkorb</a>
+            <a href="impressionen.html" class="text-xl font-bold text-slate-400 hover:text-white transition-colors mobile-link">Impressionen</a>
+            <a href="impressum.html" class="text-xl font-bold text-slate-400 hover:text-white transition-colors mobile-link">Unternehmen</a>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="flex-grow container mx-auto px-4 py-8 md:py-12 max-w-7xl">
@@ -120,17 +147,17 @@
                     </div>
 
                     <!-- Content Body -->
-                    <div class="space-y-10 text-slate-300 relative z-10">
+                    <div class="space-y-10 text-slate-300 relative z-10 w-full max-w-none">
                         <div class="grid md:grid-cols-2 gap-8">
                             <div class="space-y-4 group">
                                 <h3 class="text-lg font-bold text-white flex items-center gap-2">
                                     <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">business</span>
                                     Unternehmen
                                 </h3>
-                                <div class="bg-black/30 rounded-xl p-6 border border-white/5 group-hover:border-green-500/20 transition-colors">
-                                    <p class="font-black text-white text-xl mb-3 text-green-500">EventTech GbR</p>
-                                    <p class="text-slate-300">Holzmarktstraße 25</p>
-                                    <p class="text-slate-300">10243 Berlin</p>
+                                <div class="bg-black/30 rounded-xl p-6 border border-white/5 group-hover:border-green-500/20 transition-colors h-full">
+                                    <p class="font-black text-white text-xl mb-3 text-green-500">BWS Veranstaltungstechnik GbR</p>
+                                    <p class="text-slate-300">Margarethenstraße 3</p>
+                                    <p class="text-slate-300">54524 Klausen</p>
                                     <p class="text-slate-300">Deutschland</p>
                                 </div>
                             </div>
@@ -140,34 +167,50 @@
                                     <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">group</span>
                                     Vertreten durch
                                 </h3>
-                                <div class="bg-black/30 rounded-xl p-6 border border-white/5 group-hover:border-green-500/20 transition-colors">
+                                <div class="bg-black/30 rounded-xl p-6 border border-white/5 group-hover:border-green-500/20 transition-colors h-full">
                                     <ul class="space-y-3 font-medium">
                                         <li class="flex items-center gap-3">
                                             <span class="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
-                                            <span class="text-slate-200">Max Mustermann</span>
+                                            <span class="text-slate-200">Paul Siegemund</span>
                                         </li>
                                         <li class="flex items-center gap-3">
                                             <span class="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
-                                            <span class="text-slate-200">Erika Musterfrau</span>
+                                            <span class="text-slate-200">Marius Berens</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="space-y-4 pt-4 group">
-                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                                <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">contact_phone</span>
-                                Kontakt
-                            </h3>
-                            <div class="bg-black/30 rounded-xl p-6 border border-white/5 grid sm:grid-cols-2 gap-6 group-hover:border-green-500/20 transition-colors">
-                                <div>
-                                    <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Telefon</span>
-                                    <p class="text-white mt-1 hover:text-green-500 transition-colors cursor-pointer font-bold text-lg">+49 (0) 30 12345678</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4 group">
+                                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">contact_phone</span>
+                                    Kontakt
+                                </h3>
+                                <div class="bg-black/30 rounded-xl p-6 border border-white/5 grid gap-6 group-hover:border-green-500/20 transition-colors h-full">
+                                    <div>
+                                        <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">E-Mail</span>
+                                        <a href="mailto:info@bwsverleih.de" class="text-white mt-1 hover:text-green-500 transition-colors cursor-pointer font-bold text-lg block break-all">info@bwsverleih.de</a>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Ansprechpartner</span>
+                                        <p class="text-white mt-1 font-bold text-lg">Marius Berens</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">E-Mail</span>
-                                    <p class="text-white mt-1 hover:text-green-500 transition-colors cursor-pointer font-bold text-lg">info@eventtech-gbr.de</p>
+                            </div>
+
+                            <div class="space-y-4 group">
+                                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-green-500 text-xl group-hover:scale-110 transition-transform cursor-pointer">policy</span>
+                                    Inhaltlich Verantwortlicher
+                                </h3>
+                                <div class="bg-black/30 rounded-xl p-6 border border-white/5 group-hover:border-green-500/20 transition-colors h-full">
+                                    <p class="text-sm text-slate-400 mb-3 font-medium">gem. § 55 II RStV:</p>
+                                    <p class="text-slate-200 font-bold">Marius Berens</p>
+                                    <p class="text-slate-300">Kurt-Schuhmacher-Straße 64</p>
+                                    <p class="text-slate-300">67663 Kaiserslautern</p>
+                                    <a href="mailto:info@bwsverleih.de" class="text-green-500 hover:text-green-400 transition-colors mt-2 inline-block">info@bwsverleih.de</a>
                                 </div>
                             </div>
                         </div>
@@ -179,15 +222,264 @@
                             </h3>
                             <div class="p-6 bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 rounded-xl">
                                 <p class="text-sm text-slate-400 mb-2 font-medium">Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:</p>
-                                <p class="text-white font-mono text-2xl font-bold tracking-wider text-green-400">DE123456789</p>
+                                <p class="text-white font-mono text-2xl font-bold tracking-wider text-green-400 break-all">[Ust-IdNr eintragen]</p>
                             </div>
                         </div>
 
-                        <div class="pt-8 border-t border-white/10 text-sm text-slate-500 font-medium">
-                            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                        <div class="space-y-8 pt-8 border-t border-white/10">
+                            <!-- Haftungsausschluss Section -->
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-white mb-6 flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-green-500 text-2xl bg-green-500/10 p-2 rounded-lg border border-green-500/20">gavel</span>
+                                    Haftungsausschluss
+                                </h3>
+                                
+                                <div class="space-y-8">
+                                    <div class="bg-black/20 p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden group">
+                                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <h4 class="text-lg font-bold text-white mb-3">Haftung für Inhalte</h4>
+                                        <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                                            <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+                                            <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                                            <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-black/20 p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden group">
+                                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <h4 class="text-lg font-bold text-white mb-3">Haftung für Links</h4>
+                                        <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                                            <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+                                            <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-black/20 p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors relative overflow-hidden group">
+                                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <h4 class="text-lg font-bold text-white mb-3">Urheberrecht</h4>
+                                        <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                                            <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+                                            <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/10 text-sm text-slate-400 font-medium space-y-4 bg-black/10 p-6 rounded-2xl">
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Alternative Streitbeilegung gemäß Art. 14 Abs. 1 ODR-VO und § 36 VSBG:</h4>
+                                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die du unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" class="text-green-500 hover:text-green-400 hover:underline transition-colors">https://ec.europa.eu/consumers/odr</a> findest. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit.</p>
+                            </div>
+                            <div class="flex items-center gap-2 mt-4 text-xs text-slate-500">
+                                <span class="material-symbols-outlined text-[16px]">link</span>
+                                Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">e-recht24.de</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Datenschutzerklärung -->
+                <div id="datenschutz" class="liquid-glass rounded-3xl p-6 md:p-10 relative overflow-hidden border-white/5 glass-card-green mb-12">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-green-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="flex items-center gap-4 mb-8 pb-8 border-b border-white/10 relative z-10">
+                        <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-2xl text-green-500 shadow-lg shadow-green-500/5">
+                            <span class="material-symbols-outlined text-3xl">shield</span>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-black text-white">Datenschutzerklärung</h2>
+                            <p class="text-sm text-slate-400 mt-1 font-medium">Information über Art, Umfang und Zweck der Datenerhebung</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8 text-slate-300 relative z-10 text-sm leading-relaxed">
+                        <section>
+                            <p class="mb-4">Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten (nachfolgend kurz "Daten") innerhalb unseres Onlineangebotes und der mit ihm verbundenen Webseiten, Funktionen und Inhalte sowie externen Onlinepräsenzen, wie z.B. unser Social Media Profile auf (nachfolgend gemeinsam bezeichnet als "Onlineangebot"). Im Hinblick auf die verwendeten Begrifflichkeiten, wie z.B. "Verarbeitung" oder "Verantwortlicher" verweisen wir auf die Definitionen im Art. 4 der Datenschutzgrundverordnung (DSGVO).</p>
+                            <p class="mb-4">Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+                            <p class="mb-4">Durch die Nutzung unserer Website erklären Sie sich mit der Erhebung, Verarbeitung und Nutzung von Daten gemäß der nachfolgenden Beschreibung einverstanden.</p>
+                            <p class="mb-4">Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Dabei werden Daten wie beispielsweise aufgerufene Seiten bzw. Namen der abgerufenen Datei, Datum und Uhrzeit zu statistischen Zwecken auf dem Server gespeichert, ohne dass diese Daten unmittelbar auf Ihre Person bezogen werden. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+                            <p class="mb-4">Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+                        </section>
+
+                        <div class="bg-black/30 rounded-2xl p-6 border border-white/5 space-y-3">
+                            <h4 class="text-lg font-bold text-white mb-4">Verantwortlicher</h4>
+                            <p class="font-bold text-green-500">BWS Veranstaltungstechnik GbR</p>
+                            <p>Margarethenstraße 3</p>
+                            <p>54524 Klausen</p>
+                            <p>Mail: <a href="mailto:bwsveranstaltungstechnik@gmail.com" class="text-green-500 hover:text-green-400">bwsveranstaltungstechnik@gmail.com</a></p>
+                            <p>Inhaber & Geschäftsführer: Paul Siegemund und Marius Berens</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-bold text-white">Arten der verarbeiteten Daten</h4>
+                                <ul class="space-y-2 list-disc pl-5">
+                                    <li>Bestandsdaten (z.B. Namen, Adressen)</li>
+                                    <li>Kontaktdaten (z.B. E-Mail, Telefonnummern)</li>
+                                    <li>Inhaltsdaten (z.B. Texteingaben, Fotografien, Videos)</li>
+                                    <li>Nutzungsdaten (z.B. besuchte Webseiten, Interesse an Inhalten)</li>
+                                    <li>Meta-/Kommunikationsdaten (z.B. Geräte-Informationen, IP-Adressen)</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-bold text-white">Zweck der Verarbeitung</h4>
+                                <ul class="space-y-2 list-disc pl-5">
+                                    <li>Zurverfügungstellung des Onlineangebotes, seiner Funktionen und Inhalte</li>
+                                    <li>Beantwortung von Kontaktanfragen und Kommunikation mit Nutzern</li>
+                                    <li>Sicherheitsmaßnahmen</li>
+                                    <li>Reichweitenmessung/Marketing</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <section class="space-y-4">
+                            <h4 class="text-lg font-bold text-white">Kategorien betroffener Personen</h4>
+                            <p>Besucher und Nutzer des Onlineangebotes (Nachfolgend bezeichnen wir die betroffenen Personen zusammenfassend auch als "Nutzer").</p>
+                        </section>
+
+                        <section class="space-y-4">
+                            <h4 class="text-lg font-bold text-white">Verwendete Begrifflichkeiten</h4>
+                            <p><strong>"Personenbezogene Daten"</strong> sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.</p>
+                            <p><strong>"Verarbeitung"</strong> ist jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang im Zusammenhang mit personenbezogenen Daten.</p>
+                            <p><strong>"Pseudonymisierung"</strong> ist die Verarbeitung personenbezogener Daten in einer Weise, dass sie ohne zusätzliche Informationen nicht mehr einer spezifischen betroffenen Person zugeordnet werden können.</p>
+                            <p><strong>"Profiling"</strong> ist jede Art der automatisierten Verarbeitung personenbezogener Daten, um bestimmte persönliche Aspekte zu bewerten.</p>
+                            <p>Als <strong>"Verantwortlicher"</strong> wird die Person, Behörde, Einrichtung oder andere Stelle bezeichnet, die über die Zwecke und Mittel der Verarbeitung entscheidet.</p>
+                            <p><strong>"Auftragsverarbeiter"</strong> ist eine Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.</p>
+                        </section>
+
+                        <section class="space-y-4">
+                            <h4 class="text-lg font-bold text-white">Maßgebliche Rechtsgrundlagen</h4>
+                            <p>Nach Maßgabe des Art. 13 DSGVO teilen wir Ihnen die Rechtsgrundlagen unserer Datenverarbeitungen mit. Sofern die Rechtsgrundlage in der Datenschutzerklärung nicht genannt wird, gilt Folgendes: Die Rechtsgrundlage für die Einholung von Einwilligungen ist Art. 6 Abs. 1 lit. a und Art. 7 DSGVO, die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer Leistungen und Durchführung vertraglicher Maßnahmen sowie Beantwortung von Anfragen ist Art. 6 Abs. 1 lit. b DSGVO, die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer rechtlichen Verpflichtungen ist Art. 6 Abs. 1 lit. c DSGVO, und die Rechtsgrundlage für die Verarbeitung zur Wahrung unserer berechtigten Interessen ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+                        </section>
+
+                        <section class="space-y-4">
+                            <h4 class="text-lg font-bold text-white">Sicherheitsmaßnahmen</h4>
+                            <p>Wir treffen nach Maßgabe des Art. 32 DSGVO unter Berücksichtigung des Stands der Technik, der Implementierungskosten und der Art, des Umfangs, der Umstände und der Zwecke der Verarbeitung sowie der unterschiedlichen Eintrittswahrscheinlichkeit und Schwere des Risikos für die Rechte und Freiheiten natürlicher Personen, geeignete technische und organisatorische Maßnahmen, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten.</p>
+                        </section>
+
+                        <div class="grid md:grid-cols-2 gap-8 bg-black/20 p-6 rounded-2xl border border-white/5">
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-bold text-white">Rechte der betroffenen Personen</h4>
+                                <ul class="space-y-2 list-disc pl-5">
+                                    <li>Recht auf Auskunft über verarbeitete Daten (Art. 15 DSGVO)</li>
+                                    <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+                                    <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+                                    <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+                                    <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+                                    <li>Beschwerderecht bei Aufsichtsbehörden (Art. 77 DSGVO)</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-lg font-bold text-white">Widerrufsrecht</h4>
+                                    <p>Sie haben das Recht, erteilte Einwilligungen gem. Art. 7 Abs. 3 DSGVO mit Wirkung für die Zukunft zu widerrufen.</p>
+                                </div>
+                                <div class="pt-4 border-t border-white/5">
+                                    <h4 class="text-lg font-bold text-white">Widerspruchsrecht</h4>
+                                    <p>Sie können der künftigen Verarbeitung der Sie betreffenden Daten nach Maßgabe des Art. 21 DSGVO jederzeit widersprechen, insbesondere gegen Direktwerbung.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section class="space-y-4">
+                            <h4 class="text-lg font-bold text-white">Cookies und Widerspruchsrecht bei Direktwerbung</h4>
+                            <p>Als "Cookies" werden kleine Dateien bezeichnet, die auf Rechnern der Nutzer gespeichert werden. Wir können temporäre und permanente Cookies einsetzen und klären hierüber im Rahmen unserer Datenschutzerklärung auf. Falls die Nutzer nicht möchten, dass Cookies auf ihrem Rechner gespeichert werden, werden sie gebeten die entsprechende Option in den Systemeinstellungen ihres Browsers zu deaktivieren. Gespeicherte Cookies können in den Systemeinstellungen des Browsers gelöscht werden. Der Ausschluss von Cookies kann zu Funktionseinschränkungen dieses Onlineangebotes führen.</p>
+                        </section>
+
+                        <section class="space-y-4">
+                            <h4 class="text-lg font-bold text-white">Löschung von Daten</h4>
+                            <p>Die von uns verarbeiteten Daten werden nach Maßgabe der Art. 17 und 18 DSGVO gelöscht oder in ihrer Verarbeitung eingeschränkt. Sofern nicht im Rahmen dieser Datenschutzerklärung ausdrücklich angegeben, werden die bei uns gespeicherten Daten gelöscht, sobald sie für ihre Zweckbestimmung nicht mehr erforderlich sind und der Löschung keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+                        </section>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-bold text-white">Vertragliche Leistungen & Finanzen</h4>
+                                <p>Wir verarbeiten die Daten unserer Vertragspartner entsprechend Art. 6 Abs. 1 lit. b. DSGVO, um ihnen gegenüber unsere vertraglichen oder vorvertraglichen Leistungen zu erbringen.</p>
+                                <p>Wir verarbeiten Daten im Rahmen von Verwaltungsaufgaben sowie Organisation unseres Betriebs, Finanzbuchhaltung und Befolgung der gesetzlichen Pflichten, wie z.B. der Archivierung.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-bold text-white">Hosting und E-Mail-Versand</h4>
+                                <p>Die von uns in Anspruch genommenen Hosting-Leistungen dienen der Zurverfügungstellung von Infrastruktur- und Plattformdienstleistungen, Speicherkapazität, E-Mail-Versand, sowie Sicherheitsleistungen.</p>
+                            </div>
+                        </div>
+
+                        <section class="space-y-4">
+                            <h4 class="text-lg font-bold text-white">Erhebung von Zugriffsdaten und Logfiles</h4>
+                            <p>Wir, bzw. unser Hostinganbieter, erhebt auf Grundlage unserer berechtigten Interessen (Art. 6 Abs. 1 lit. f. DSGVO) Daten über jeden Zugriff auf den Server. Logfile-Informationen werden z.B. zur Aufklärung von Missbrauchshandlungen maximal 7 Tage gespeichert.</p>
+                        </section>
+
+                        <section class="space-y-4">
+                            <h4 class="text-lg font-bold text-white">Google Analytics</h4>
+                            <p>Wir setzen auf Grundlage unserer berechtigten Interessen Google Analytics ein. Die IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Daten werden nach 14 Monaten gelöscht oder anonymisiert.</p>
+                        </section>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-bold text-white">Onlinepräsenzen in sozialen Medien</h4>
+                                <p>Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke, um mit Nutzern zu kommunizieren. Dabei können Daten außerhalb der EU verarbeitet werden.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <h4 class="text-lg font-bold text-white">Einbindung von Diensten und Inhalten Dritter</h4>
+                                <p>Wir setzen Inhalte oder Services von Drittanbietern ein, um z.B. Videos oder Schriftarten einzubinden (auf Grundlage unserer berechtigten Interessen).</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-white/10 text-xs text-slate-500">
+                            Erstellt mit Datenschutz-Generator.de von RA Dr. Thomas Schwenke
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allgemeine Geschäftsbedingungen (AGB) -->
+                <div id="agb" class="liquid-glass rounded-3xl p-6 md:p-10 relative overflow-hidden border-white/5 glass-card-green mb-12">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="flex items-center gap-4 mb-8 pb-8 border-b border-white/10 relative z-10">
+                        <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-2xl text-green-500 shadow-lg shadow-green-500/5">
+                            <span class="material-symbols-outlined text-3xl">gavel</span>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-black text-white">Allgemeine Geschäftsbedingungen</h2>
+                            <p class="text-sm text-slate-400 mt-1 font-medium">Leistungs- und Mietbedingungen (AGB)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8 text-slate-300 relative z-10">
+                        <div class="bg-black/20 p-6 md:p-8 rounded-2xl border border-white/5 hover:border-white/10 transition-colors group relative overflow-hidden">
+                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500/50 to-transparent"></div>
+                            <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <span class="text-green-500">§1</span> Pflichten des Mieters
+                            </h4>
+                            <p class="leading-relaxed">Der Mieter verpflichtet sich dafür Sorge zu tragen, dass die Mietgegenstände in einwandfreiem und funktionsfähigen Zustand wieder an den Vermieter zurückgegeben werden. Bei Verlust oder Beschädigung der Mietgegenstände hat der Mieter Schadensersatz in Höhe der tatsächlich entstandenen Neubeschaffungs- bzw. Reparaturkosten sowie entgangener Mieteinnahmen zu leisten. Eine versuchte Selbstreparatur, bedarf der Zustimmung des Vermieters. Der Mieter haftet in jedem Fall für die missbräuchliche Nutzung der Mietgegenstände durch Dritte. Eine Haftung wegen normalem Verschleiß bleibt ausgeschlossen.</p>
+                        </div>
+
+                        <div class="bg-black/20 p-6 md:p-8 rounded-2xl border border-white/5 hover:border-white/10 transition-colors group relative overflow-hidden">
+                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500/50 to-transparent"></div>
+                            <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <span class="text-green-500">§2</span> Pflichten des Vermieters
+                            </h4>
+                            <p class="leading-relaxed">Der Vermieter ist zur sach- und fachgerechten Ausgabe der Mietgegenstände und erforderlichenfalls zum Austausch von defekten Mietgegenständen sowie von Ersatzteilen verpflichtet. Der Vermieter ist zudem verpflichtet, die Mietgegenstände in funktionstüchtigen Zustand zu übergeben.</p>
+                        </div>
+
+                        <div class="bg-black/20 p-6 md:p-8 rounded-2xl border border-white/5 hover:border-white/10 transition-colors group relative overflow-hidden">
+                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500/50 to-transparent"></div>
+                            <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <span class="text-green-500">§3</span> Vertragslaufzeit
+                            </h4>
+                            <p class="leading-relaxed">Der Mietvertrag beginnt mit dem Tag der Ausgabe und endet mit der Rückgabe. Soweit der Mieter die Mietgegenstände vorzeitig zurückgibt, entfällt die Verpflichtung zur Zahlung der Miete nicht. Der Mieter kann die Rückgabe jedoch, unter Beachtung einer Frist von 2 Werktagen, verschieben, ohne dass hierfür weitere Kosten entstehen.</p>
+                        </div>
+
+                        <div class="bg-black/20 p-6 md:p-8 rounded-2xl border border-white/5 hover:border-white/10 transition-colors group relative overflow-hidden">
+                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500/50 to-transparent"></div>
+                            <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <span class="text-green-500">§4</span> Salvatorische Klausel
+                            </h4>
+                            <p class="leading-relaxed">Sollten einzelne Bestimmungen dieses Vertrages unwirksam oder undurchführbar sein oder nach Vertragsschluss unwirksam oder undurchführbar werden, bleibt davon die Wirksamkeit des Vertrages im Übrigen unberührt. An die Stelle der unwirksamen oder undurchführbaren Bestimmung soll diejenige wirksame und durchführbare Regelung treten, deren Wirkungen der wirtschaftlichen Zielsetzung am nächsten kommen, die die Vertragsparteien mit der unwirksamen bzw. undurchführbaren Bestimmung verfolgt haben. Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich der Vertrag als lückenhaft erweist.</p>
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </div>
     </main>
@@ -205,13 +497,11 @@
                 <!-- Brand Info -->
                 <div class="flex flex-col gap-6">
                     <a href="index.html" class="flex items-center gap-2 group w-fit">
-                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer">
-                            <span class="material-symbols-outlined text-background-dark text-xl font-bold">blur_on</span>
-                        </div>
-                        <span class="text-xl font-black tracking-tighter uppercase text-white">EventTech GbR</span>
+                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.2)] cursor-pointer overflow-hidden"><img src="Bilder/Logo/BWS Logo.webp" alt="BWS Logo" class="w-full h-full object-contain scale-[1.3] pb-0.5"></div>
+                        <span class="text-xl font-black tracking-tighter uppercase text-white">BWS Veranstaltungstechnik GbR</span>
                     </a>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Dein Premium Partner für Veranstaltungstechnik in Berlin. Höchste Qualität für unvergessliche Events.
+                        Dein Premium Partner für Veranstaltungstechnik in der Eifel, Wittlich und Umgebung. Höchste Qualität für unvergessliche Events.
                     </p>
                     <div class="flex items-center gap-4">
                         <a href="javascript:void(0)" class="w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-slate-400 hover:text-white hover:border-primary hover:-translate-y-1 transition-all">
@@ -266,7 +556,7 @@
 
             <!-- Bottom Section -->
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 EventTech GbR. Alle Rechte vorbehalten.</p>
+                <p class="text-xs text-slate-500 font-medium uppercase tracking-widest">© 2026 BWS Veranstaltungstechnik GbR. Alle Rechte vorbehalten.</p>
                 
                 <!-- Payment Methods Placeholder using Material Icons as generic stand-ins -->
                 <div class="flex items-center gap-3 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
@@ -304,6 +594,25 @@
                 });
             });
         });
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "BWS Veranstaltungstechnik GbR",
+        "description": "Impressum, Datenschutzerklärung und Allgemeine Geschäftsbedingungen (AGB) der BWS Veranstaltungstechnik GbR.",
+        "url": "https://bws-veranstaltungstechnik.de/impressum.html",
+        "email": "info@bwsverleih.de",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Klausen",
+            "postalCode": "54524",
+            "addressRegion": "Rheinland-Pfalz",
+            "addressCountry": "DE"
+        }
+    }
     </script>
 </body>
 </html>

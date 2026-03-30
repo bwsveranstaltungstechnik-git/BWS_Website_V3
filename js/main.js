@@ -77,7 +77,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Badge on page load
     updateCartBadge();
 
-    // Add to cart functionality
+    // Quantity Selector Logic (on catalog pages)
+    document.querySelectorAll('.qty-minus').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const display = document.getElementById('qty-' + targetId);
+            if (display) {
+                let val = parseInt(display.textContent) || 1;
+                if (val > 1) display.textContent = val - 1;
+            }
+        });
+    });
+    document.querySelectorAll('.qty-plus').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const maxQty = parseInt(btn.getAttribute('data-max')) || 99;
+            const display = document.getElementById('qty-' + targetId);
+            if (display) {
+                let val = parseInt(display.textContent) || 1;
+                if (val < maxQty) {
+                    display.textContent = val + 1;
+                } else {
+                    btn.style.color = '#ef4444';
+                    setTimeout(() => { btn.style.color = ''; }, 500);
+                }
+            }
+        });
+    });
+
+    // Add to cart functionality (with quantity selector and max limit)
     const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
     addToCartBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -88,25 +116,50 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = parseFloat(btn.getAttribute('data-price'));
             const category = btn.getAttribute('data-category');
             const img = btn.getAttribute('data-img');
+            const maxQty = parseInt(btn.getAttribute('data-max')) || 99;
+
+            // Get selected quantity from the qty selector
+            const qtyDisplay = document.getElementById('qty-' + id);
+            const selectedQty = qtyDisplay ? parseInt(qtyDisplay.textContent) || 1 : 1;
 
             let cart = JSON.parse(localStorage.getItem('bws_cart')) || [];
             
             const existingItemIndex = cart.findIndex(item => item.id === id);
             if (existingItemIndex > -1) {
-                cart[existingItemIndex].quantity += 1;
+                const newQty = cart[existingItemIndex].quantity + selectedQty;
+                if (newQty > maxQty) {
+                    cart[existingItemIndex].quantity = maxQty;
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = `<span class="material-symbols-outlined text-sm">block</span> Max. ${maxQty} Stück`;
+                    btn.classList.add('!bg-red-500/20', '!text-red-400', '!border-red-500/30');
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('!bg-red-500/20', '!text-red-400', '!border-red-500/30');
+                    }, 2000);
+                } else {
+                    cart[existingItemIndex].quantity = newQty;
+                }
             } else {
-                cart.push({ id, name, price, category, img, quantity: 1 });
+                const qty = Math.min(selectedQty, maxQty);
+                cart.push({ id, name, price, category, img, quantity: qty, maxQty });
             }
             
             localStorage.setItem('bws_cart', JSON.stringify(cart));
             updateCartBadge();
             
-            // Optional: visual feedback on the button
+            // Visual feedback
             const originalText = btn.innerHTML;
-            btn.innerHTML = `<span class="material-symbols-outlined text-sm">check</span> Hinzugefügt`;
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-            }, 1500);
+            if (!btn.classList.contains('!bg-red-500/20')) {
+                btn.innerHTML = `<span class="material-symbols-outlined text-sm">check</span> ${selectedQty}x hinzugefügt`;
+                btn.classList.add('!bg-green-500/20', '!text-green-400', '!border-green-500/30');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('!bg-green-500/20', '!text-green-400', '!border-green-500/30');
+                }, 1500);
+            }
+            
+            // Reset qty selector to 1
+            if (qtyDisplay) qtyDisplay.textContent = '1';
         });
     });
 
@@ -265,9 +318,14 @@ document.addEventListener('DOMContentLoaded', () => {
             let cart = JSON.parse(localStorage.getItem('bws_cart')) || [];
             const index = cart.findIndex(item => item.id === id);
             if (index > -1) {
-                cart[index].quantity += delta;
-                if (cart[index].quantity <= 0) {
+                const maxQty = cart[index].maxQty || 99;
+                let newQty = cart[index].quantity + delta;
+                if (newQty <= 0) {
                     cart.splice(index, 1);
+                } else if (newQty > maxQty) {
+                    cart[index].quantity = maxQty;
+                } else {
+                    cart[index].quantity = newQty;
                 }
                 localStorage.setItem('bws_cart', JSON.stringify(cart));
                 updateCartBadge();
@@ -293,6 +351,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initial Calculation
         calculateFactor();
+    }
+
+    // -----------------------------------------
+    // Mobile Menu Logic
+    // -----------------------------------------
+    const mobileMenuOpen = document.getElementById('mobile-menu-open');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileMenuOpen && mobileMenuClose && mobileMenu) {
+        mobileMenuOpen.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        });
     }
 
     console.log('Main JS loaded');
