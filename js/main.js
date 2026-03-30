@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('cart-title-count').textContent = `(${cart.length} Positionen)`;
 
-            cart.forEach((item, index) => {
+            cart.forEach((item) => {
                 const itemTotal = item.price * item.quantity * rentFactor;
                 totalNetto += itemTotal;
 
@@ -306,12 +306,51 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const updateSummary = (netto) => {
-            const tax = netto * 0.19;
-            const brutto = netto + tax;
-
             document.getElementById('summary-netto').textContent = `${netto.toFixed(2).replace('.', ',')} €`;
-            document.getElementById('summary-tax').textContent = `${tax.toFixed(2).replace('.', ',')} €`;
-            document.getElementById('summary-brutto').textContent = `${brutto.toFixed(2).replace('.', ',')} €`;
+            document.getElementById('summary-brutto').textContent = `${netto.toFixed(2).replace('.', ',')} €`;
+            populateHiddenFields();
+        };
+
+        const populateHiddenFields = () => {
+            const cart = JSON.parse(localStorage.getItem('bws_cart')) || [];
+            const cartField = document.getElementById('hidden-cart-inhalt');
+            const mietdauerField = document.getElementById('hidden-mietdauer');
+            const logistikField = document.getElementById('hidden-logistik');
+            const gesamtField = document.getElementById('hidden-gesamtbetrag');
+
+            if (cartField) {
+                if (cart.length === 0) {
+                    cartField.value = 'Kein Artikel im Warenkorb.';
+                } else {
+                    let cartText = 'Mietanfrage – Artikelliste:\n';
+                    cart.forEach(item => {
+                        cartText += `- ${item.name} (${item.quantity}x) — ${item.price.toFixed(2)} €/Tag\n`;
+                    });
+                    cartField.value = cartText;
+                }
+            }
+
+            if (mietdauerField) {
+                const startEl = document.getElementById('rent-start');
+                const endEl = document.getElementById('rent-end');
+                if (startEl && endEl) {
+                    mietdauerField.value = `${startEl.value} bis ${endEl.value} (${rentDays} Tag${rentDays > 1 ? 'e' : ''}, Faktor ${rentFactor.toFixed(1)})`;
+                }
+            }
+
+            if (logistikField) {
+                const deliveryRadios = document.querySelectorAll('input[name="delivery"]');
+                let logistikValue = 'Selbstabholung';
+                deliveryRadios.forEach((radio, i) => {
+                    if (radio.checked && i === 1) logistikValue = 'Lieferung & Aufbau';
+                });
+                logistikField.value = logistikValue;
+            }
+
+            if (gesamtField) {
+                const bruttoEl = document.getElementById('summary-brutto');
+                if (bruttoEl) gesamtField.value = bruttoEl.textContent;
+            }
         };
 
         const changeQuantity = (id, delta) => {
@@ -347,6 +386,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateCartBadge();
                 renderCart();
             }
+        });
+
+        // Update hidden fields when logistics selection changes
+        document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+            radio.addEventListener('change', populateHiddenFields);
+        });
+
+        // Angebot speichern
+        document.getElementById('save-offer-btn')?.addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('bws_cart')) || [];
+            const startEl = document.getElementById('rent-start');
+            const endEl = document.getElementById('rent-end');
+            const savedOffer = {
+                cart,
+                startDate: startEl?.value || '',
+                endDate: endEl?.value || '',
+                timestamp: new Date().toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })
+            };
+            localStorage.setItem('bws_saved_offer', JSON.stringify(savedOffer));
+
+            const btn = document.getElementById('save-offer-btn');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined text-sm">check</span> Angebot gespeichert ✓';
+            btn.classList.add('!bg-green-500/20', '!text-green-400', '!border-green-500/30');
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.classList.remove('!bg-green-500/20', '!text-green-400', '!border-green-500/30');
+            }, 2000);
+        });
+
+        // Check for saved offer on load and show banner if present
+        const savedOffer = JSON.parse(localStorage.getItem('bws_saved_offer'));
+        if (savedOffer) {
+            const banner = document.getElementById('saved-offer-banner');
+            const dateEl = document.getElementById('saved-offer-date');
+            if (banner) {
+                banner.classList.remove('hidden');
+                if (dateEl) dateEl.textContent = `Gespeichert am ${savedOffer.timestamp}`;
+            }
+        }
+
+        document.getElementById('load-offer-btn')?.addEventListener('click', () => {
+            const offer = JSON.parse(localStorage.getItem('bws_saved_offer'));
+            if (offer) {
+                localStorage.setItem('bws_cart', JSON.stringify(offer.cart));
+                const startEl = document.getElementById('rent-start');
+                const endEl = document.getElementById('rent-end');
+                if (startEl && offer.startDate) startEl.value = offer.startDate;
+                if (endEl && offer.endDate) endEl.value = offer.endDate;
+                document.getElementById('saved-offer-banner')?.classList.add('hidden');
+                updateCartBadge();
+                calculateFactor();
+            }
+        });
+
+        document.getElementById('discard-offer-btn')?.addEventListener('click', () => {
+            localStorage.removeItem('bws_saved_offer');
+            document.getElementById('saved-offer-banner')?.classList.add('hidden');
         });
 
         // Initial Calculation

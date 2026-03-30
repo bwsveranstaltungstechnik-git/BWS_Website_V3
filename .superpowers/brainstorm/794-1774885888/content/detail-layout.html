@@ -1,0 +1,77 @@
+<h2>Produkt-Detailseite — Layout</h2>
+<p class="subtitle">Wie soll die Detailseite aufgebaut sein? (Technisch: eine Seite, die per ?id=produkt-id befüllt wird)</p>
+
+<div class="options">
+  <div class="option" data-choice="split" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Bild links / Info rechts (Empfohlen)</h3>
+      <p>Klassisches Shop-Layout. Groß Produktbild links, rechts: Name, Preis/Tag, Beschreibung, Menge-Auswahl, "In den Warenkorb".</p>
+      <div class="mockup" style="margin-top:12px;">
+        <div class="mockup-header">Detailseite – Split View</div>
+        <div class="mockup-body" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;">
+          <div style="background:rgba(255,255,255,0.05);border-radius:8px;height:140px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:12px;">📷 Produktbild<br>groß</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:18px;width:70%;"></div>
+            <div style="background:#f59e0b;border-radius:4px;height:14px;width:40%;"></div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:4px;height:40px;"></div>
+            <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:12px;width:90%;"></div>
+            <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:12px;width:75%;"></div>
+            <div style="background:#f59e0b;border-radius:8px;height:32px;margin-top:4px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#000;font-weight:bold;">In den Warenkorb</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="hero" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Großes Hero-Bild oben, Info darunter</h3>
+      <p>Bild nimmt volle Breite ein, darunter alle Infos in zwei Spalten. Mehr visuellen Impact, weniger kompakt.</p>
+      <div class="mockup" style="margin-top:12px;">
+        <div class="mockup-header">Detailseite – Hero</div>
+        <div class="mockup-body" style="padding:12px;display:flex;flex-direction:column;gap:8px;">
+          <div style="background:rgba(255,255,255,0.05);border-radius:8px;height:80px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:12px;">📷 Breites Produktbild</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="background:rgba(255,255,255,0.07);border-radius:4px;height:14px;width:80%;"></div>
+              <div style="background:rgba(255,255,255,0.04);border-radius:4px;height:36px;"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="background:#f59e0b;border-radius:4px;height:14px;width:50%;"></div>
+              <div style="background:#f59e0b;border-radius:8px;height:32px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#000;font-weight:bold;">In den Warenkorb</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="modal" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Modal / Overlay (kein Seitenwechsel)</h3>
+      <p>Klick auf ein Produkt öffnet ein großes Overlay auf der aktuellen Seite. Kein Laden einer neuen Seite — schneller, aber keine eigene URL pro Produkt.</p>
+      <div class="mockup" style="margin-top:12px;">
+        <div class="mockup-header">Produktseite mit Modal-Overlay</div>
+        <div class="mockup-body" style="padding:12px;position:relative;">
+          <div style="opacity:0.3;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+            <div style="background:rgba(255,255,255,0.05);border-radius:6px;height:50px;"></div>
+            <div style="background:rgba(255,255,255,0.05);border-radius:6px;height:50px;"></div>
+            <div style="background:rgba(255,255,255,0.05);border-radius:6px;height:50px;"></div>
+          </div>
+          <div style="position:absolute;inset:4px;background:rgba(15,23,42,0.95);border-radius:8px;border:1px solid rgba(245,158,11,0.3);padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="background:rgba(255,255,255,0.05);border-radius:6px;height:100%;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:11px;">Bild</div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div style="background:rgba(255,255,255,0.07);border-radius:3px;height:10px;width:70%;"></div>
+              <div style="background:#f59e0b;border-radius:3px;height:8px;width:40%;"></div>
+              <div style="background:rgba(255,255,255,0.04);border-radius:3px;height:25px;"></div>
+              <div style="background:#f59e0b;border-radius:5px;height:20px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#000;font-weight:bold;">In den Warenkorb</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

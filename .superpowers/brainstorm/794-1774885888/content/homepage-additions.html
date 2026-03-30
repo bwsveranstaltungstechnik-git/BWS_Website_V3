@@ -1,0 +1,73 @@
+<h2>Homepage-Ergänzungen</h2>
+<p class="subtitle">Zwei neue Sektionen für die Startseite — passt das so?</p>
+
+<div class="section">
+  <h3>1 — Google-Bewertung (Vertrauenssignal)</h3>
+  <p class="subtitle" style="margin-bottom:12px;">Direkt unter dem Hero-Button sichtbar — klein aber wirkungsvoll</p>
+  <div class="mockup">
+    <div class="mockup-header">Hero-Bereich (Ausschnitt)</div>
+    <div class="mockup-body" style="padding:16px;display:flex;flex-direction:column;align-items:center;gap:10px;">
+      <div style="background:rgba(255,255,255,0.07);border-radius:8px;height:14px;width:60%;"></div>
+      <div style="background:rgba(255,255,255,0.04);border-radius:6px;height:10px;width:80%;"></div>
+      <div style="background:rgba(255,255,255,0.04);border-radius:6px;height:10px;width:70%;"></div>
+      <div style="display:flex;gap:8px;margin-top:4px;">
+        <div style="background:#f59e0b;border-radius:20px;padding:6px 16px;font-size:11px;font-weight:900;color:#000;">Jetzt anfragen</div>
+        <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;color:white;">Sortiment ansehen</div>
+      </div>
+      <!-- NEW: Rating badge -->
+      <div style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:5px 12px;">
+        <span style="color:#fbbf24;font-size:12px;">★★★★★</span>
+        <span style="font-size:11px;font-weight:700;color:white;">4,8</span>
+        <span style="font-size:10px;color:#64748b;">· 54 Google-Bewertungen</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/60px-Google_2015_logo.svg.png" style="height:12px;opacity:0.7;" alt="Google">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:24px;">
+  <h3>2 — "So funktioniert's" Sektion</h3>
+  <p class="subtitle" style="margin-bottom:12px;">3 Schritte direkt nach dem Hero — baut Vertrauen auf und senkt Hemmschwelle</p>
+  <div class="mockup">
+    <div class="mockup-header">Neue Sektion nach dem Hero</div>
+    <div class="mockup-body" style="padding:16px;">
+      <div style="text-align:center;margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:900;color:white;">So einfach geht's</div>
+        <div style="font-size:10px;color:#64748b;margin-top:2px;">In 3 Schritten zum perfekten Event</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px;text-align:center;border:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:20px;margin-bottom:4px;">🛒</div>
+          <div style="font-size:10px;font-weight:700;color:#f59e0b;">1. Auswählen</div>
+          <div style="font-size:9px;color:#64748b;margin-top:3px;line-height:1.4;">Artikel in den Warenkorb legen</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px;text-align:center;border:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:20px;margin-bottom:4px;">📨</div>
+          <div style="font-size:10px;font-weight:700;color:#f59e0b;">2. Anfragen</div>
+          <div style="font-size:9px;color:#64748b;margin-top:3px;line-height:1.4;">Unverbindliche Anfrage senden</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px;text-align:center;border:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:20px;margin-bottom:4px;">🎉</div>
+          <div style="font-size:10px;font-weight:700;color:#f59e0b;">3. Loslegen</div>
+          <div style="font-size:9px;color:#64748b;margin-top:3px;line-height:1.4;">Abholen oder liefern lassen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="options" style="margin-top:24px;">
+  <div class="option" data-choice="gut" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>Beide gut — so umsetzen</h3>
+    </div>
+  </div>
+  <div class="option" data-choice="anpassen" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content">
+      <h3>Etwas anpassen</h3>
+      <p>Sag mir was im Terminal.</p>
+    </div>
+  </div>
+</div>

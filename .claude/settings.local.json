@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash \"C:/Users/beren/.claude/plugins/marketplaces/superpowers-dev/skills/brainstorming/scripts/start-server.sh\" --project-dir \"C:/Users/beren/OneDrive - RPTU Kaiserslautern-Landau/Desktop/Website/BWS_Website_V3\")",
+      "Bash(xargs cat:*)"
+    ]
+  }
+}

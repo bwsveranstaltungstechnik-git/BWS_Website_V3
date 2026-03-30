@@ -1,0 +1,93 @@
+<h2>Produkt-Detailseite — Vorschau</h2>
+<p class="subtitle">So würde die Seite mit den vorhandenen Daten aussehen. Passt das so?</p>
+
+<div class="mockup">
+  <div class="mockup-header">mietartikel-details.html?id=tontechnik-ld-icoa-12a-bt</div>
+  <div class="mockup-body" style="padding:0;">
+
+    <!-- Navbar placeholder -->
+    <div style="background:rgba(0,0,0,0.4);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);">
+      <span style="font-size:11px;font-weight:900;color:white;text-transform:uppercase;">BWS Veranstaltungstechnik</span>
+      <div style="background:#f59e0b;border-radius:20px;padding:4px 10px;font-size:10px;font-weight:bold;color:#000;">Warenkorb 🛒</div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div style="padding:8px 16px;font-size:10px;color:#64748b;">
+      ← Tontechnik &nbsp;/&nbsp; <span style="color:#94a3b8;">LD ICOA 12A BT</span>
+    </div>
+
+    <!-- Main Content: Split A -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:12px 16px 16px;">
+
+      <!-- Left: Image -->
+      <div style="background:rgba(255,255,255,0.04);border-radius:12px;border:1px solid rgba(255,255,255,0.08);aspect-ratio:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;">
+        <span style="font-size:36px;">🔊</span>
+        <span style="font-size:10px;color:#64748b;">Produktbild</span>
+      </div>
+
+      <!-- Right: Info -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+
+        <!-- Category badge -->
+        <div style="display:inline-flex;align-items:center;gap:4px;background:rgba(6,182,212,0.15);border:1px solid rgba(6,182,212,0.3);border-radius:20px;padding:3px 10px;width:fit-content;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>
+          <span style="font-size:9px;font-weight:700;color:#06b6d4;text-transform:uppercase;letter-spacing:1px;">Tontechnik</span>
+        </div>
+
+        <!-- Name -->
+        <div>
+          <div style="font-size:18px;font-weight:900;color:white;line-height:1.2;">LD ICOA 12A BT</div>
+          <div style="font-size:10px;color:#64748b;margin-top:2px;">Aktive PA-Box mit Bluetooth</div>
+        </div>
+
+        <!-- Price -->
+        <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:8px 12px;">
+          <div style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;font-weight:700;">Mietpreis</div>
+          <div style="font-size:22px;font-weight:900;color:#f59e0b;">25,00 €<span style="font-size:11px;color:#64748b;font-weight:400;margin-left:3px;">/ Tag</span></div>
+          <div style="font-size:9px;color:#64748b;margin-top:2px;">Netto gem. § 19 UStG · max. 2 Stück verfügbar</div>
+        </div>
+
+        <!-- Quantity + Add to Cart -->
+        <div style="display:flex;gap:8px;align-items:center;">
+          <div style="background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;padding:4px;">
+            <div style="width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:16px;">−</div>
+            <div style="width:28px;text-align:center;font-weight:700;color:white;font-size:13px;">1</div>
+            <div style="width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:#f59e0b;font-size:16px;">+</div>
+          </div>
+          <div style="flex:1;background:#f59e0b;border-radius:8px;padding:8px;text-align:center;font-size:11px;font-weight:900;color:#000;">IN DEN WARENKORB</div>
+        </div>
+
+        <!-- Back link -->
+        <div style="font-size:10px;color:#64748b;margin-top:4px;">← Zurück zur Übersicht</div>
+      </div>
+    </div>
+
+    <!-- Related products hint -->
+    <div style="margin:0 16px 16px;padding:10px 12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;">
+      <div style="font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Weitere Tontechnik</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+        <div style="background:rgba(255,255,255,0.04);border-radius:6px;height:40px;border:1px solid rgba(255,255,255,0.06);"></div>
+        <div style="background:rgba(255,255,255,0.04);border-radius:6px;height:40px;border:1px solid rgba(255,255,255,0.06);"></div>
+        <div style="background:rgba(255,255,255,0.04);border-radius:6px;height:40px;border:1px solid rgba(255,255,255,0.06);"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="options" style="margin-top:20px;">
+  <div class="option" data-choice="gut" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>Sieht gut aus — so umsetzen</h3>
+      <p>Detailseite mit Name, Bild, Kategorie, Preis, Menge-Auswahl, Warenkorb-Button und ähnlichen Produkten.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="anpassen" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content">
+      <h3>Ich will etwas anpassen</h3>
+      <p>Sag mir was geändert werden soll.</p>
+    </div>
+  </div>
+</div>

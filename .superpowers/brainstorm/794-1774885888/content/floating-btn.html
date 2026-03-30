@@ -1,0 +1,47 @@
+<h2>Floating Kontakt-Button</h2>
+<p class="subtitle">Der Button erscheint auf allen Seiten unten rechts — er macht es Besuchern einfach, sofort Kontakt aufzunehmen. Welche Variante?</p>
+
+<div class="options">
+  <div class="option" data-choice="phone-only" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Nur Telefon</h3>
+      <p>Ein einzelner runder Button mit Telefon-Icon. Klick → wählt direkt an. Simpel, kein Ablenkung.</p>
+      <div style="margin-top:12px; display:flex; justify-content:flex-end;">
+        <div style="width:52px;height:52px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(245,158,11,0.5);">
+          <span style="font-size:22px;">📞</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="phone-whatsapp" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Telefon + WhatsApp (gestapelt)</h3>
+      <p>Zwei Buttons übereinander. Sofort sichtbar, beide Kanäle gleichzeitig erreichbar.</p>
+      <div style="margin-top:12px; display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);">
+          <span style="font-size:20px;">💬</span>
+        </div>
+        <div style="width:48px;height:48px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(245,158,11,0.4);">
+          <span style="font-size:20px;">📞</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="fab-expand" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Aufklappbarer FAB</h3>
+      <p>Ein „+" Button — beim Klick klappt er auf und zeigt Telefon, WhatsApp und E-Mail. Sauber, platzsparend.</p>
+      <div style="margin-top:12px; display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:#1e293b;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:16px;">📧</div>
+        <div style="width:40px;height:40px;border-radius:50%;background:#1e293b;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:16px;">💬</div>
+        <div style="width:40px;height:40px;border-radius:50%;background:#1e293b;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:16px;">📞</div>
+        <div style="width:52px;height:52px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(245,158,11,0.5);font-size:22px;font-weight:bold;">✕</div>
+      </div>
+    </div>
+  </div>
+</div>
